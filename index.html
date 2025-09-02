@@ -34,59 +34,60 @@
             margin: 0 auto;
         }
 
-        header {
-            background-color: var(--azul-escuro);
-            color: var(--branco);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+ header {
+        background-color: var(--branco); /* Fundo branco */
+        color: var(--azul-escuro); /* Texto em azul escuro */
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil */
+    }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-        .logo img {
-            height: 50px;
-        }
+    .logo img {
+        height: 50px;
+    }
 
-        .contact-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+    .contact-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
 
-        .btn {
-            background-color: var(--dourado);
-            color: var(--azul-escuro);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn-whatsapp {
-            background-color: var(--dourado);
-            color: var(--azul-escuro);
-        }
+    .btn {
+        background-color: var(--dourado);
+        color: var(--azul-escuro);
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn-whatsapp {
+        background-color: var(--dourado);
+        color: var(--azul-escuro);
+    }
 
-        .btn-whatsapp:hover {
-            background-color: #e5a701;
-        }
-        
-        .btn-grupo {
-            background-color: var(--azul);
-            color: var(--branco);
-        }
+    .btn-whatsapp:hover {
+        background-color: #e5a701;
+    }
+    
+    .btn-grupo {
+        background-color: var(--azul);
+        color: var(--branco);
+    }
 
-        .btn-grupo:hover {
-            background-color: #034b99;
-        }
+    .btn-grupo:hover {
+        background-color: #034b99;
+    }
 
         /* Seções */
         section {
