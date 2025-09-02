@@ -138,62 +138,66 @@
             margin-bottom: 40px;
         }
 
-        /* Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
 
-/* Adicione esta nova regra para as trilhas */
-.trilhas-grid {
+/* Cards */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
-        
-        .course-card, .trilha-card {
-            background-color: var(--cinza-claro);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .course-card:hover, .trilha-card:hover {
-            transform: translateY(-10px);
-        }
 
-        .course-card h3, .trilha-card h3 {
-            font-size: 1.5em;
-            color: var(--azul-escuro);
-            margin-bottom: 10px;
-        }
+/* Estilos de base para todos os cards (cursos e trilhas) */
+.course-card, .trilha-card {
+    background-color: var(--cinza-claro);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
 
-        .course-card p, .trilha-card p {
-            font-size: 1em;
-            color: var(--cinza-escuro);
-            margin-bottom: 15px;
-        }
+/* Regra específica para os cards de trilha para adicionar o espaçamento */
+.trilha-card {
+    margin-bottom: 30px;
+}
+
+/* Efeitos de Hover */
+.course-card:hover, .trilha-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Títulos dos cards */
+.course-card h3, .trilha-card h3 {
+    font-size: 1.5em;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* Parágrafos dos cards */
+.course-card p, .trilha-card p {
+    font-size: 1em;
+    color: var(--cinza-escuro);
+    margin-bottom: 15px;
+}
+
+/* Parágrafo das trilhas */
+.trilha-card p {
+    font-size: 1.1em;
+}
+
+/* Detalhes do card */
+.card-details {
+    font-size: 0.9em;
+    color: var(--azul);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-details span {
+    display: block;
+}
         
-        .trilha-card p {
-            font-size: 1.1em;
-        }
-
-        .card-details {
-            font-size: 0.9em;
-            color: var(--azul);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        .card-details span {
-            display: block;
-        }
-
         /* Depoimentos */
         .testimonials {
             background-color: var(--azul);
