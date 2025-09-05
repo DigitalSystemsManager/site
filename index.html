@@ -251,20 +251,120 @@
         }
 
         /* Rodapé */
-        footer {
-            background-color: var(--azul-escuro);
-            color: var(--branco);
-            padding: 40px 0;
-            text-align: center;
-        }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
 
+/* SEUS ESTILOS BASE PARA O FOOTER */
+footer {
+    background-color: var(--azul-escuro); /* Mantenha sua variável */
+    color: var(--branco);                 /* Mantenha sua variável */
+    padding: 40px 0 20px 0;               /* Ajuste conforme o que preferir */
+    text-align: center;                   /* Mantenha */
+}
+
+/* SE VOCÊ NÃO FOR USAR MAIS O LAYOUT FLEX PARA O FOOTER GERAL, PODE REMOVER OU REAVALIAR ESTE BLOCO */
+/* .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+} */
+
+/* NOVOS ESTILOS PARA A SEÇÃO DE CALL-TO-ACTION */
+.footer-cta-section {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.footer-cta-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: var(--branco); /* Use sua variável de cor, ou defina uma nova */
+}
+
+.footer-cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--branco); /* Use sua variável de cor */
+}
+
+/* ESTILOS PARA O BOTÃO FALE CONOSCO DA CTA */
+.btn-footer-cta {
+    background-color: #ff6b6b; /* OU use uma variável: var(--cor-botao-cta); */
+    color: white;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-footer-cta:hover {
+    background-color: #e65c5c; /* Ajuste ou use variável */
+}
+
+/* ESTILOS PARA A SEÇÃO DE CONTEÚDO PRINCIPAL DO FOOTER */
+.footer-main-content {
+    margin-bottom: 30px;
+}
+
+.footer-main-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--branco); /* Use sua variável de cor */
+}
+
+.logo-secundaria-rodape {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-main-content p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.footer-main-content p a {
+    color: var(--cor-link-footer); /* Exemplo de variável para links do footer */
+    text-decoration: none;
+}
+
+.footer-main-content p a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* ESTILOS PARA A SEÇÃO DE COPYRIGHT */
+.footer-copyright-section {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: #aaaaaa; /* Use sua variável de cor, se houver, ou mantenha este cinza */
+}
+
+       
          /* Icones Mídia Social */
         .social-media a {
             color: var(--branco);
