@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Systems Managing - Cursos de TI Online ao Vivo e Interativos</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <style>
+        :root {
+            --azul-escuro: #0e3d71;
+            --dourado: #f6b401;
+            --azul: #045ebf;
+            --branco: #ffffff;
+            --cinza-claro: #f4f4f4;
+            --cinza-escuro: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--cinza-escuro);
+            background-color: var(--branco);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+ header {
+        background-color: var(--branco); /* Fundo branco */
+        color: var(--azul-escuro); /* Texto em azul escuro */
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil */
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .logo img {
+        height: 90px;
+    }
+
+  .logo-secundaria-rodape {
+    display: block; /* Faz com que a imagem ocupe uma linha inteira */
+    margin: 15px auto; /* Centraliza horizontalmente e adiciona um espaçamento de 15px acima e abaixo */
+    width: 100px; /* Define a largura para 50 pixels */
+    height: 100px; /* Define a altura para 50 pixels */
+}
+
+
+    .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    height: 50px; /* Define o tamanho da miniatura */
+}
+
+.contact-buttons {
+        display: flex;
+        gap: 1
+        0px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        background-color: var(--dourado);
+        color: var(--azul-escuro);
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin-top: 15px;
+    }
+    
+    .btn-whatsapp {
+        background-color: var(--dourado);
+        color: var(--azul-escuro);
+    }
+
+    .btn-whatsapp:hover {
+        background-color: #e5a701;
+    }
+    
+    .btn-grupo {
+        background-color: var(--azul);
+        color: var(--branco);
+    }
+
+    .btn-grupo:hover {
+        background-color: #034b99;
+    }
+
+        /* Seções */
+        section {
+            padding: 80px 0;
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
+
+/* Nova regra para ajustar o espaço da seção de trilhas */
+#trilhas {
+    padding-top: 5px; 
+}
+        
+        .hero {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .hero .btn {
+            background-color: var(--dourado);
+            color: var(--azul-escuro);
+        }
+        
+        .section-heading {
+            font-size: 2.2em;
+            color: var(--azul-escuro);
+            margin-bottom: 20px;
+        }
+
+        .subsection-heading {
+            font-size: 1.5em;
+            color: var(--dourado);
+            margin-bottom: 40px;
+        }
+
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Estilos de base para todos os cards (cursos e trilhas) */
+.course-card, .trilha-card {
+    background-color: var(--cinza-claro);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+/* Regra específica para os cards de trilha para adicionar o espaçamento */
+.trilha-card {
+    margin-bottom: 30px;
+}
+
+/* Efeitos de Hover */
+.course-card:hover, .trilha-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Títulos dos cards */
+.course-card h3, .trilha-card h3 {
+    font-size: 1.5em;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+/* Parágrafos dos cards */
+.course-card p, .trilha-card p {
+    font-size: 1em;
+    color: var(--cinza-escuro);
+    margin-bottom: 15px;
+}
+
+/* Parágrafo das trilhas */
+.trilha-card p {
+    font-size: 1.1em;
+}
+
+/* Detalhes do card */
+.card-details {
+    font-size: 0.9em;
+    color: var(--azul);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-details span {
+    display: block;
+}
+        
+        /* Depoimentos */
+        .testimonials {
+            background-color: var(--azul);
+            color: var(--branco);
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card h4 {
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+
+
+/* SEUS ESTILOS BASE PARA O FOOTER */
+footer {
+    background-color: var(--azul-escuro); /* Mantenha sua variável */
+    color: var(--branco);                 /* Mantenha sua variável */
+    padding: 40px 0 20px 0;               /* Ajuste conforme o que preferir */
+    text-align: center;                   /* Mantenha */
+}
+
+/* SE VOCÊ NÃO FOR USAR MAIS O LAYOUT FLEX PARA O FOOTER GERAL, PODE REMOVER OU REAVALIAR ESTE BLOCO */
+/* .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+} */
+
+/* NOVOS ESTILOS PARA A SEÇÃO DE CALL-TO-ACTION */
+.footer-cta-section {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.footer-cta-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: var(--branco); /* Use sua variável de cor, ou defina uma nova */
+}
+
+.footer-cta-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: var(--branco); /* Use sua variável de cor */
+}
+
+/* ESTILOS PARA O BOTÃO FALE CONOSCO DA CTA */
+.btn-footer-cta {
+    background-color: #25D366; /* OU use uma variável: var(--cor-botao-cta); */
+    color: white;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-footer-cta:hover {
+    background-color: #e65c5c; /* Ajuste ou use variável */
+}
+
+/* ESTILOS PARA A SEÇÃO DE CONTEÚDO PRINCIPAL DO FOOTER */
+.footer-main-content {
+    margin-bottom: 30px;
+}
+
+.footer-main-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--branco); /* Use sua variável de cor */
+}
+
+.logo-secundaria-rodape {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-main-content p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.footer-main-content p a {
+    color: var(--cor-link-footer); /* Exemplo de variável para links do footer */
+    text-decoration: none;
+}
+
+.footer-main-content p a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* ESTILOS PARA A SEÇÃO DE COPYRIGHT */
+.footer-copyright-section {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: #aaaaaa; /* Use sua variável de cor, se houver, ou mantenha este cinza */
+}
+
+       
+         /* Icones Mídia Social */
+        .social-media a {
+            color: var(--branco);
+            font-size: 2em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* Botão Voltar ao Topo */
+        #top-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background-color: var(--dourado);
+            color: var(--azul-escuro);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .contact-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Digital Systems Managing"></a>
+            </div>
+            <div class="contact-buttons">
+            <a href="https://wa.me/5561998865417?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20gratuita%20de%2030%20minutos%20para%20avaliar%20meu%20caso." class="btn btn-grupo" target="_blank">Agendar Aulas</a>           
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Leve sua carreira para o próximo nível com cursos ao vivo e personalizados.</h1>
+                <p>Cansado de cursos gravados sem interação? Experimente o nosso método de ensino ao vivo, com interações diretas e suporte do instrutor.</p>
+                <a href="#cursos" class="btn">Conheça Nossos Cursos</a>
+            </div>
+        </section>
+
+        <section id="cursos">
+            <div class="container">
+                <h2 class="section-heading">Experiência Exclusiva</h2>
+                <p class="subsection-heading">Cada aluno tem uma experiência única e exclusiva.</p>
+                
+                <div class="card-grid">
+                    <div class="course-card">
+                        <h3>O Essencial de Excel: Curso básico para iniciantes</h3>
+                        <p>Aprenda trabalhar com planilhas, células, funções, fórmulas, tabelas, gráficos e mais recursos para calcular, organizar e apresentar dados no Microsoft Excel.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                        <a href="#contato" class="btn btn-whatsapp">Saber Mais</a>
+                    </div>
+                    <div class="course-card">
+                        <h3>IA na Prática: otimizar a rotina com Inteligência Artificial</h3>
+                        <p> Entenda como a Inteligência Artificial funciona e como usá-la para o seu benefício. Um guia completo e prático para transformar o dia a dia de trabalho.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                       <a href="#contato" class="btn btn-whatsapp">
+
+    Saber Mais
+</a>
+                    </div>
+                    <div class="course-card">
+                        <h3>Python para Iniciantes: a habilidade que o mercado exige</h3>
+                        <p>Do zero ao seu primeiro código. Um curso prático e direto para você dominar a lógica de programação e iniciar sua jornada no universo da tecnologia.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                        <a href="#contato" class="btn btn-whatsapp">Saber Mais</a>
+                    </div>
+
+<div class="course-card">
+    <h3>Desenvolvimento Web: começe a sua jornada pelo básico</h3>
+    <p>Do zero ao seu primeiro site dinâmico. Um curso prático para você dominar as bases do HTML, CSS, JavaScript e a lógica de servidor com PHP.</p>
+    <div class="card-details">
+        <span>Carga Horária: 40h</span>
+        <span>Aulas: 20</span>
+    </div>
+    <a href="#contato" class="btn btn-whatsapp">Saber Mais</a>
+</div>
+                    
+                    <div class="course-card">
+                        <h3>Sites WordPress: O guia para o seu primeiro site profissional</h3>
+                        <p>Aprenda a construir sites incríveis com WordPress e descubra como ter uma página profissional para marcar presença digital na internet e nos negócios.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                        <a href="#contato" class="btn btn-whatsapp">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Automação com Scripts: o curso que economiza seu tempo</h3>
+                        <p>Tarefas diárias podem ser feitas em segundos. Com o poder do Shell, Python e PHP,aprenda a automatizar processos e ter uma rotina mais tranquila.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                      <a href="#contato" class="btn btn-whatsapp">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Produtividade com Google Drive: organize seu dia a dia</h3>
+                        <p>Aprenda a gerenciar seus arquivos com as ferramentas do Google Drive. Garanta acesso acesso os seus dados de qualquer lugar do planeta com segurança.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Produtividade com Microsoft: Simples, Básico, Rápido e Eficaz</h3>
+                        <p>Aprenda a gerenciar seus documentos e a colaborar com a equipe em tempo real. Um curso prático para liberar todo o seu potencial de produtividade com o OneDrive</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 20h</span>
+                            <span>Aulas: 10</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Tráfego Pago para Iniciantes: do zero a resultados</h3>
+                        <p>A sua jornada no mundo dos anúncios começa aqui. Um curso prático e direto para você aprender a criar campanhas que geram vendas e crescimento.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 30h</span>
+                            <span>Aulas: 15</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Segurança da Informação: o escudo da infraestrutura</h3>
+                        <p>Controle e políticas de acesso, monitoramento, criptografia, conformidade e mais. Prepara-se para proteger sua infraestrutura das ameaças cibernéticas.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 40h</span>
+                            <span>Aulas: 20</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Backup de Dados: o manual do profissional de TI</h3>
+                        <p> Deixe de lado a preocupação com a perda de informações aprenda usar ferramentas e crie estratégias para proteger, armazenar e restaurar dados críticos.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 30h</span>
+                            <span>Aulas: 20</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Redes Essenciais: sua jornada em Redes de Computadores </h3>
+                        <p>Comece sua jornada na área que conecta o mundo. Entenda os fundamentos das conexões, protocolos e arquiteturas, e construa seu futuro em TI.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 40h</span>
+                            <span>Aulas: 20</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+
+                    <div class="course-card">
+    <h3>Azure: aprenda a usar recursos fanstásticos da nuvem da Microsoft</h3>
+    <p>Aprenda a gerenciar, configurar e otimizar máquinas virtuais, redes e serviços essenciais. Guia inicial para quem quer seguir para carreira de computação em nuvem.</p>
+    <div class="card-details">
+        <span>Carga Horária: 60h</span>
+        <span>Aulas: 30</span>
+    </div>
+    <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+</div>
+                    
+                     <div class="course-card">
+                        <h3>Firewall pfSense: o guia definitivo para proteger sua rede</h3>
+                        <p>Configure do zero um dos firewalls mais robustos do mercado. Este curso prático te dá o poder de proteger redes e evitar perdas de dados.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 50h</span>
+                            <span>Aulas: 25</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Kali Linux: Guia básico para seguir carreira em cibersegurança</h3>
+                        <p> Aprenda a identificar e explorar vulnerabilidades em sistemas. Para você que quer entrar no mundo da segurança ofensiva e proteger empresas.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 40h</span>
+                            <span>Aulas: 20</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Fundamentos Linux: o ponto de partida na sua carreira em TI</h3>
+                        <p>Dê o primeiro passo para uma carreira de sucesso no mundo da administração de sistemas, preparando o terreno para o seu futuro.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 30h</span>
+                            <span>Aulas: 15</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Administração de Linux: domine o software de código aberto poderoso</h3>
+                        <p>Aprenda a comandar servidores com este curso completo e prático. Do básico ao avançado, você terá o controle total da sua infraestrura.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 60h</span>
+                            <span>Aulas: 30</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                        <div class="course-card">
+                        <h3>Linux na Nuvem: domine o Linux em instancias EC2 da Amazon</h3>
+                        <p>Gerencie servidores EC2, domine com comandos AWScli e CloudFormation para gerenciamento e provisionamento de recursos, acelere sua carreira./p>
+                        <div class="card-details">
+                            <span>Carga Horária: 60h</span>
+                            <span>Aulas: 30</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>Certificação Linux LPI: o caminho para sua carreira em TI</h3>
+                        <p>Conquiste a sua primeira certificação Linux e abra as portas para oportunidades globais em administração de sistemas e servidores.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 40h</span>
+                            <span>Aulas: 20</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3> AWS Cloud: prepare-se para sua 1ª certificação em nuvem</h3>
+                        <p>Desvende o mundo da computação em nuvem e aprenda sobre os serviços essenciais da AWS para sua iniciar sua carreira na área de TI.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 120h</span>
+                            <span>Período: 3 meses</span>
+                        </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                     <div class="course-card">
+                        <h3>AWS Solutions Architect: Lidere projetos na Nuvem</h3>
+                        <p>Aprenda a projetar, implementar e gerenciar sistemas distribuídos na nuvem da AWS. Prepare-se para conquistar uma certificação de alto nível.</p>
+                        <div class="card-details">
+                            <span>Carga Horária: 240h</span>
+                            <span>Perído: 6 meses</span>
+                        </div>
+                        <a href="#contato" class="btn btn-whatsapp">Saiba Mais</a>
+                    </div>
+                   </div>
+            </div>
+        </section>
+
+        <section id="trilhas">
+            <div class="container">
+                <h2 class="section-heading">Escolha Uma Trilha Profissional</h2>
+                <p class="subsection-heading">Pacotes Personalizados Para o Seu Sucesso na área de TI</p>
+
+                <div class="trilhas-grid">
+                    <div class="trilha-card">
+                        <h3>Trilha 1: Profissional de Linux (Infraestrutura)</h3>
+                        <p>A sua base para uma carreira de sucesso em TI. Esta trilha completa transforma você em um especialista em Linux, com foco em administração de sistemas, gerenciamento de redes e servidores, automação de processos e gestão na nuvem. Domine as tecnologias que movem o mercado e leve sua carreira para o próximo nível.</p>
+                        <h4>Cursos Incluídos:</h4>
+                        <ul>
+                            <li>Administração de Sistemas e Servidores Linux</li>
+                            <li>Automação de Scripts para backup de dados</li>
+                            <li>Administração de Linux na nuvem da AWS</li>
+                        </ul>
+                        <div class="card-details">
+        <span>Carga Horária Total: 120h</span>
+    </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                    <div class="trilha-card">
+                        <h3>Trilha 2: Criação de Sites WordPress e Divulgação Online para Empreendedores</h3>
+                        <p>Ideal para quem quer lançar um negócio online ou criar uma presença digital forte. Este pacote te dá o conhecimento para construir seu próprio site profissional, publicá-lo, otimizar sua hospedagem e atrair clientes através de campanhas de marketing digital eficazes.</p>
+                        <h4>Cursos Incluídos:</h4>
+                        <ul>
+                            <li>Criação de sites WordPress</li>
+                            <li>Tráfego pago em mídias sociais</li>
+                            <li>Criação de imagens, vídeos e criativos</li>
+                        </ul>
+                         <div class="card-details">
+        <span>Carga Horária Total: 160h</span>
+    </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                    <div class="trilha-card">
+                        <h3>Trilha 3: Segurança da Informação</h3>
+                        <p>Proteja a si mesmo e a sua empresa. Esta trilha foi desenhada para te capacitar com os conceitos de segurança, abordando a configuração de firewalls, políticas de segurança e a prática de testes de invasão com ferramentas de ponta.</p>
+                        <h4>Cursos Incluídos:</h4>
+                        <ul>
+                            <li>Conceitos gerais de segurança</li>
+                            <li>Configurações de firewall</li>
+                            <li>Kali Linux: O Guia do Pentester</li>
+                        </ul>
+                         <div class="card-details">
+        <span>Carga Horária Total: 180h</span>
+    </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                    <div class="trilha-card">
+                        <h3>Trilha 4: Colaboração e Produtividade no Trabalho</h3>
+                        <p>Otimize sua rotina e aumente sua eficiência com ferramentas de ponta. Aprenda a dominar planilhas, utilizar a inteligência artificial a seu favor e colaborar de forma fluida com as principais plataformas de nuvem do mercado.</p>
+                        <h4>Cursos Incluídos:</h4>
+                        <ul>
+                            <li>Excel para iniciantes</li>
+                            <li>Introdução à nuvem</li>
+                            <li>Inteligência Artificial na prática</li>
+                            <li>Produtividade em Nuvem (Google)</li>
+                            <li>Produtividade em Nuvem (Microsoft)</li>
+                        </ul>
+                         <div class="card-details">
+        <span>Carga Horária Total: 120h</span>
+    </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                    <div class="trilha-card">
+                        <h3>Trilha 5: Profissional Certificado</h3>
+                        <p>Destaque-se no mercado com certificações reconhecidas globalmente. Esta trilha te prepara para ser aprovado nas provas, com um acompanhamento individual do instrutor, do zero à aprovação. É um serviço premium e personalizado.</p>
+                        <h4>Cursos Incluídos:</h4>
+                        <ul>
+                            <li>Preparatório para Certificação LPI-1</li>
+                            <li>O Caminho para sua Primeira Certificação AWS (CLF-C02)</li>
+                            <li>Projetando Soluções na Nuvem com a Certificação SAA-C03</li>
+                            <li>Acompanhamento do instrutor do início ao fim: do zero à aprovação.</li>
+                        </ul>
+                         <div class="card-details">
+        <span>Tempo de estudo: 2 anos</span>
+    </div>
+                        <a href="https://wa.me/5561998865417" class="btn btn-whatsapp" target="_blank">Saber Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    
+<section class="testimonials">
+    
+    <div class="container">
+        <h2 class="section-heading" style="color: var(--branco);">O Que Nossos Alunos Dizem</h2>
+        <div class="carousel-content">
+            <div class="testimonial-card">
+                <p class="quote">"Curso de Administrador de Rede Linux muito bom e o Professor passou claramente todos os ensinamentos em suas aulas e demonstrou conhecimento e domínio sobre todo o conteúdo." - João Santos</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Gostei muito das aulas. o professor sabe explicar, tira as dúvidas na sala de aula, com exemplos ótimos que ajudam a entender direitinho." - Joselito Filho</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"É um excelente professor, com uma excelente didática. Aproveitei muito o curso e vou ter outros cursos com ele como professor" - Yan</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Gostei muito da metodologia de ensino. Conheço o professor a muito tempo e a forma como ele ensina é a mais simples e direta possível para o aprendizado." - Rafael Gomes</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Eu sou aluna e posso dizer com propriedade que superou as minhas expectativas, professor super atencioso e o conteúdo excelente." - Maria Oliveira</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Meu nome é Claudio e sou analista de sistemas. Os cursos me ajudaram a evoluir profissionalmente. Excelente didática! Recomendo." - Claudio Rodrigues</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Já estou no meu segundo curso e a didática do professor é fantástica. Ele sabe como tornar o assunto complexo em algo muito simples." - Lucas Ferreira</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"O curso de Linux é excelente. O professor é muito didático e paciente, me ajudou a sanar todas as minhas dúvidas." - Fernando Sousa</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+    </main>
+
+
+
+<footer>
+    <!-- Seção de Call-to-Action (Nova) -->
+    <div class="container footer-cta-section">
+         <section id="contato">
+        <h2>🎯 Pronto para Transformar Seu Futuro?</h2>
+        <p>"Construa a sua jornada de aprendizado conosco. Seu conhecimento, seu ritmo, seu curso."</p>
+        <div class="footer-button-wrapper">
+            <a href="https://wa.me/5561998865417?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20gratuita%20de%2030%20minutos%20para%20avaliar%20meu%20caso."
+               class="btn btn-footer-cta" target="_blank">FALE CONOSCO</a>
+        </div>
+    </div>
+
+    <!-- Seção de Contato Principal e Redes Sociais (Atualizada) -->
+    <div class="container footer-main-content">
+            <!-- Nome da empresa antes da logo e links sociais -->
+            <h3>Digital Systems Managing</h3>
+            <img src="img/logo2.png" alt="Digital Systems Managing Logo" class="logo-secundaria-rodape">
+
+            <p>Email: <a href="mailto:digitalsm.empresa@gmail.com">digitalsm.empresa@gmail.com</a></p>
+            <p>WhatsApp: +55 61 9 9886-5417</p>
+              <div class="social-icons">
+                <a href="https://wa.me/5561998865417" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/digitalsystemsmanaging/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank"><img src="img/linkedin.png" alt="Linkedin"></a>
+                <a href="https://www.youtube.com/@digitalsystemsmanaging" target="_blank"><img src="img/youtube.png" alt="Youtube"></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção de Copyright (Nova) -->
+    <div class="container footer-copyright-section">
+        <p>&copy; 2025 Digital Systems Managing | Todos os direitos reservados</p>
+    </div>
+</footer>
+
+
+
+    
+    <button onclick="topFunction()" id="top-btn" title="Voltar ao Topo">^</button>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("top-btn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.carousel-content').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000, // Altera o slide a cada 3 segundos
+        arrows: false // Oculta as setas de navegação
+      });
+    });
+    </script>
+
+</body>
+</html>
