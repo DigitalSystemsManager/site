@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso Backup Automático com S3 | DigitalSM</title>
+  <style>
+    :root {
+      --azul-escuro: #0e3d71;
+      --dourado: #f6b401;
+      --azul: #045ebf;
+      --branco: #ffffff;
+      --cinza-claro: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cinza-claro);
+      color: #333;
+    }
+
+    header {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background-color: var(--dourado);
+      color: var(--azul-escuro);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      padding: 2rem 1rem;
+    }
+
+    .footer-cta-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn-footer-cta {
+      background-color: var(--dourado);
+      color: var(--azul-escuro);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .footer-main-content {
+      text-align: center;
+    }
+
+    .logo-secundaria-rodape {
+      max-width: 120px;
+      margin: 1rem auto;
+    }
+
+    .footer-main-content p a {
+      color: var(--dourado);
+      text-decoration: none;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-copyright-section {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      .social-icons img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Curso Digital: Backup Automático com S3</h1>
+    <p>Proteja seus dados com automação, segurança e tranquilidade — sem depender de terceiros</p>
+    <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20o%20curso%20de%20Backup%20Autom%C3%A1tico%20com%20S3" class="highlight" target="_blank">QUERO ME PROTEGER AGORA</a>
+  </header>
+
+  <section>
+    <h2>🎯 Dor que esse curso resolve</h2>
+    <ul>
+      <li>Perda de dados por falha humana ou técnica</li>
+      <li>Falta de rotina de backup confiável</li>
+      <li>Medo de ransomware ou apagamento acidental</li>
+      <li>Desconhecimento sobre automação segura</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📚 O que você vai aprender</h2>
+    <ul>
+      <li>Configurar backup automático no Linux e Windows</li>
+      <li>Usar AWS S3 com segurança e versionamento</li>
+      <li>Agendar backups com cron e Task Scheduler</li>
+      <li>Restaurar arquivos com integridade e agilidade</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📦 Entregáveis</h2>
+    <ul>
+      <li>Scripts prontos para Linux e Windows</li>
+      <li>Runbook técnico com passo a passo</li>
+      <li>Vídeos explicativos curtos e diretos</li>
+      <li>Checklist de segurança + planilha de controle</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>👥 Para quem é esse curso</h2>
+    <ul>
+      <li>Autônomos e freelancers com arquivos críticos</li>
+      <li>PMEs sem equipe de TI</li>
+      <li>Profissionais iniciantes em Linux ou AWS</li>
+      <li>Quem já perdeu dados e não quer repetir o erro</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💰 Valor e acesso</h2>
+    <p><strong>R$ 129,00</strong> — pagamento via Pix, boleto ou cartão</p>
+    <p>Acesso imediato e vitalício via Hotmart</p>
+    <a href="#" class="highlight">COMPRAR AGORA</a>
+  </section>
+
+  <footer>
+    <div class="container footer-cta-section">
+      <section id="contato">
+        <h2>🎯 Pronto para Transformar Seu Futuro?</h2>
+        <p>"Construa a sua jornada de aprendizado conosco. Seu conhecimento, seu ritmo, seu curso."</p>
+        <div class="footer-button-wrapper">
+          <a href="https://wa.me/5561998865417?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20gratuita%20de%2030%20minutos%20para%20avaliar%20meu%20caso." class="btn btn-footer-cta" target="_blank">FALE CONOSCO</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="container footer-main-content">
+      <h3>Digital Systems Managing</h3>
+      <img src="img/logo2.png" alt="Digital Systems Managing Logo" class="logo-secundaria-rodape">
+      <p>Email: <a href="mailto:digitalsm.empresa@gmail.com">digitalsm.empresa@gmail.com</a></p>
+      <p>WhatsApp: +55 61 9 9886-5417</p>
+      <div class="social-icons">
+        <a href="https://wa.me/5561998865417" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/digitalsystemsmanaging/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank"><img src="img/linkedin.png" alt="Linkedin"></a>
+        <a href="https://www.youtube.com/@digitalsystemsmanaging" target="_blank"><img src="img/youtube.png" alt="Youtube"></a>
+      </div>
+    </div>
+
+    <div class="container footer-copyright-section">
+      <p>&copy; 2025 Digital Systems Managing | Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>
