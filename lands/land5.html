@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Automático AWS - Nunca Mais Perca Dados</title>
+    <meta name="description" content="Backup automático na nuvem AWS por R$ 299/mês. Proteção completa contra perda de dados. Auditoria gratuita.">
+    
+    <style>
+        /* RESET E VARIÁVEIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #2C5282;
+            --success-green: #38A169;
+            --accent-orange: #ED8936;
+            --text-dark: #1A202C;
+            --text-gray: #4A5568;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --red: #E53E3E;
+            --yellow: #F6E05E;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* TIPOGRAFIA */
+        .headline-primary {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .subheadline {
+            font-size: 1.5rem;
+            color: var(--bg-light);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+        
+        .section-title-red {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--red);
+        }
+        
+        .section-title-green {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--success-green);
+        }
+        
+        .section-title-orange {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent-orange);
+        }
+        
+        /* BOTÕES */
+        .btn-primary-huge {
+            background: var(--accent-orange);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .btn-primary-huge:hover {
+            background: #DD7324;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(237, 137, 54, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 10px auto;
+            text-decoration: none;
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .btn-red {
+            background: var(--red);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            text-align: center;
+            max-width: 350px;
+        }
+        
+        /* SEÇÕES */
+        .section {
+            padding: 80px 0;
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #2C5282 0%, #2A4365 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .benefits-quick {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px auto;
+            font-size: 1.1rem;
+            line-height: 2;
+            max-width: 500px;
+        }
+        
+        .cta-subtitle {
+            font-size: 1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .social-proof {
+            margin-top: 40px;
+            opacity: 0.9;
+        }
+        
+        .testimonial-mini {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* PROBLEMA */
+        .problem {
+            background: #FED7D7;
+            padding: 80px 0;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .problem-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .statistic-shock {
+            background: var(--red);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        
+        .statistic-shock h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* SOLUÇÃO */
+        .solution {
+            background: #F0FFF4;
+            padding: 80px 0;
+        }
+        
+        .how-it-works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .step-number {
+            background: var(--success-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--success-green);
+        }
+        
+        .benefits-detailed {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #E2E8F0;
+            font-size: 1.1rem;
+        }
+        
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* DEPOIMENTOS */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .testimonial-card {
+            background: #F7FAFC;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .case-study-highlight {
+            background: var(--success-green);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .case-study-highlight h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .case-study-highlight p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* PREÇOS */
+        .pricing {
+            background: #E6FFFA;
+            padding: 80px 0;
+        }
+        
+        .pricing-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .cost-problem {
+            background: #FED7D7;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .cost-problem h3 {
+            color: var(--red);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cost-item {
+            padding: 10px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .total-cost {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--red);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .our-solution {
+            background: white;
+            padding: 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .plan-highlight h4 {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        .price-big {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .price-big span {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+        }
+        
+        .plan-includes {
+            padding: 30px;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+        
+        .guarantee {
+            background: var(--success-green);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .comparison-visual {
+            background: var(--accent-orange);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .comparison-visual h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* CTA FINAL */
+        .final-cta {
+            background: linear-gradient(135deg, #38A169 0%, #2F855A 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-final-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+        
+        .offer-summary {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px auto 30px auto;
+            max-width: 500px;
+        }
+        
+        .offer-summary h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .offer-item {
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+        
+        .guarantees {
+            margin: 30px 0;
+        }
+        
+        .guarantee-item {
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .cta-info {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .final-social-proof {
+            margin-top: 40px;
+            font-style: italic;
+        }
+        
+        /* CONTATO */
+        .contact {
+            background: var(--primary-blue);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+        
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 10px;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-button:hover {
+            background: #1DA851;
+            transform: translateY(-2px);
+        }
+        
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .headline-primary {
+                font-size: 2.5rem;
+            }
+            
+            .subheadline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title, .section-title-red, .section-title-green, .section-title-orange {
+                font-size: 2rem;
+            }
+            
+            .pricing-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-big {
+                font-size: 3rem;
+            }
+            
+            .cta-final-title {
+                font-size: 2rem;
+            }
+            
+            .btn-primary-huge {
+                font-size: 1rem;
+                padding: 15px 25px;
+            }
+        }
+        
+        /* SCROLL SUAVE */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="headline-primary">
+                Nunca Mais Perca os Dados da Sua Empresa
+            </h1>
+            
+            <h2 class="subheadline">
+                Backup Automático na Nuvem AWS + Proteção Completa por R$ 299/mês
+            </h2>
+            
+            <div class="benefits-quick">
+                ✅ Backup diário automático<br>
+                ✅ Restauração em 1 clique<br>
+                ✅ Armazenamento seguro AWS<br>
+                ✅ Monitoramento 24/7<br>
+                ✅ Suporte técnico incluso
+            </div>
+            
+            <a href="#contato" class="btn-primary-huge">
+                QUERO PROTEGER MEUS DADOS AGORA
+            </a>
+            
+            <p class="cta-subtitle">
+                Auditoria gratuita + Orçamento em 24h
+            </p>
+            
+            <div class="social-proof">
+                <p>Mais de 50 empresas já protegidas</p>
+                <div class="testimonial-mini">
+                    "Salvou nossa empresa quando HD queimou" - João Silva, Metalúrgica JM
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA SECTION -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title-red">
+                Sua Empresa Está a 1 Clique do Desastre
+            </h2>
+            
+            <div class="problem-grid">
+                <div class="problem-item">
+                    💥 <strong>HD queima:</strong> 10 anos de dados perdidos
+                </div>
+                
+                <div class="problem-item">
+                    🔥 <strong>Incêndio/Roubo:</strong> Backup local some junto
+                </div>
+                
+                <div class="problem-item">
+                    🦠 <strong>Vírus/Ransomware:</strong> Arquivos sequestrados
+                </div>
+                
+                <div class="problem-item">
+                    👤 <strong>Erro humano:</strong> Funcionário apaga pasta importante
+                </div>
+            </div>
+            
+            <div class="statistic-shock">
+                <h3>60% das empresas que perdem dados fecham em 6 meses</h3>
+                <p>Fonte: Estudo Symantec 2023</p>
+            </div>
+            
+            <a href="#contato" class="btn-red">
+                NÃO QUERO CORRER ESSE RISCO
+            </a>
+        </div>
+    </section>
+
+    <!-- SOLUÇÃO SECTION -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title-green">
+                Backup Automático AWS: Durma Tranquilo Toda Noite
+            </h2>
+            
+            <div class="how-it-works">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Instalação Invisível</h3>
+                    <p>Configuramos tudo sem parar sua operação. Você nem percebe que está funcionando.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Backup Automático</h3>
+                    <p>Todo dia, automaticamente, seus dados sobem para nuvem AWS criptografados.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Restauração Rápida</h3>
+                    <p>Se precisar, restauramos tudo em minutos. 1 clique e seus dados voltam.</p>
+                </div>
+            </div>
+            
+            <div class="benefits-detailed">
+                <h3>Por Que AWS é Mais Seguro:</h3>
+                
+                <div class="benefit-item">
+                    🏢 <strong>Datacenter militar:</strong> Segurança física máxima
+                </div>
+                
+                <div class="benefit-item">
+                    🔐 <strong>Criptografia bancária:</strong> Mesmo nível dos bancos
+                </div>
+                
+                <div class="benefit-item">
+                    🌍 <strong>Múltiplas cópias:</strong> Dados em 3 locais diferentes
+                </div>
+                
+                <div class="benefit-item">
+                    ⚡ <strong>99.9% disponibilidade:</strong> Sempre acessível
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS SECTION -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">
+                Empresas Que Já Foram Salvas
+            </h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "HD do servidor queimou numa sexta-feira. Na segunda estava tudo funcionando normal. Sem o backup AWS teríamos fechado."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/2C5282/FFFFFF?text=JS" alt="João Silva">
+                        <div>
+                            <strong>João Silva</strong><br>
+                            Metalúrgica JM - 15 funcionários
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Vírus infectou tudo. Perdemos 1 dia de trabalho, mas recuperamos 5 anos de projetos. Investimento que se paga sozinho."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/38A169/FFFFFF?text=MS" alt="Maria Santos">
+                        <div>
+                            <strong>Maria Santos</strong><br>
+                            Escritório Contábil MS - 8 funcionários
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Funcionário apagou pasta com 200 orçamentos. Em 10 minutos estava tudo de volta. Minha pressão nem subiu!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60/ED8936/FFFFFF?text=CL" alt="Carlos Lima">
+                        <div>
+                            <strong>Carlos Lima</strong><br>
+                            Construtora CL - 12 funcionários
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study-highlight">
+                <h3>CASE: Escritório de Advocacia</h3>
+                <p><strong>Problema:</strong> Ransomware criptografou todos os processos</p>
+                <p><strong>Solução:</strong> Restauração completa em 2 horas</p>
+                <p><strong>Resultado:</strong> Zero perda de dados, operação normal</p>
+                <p><strong>Economia:</strong> R$ 50.000 em dados recuperados</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREÇOS SECTION -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">
+                Proteção Completa por Menos que um Almoço por Dia
+            </h2>
+            
+            <div class="pricing-comparison">
+                <div class="cost-problem">
+                    <h3>Custo de Perder Dados:</h3>
+                    <div class="cost-item">Recriar arquivos: R$ 15.000</div>
+                    <div class="cost-item">Tempo parado: R$ 8.000</div>
+                    <div class="cost-item">Clientes perdidos: R$ 25.000</div>
+                    <div class="cost-item">Stress e dor de cabeça: Sem preço</div>
+                    <div class="total-cost">TOTAL: R$ 48.000+</div>
+                </div>
+                
+                <div class="our-solution">
+                    <div class="plan-highlight">
+                        <h4>PLANO PROTEÇÃO TOTAL</h4>
+                        
+                        <div class="price-big">
+                            R$ 299<span>/mês</span>
+                        </div>
+                        
+                        <div class="plan-includes">
+                            ✅ Backup diário automático<br>
+                            ✅ Armazenamento AWS ilimitado*<br>
+                            ✅ Restauração em 1 clique<br>
+                            ✅ Monitoramento 24/7<br>
+                            ✅ Suporte técnico incluso<br>
+                            ✅ Relatórios mensais<br>
+                            ✅ Teste de restauração<br>
+                            ✅ Configuração gratuita
+                        </div>
+                        
+                        <div class="guarantee">
+                            🛡️ GARANTIA 30 DIAS<br>
+                            Não ficou satisfeito? Devolvemos 100%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-visual">
+                <h3>R$ 299/mês vs R$ 48.000 de prejuízo</h3>
+                <p>Você paga 160x MENOS para estar protegido</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL SECTION -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-final-title">
+                Sua Empresa Merece Estar Protegida
+            </h2>
+            
+            <div class="offer-summary">
+                <h3>Você recebe HOJE:</h3>
+                <div class="offer-item">✅ Auditoria gratuita (R$ 800)</div>
+                <div class="offer-item">✅ Orçamento personalizado</div>
+                <div class="offer-item">✅ Plano de proteção completo</div>
+                <div class="offer-item">✅ Sem compromisso</div>
+            </div>
+            
+            <div class="guarantees">
+                <div class="guarantee-item">
+                    🛡️ Garantia 30 dias ou dinheiro de volta
+                </div>
+                <div class="guarantee-item">
+                    ⚡ Implementação sem parar operação
+                </div>
+                <div class="guarantee-item">
+                    📞 Suporte técnico humanizado
+                </div>
+            </div>
+            
+            <a href="#contato" class="btn-primary-huge">
+                QUERO PROTEGER MINHA EMPRESA AGORA
+            </a>
+            
+            <div class="cta-info">
+                📱 WhatsApp: (11) 99999-9999<br>
+                📧 Email: contato@seudominio.com<br>
+                ⏰ Resposta em até 2 horas
+            </div>
+            
+            <a href="#contato" class="btn-secondary">
+                QUERO APENAS A AUDITORIA GRATUITA
+            </a>
+            
+            <div class="final-social-proof">
+                <p>"Melhor investimento que fiz na empresa"</p>
+                <small>- Roberto Alves, Indústria RA</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO SECTION -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato Agora</h2>
+            
+            <div class="contact-info">
+                📱 <strong>WhatsApp:</strong> (11) 99999-9999<br>
+                📧 <strong>Email:</strong> contato@seudominio.com<br>
+                🕐 <strong>Horário:</strong> Segunda a Sexta, 8h às 18h<br>
+                ⚡ <strong>Resposta:</strong> Até 2 horas
+            </div>
+            
+            <a href="https://wa.me/5511999999999?text=Olá! Quero proteger os dados da minha empresa com backup AWS. Pode me enviar mais informações?" class="whatsapp-button" target="_blank">
+                💬 FALAR NO WHATSAPP AGORA
+            </a>
+            
+            <a href="mailto:contato@seudominio.com?subject=Interesse em Backup AWS&body=Olá! Tenho interesse no serviço de backup automático AWS. Gostaria de receber mais informações." class="btn-secondary">
+                📧 ENVIAR EMAIL
+            </a>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT SIMPLES -->
+    <script>
+        // Scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animação simples nos botões
+        document.querySelectorAll('.btn-primary-huge, .btn-secondary, .btn-red').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
