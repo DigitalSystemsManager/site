@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Corporativo Blindado - Sua Empresa Nunca Mais Perde Dados</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); }
+        .glow-button { 
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); 
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover { 
+            box-shadow: 0 0 50px rgba(34, 197, 94, 0.6); 
+            transform: translateY(-2px);
+        }
+        .pulse-danger { animation: pulse-red 2s infinite; }
+        @keyframes pulse-red {
+            0%, 100% { background-color: #dc2626; }
+            50% { background-color: #ef4444; }
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #22c55e;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #22c55e; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    
+    <!-- Header -->
+    <nav class="bg-slate-800/90 backdrop-blur-sm fixed w-full z-50 border-b border-green-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span class="text-slate-900 font-bold text-sm">🛡️</span>
+                    </div>
+                    <span class="text-xl font-bold text-green-400">BackupBlindado</span>
+                </div>
+                <a href="#contato" class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-lg font-semibold text-slate-900 transition-colors">
+                    QUERO PROTEGER MINHA EMPRESA
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgb(34, 197, 94)" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>')] opacity-30"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10" x-data="{ showTypewriter: true }">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black mb-6">
+                    <span class="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 bg-clip-text text-transparent">
+                        E SE SUA EMPRESA
+                    </span>
+                    <br>
+                    <span class="text-white typewriter" x-show="showTypewriter">
+                        PERDESSE TUDO HOJE?
+                    </span>
+                </h1>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-red-600/20 border border-red-500/50 rounded-xl p-6 pulse-danger">
+                    <div class="text-4xl mb-4">🔥</div>
+                    <h3 class="text-lg font-bold mb-2">INCÊNDIO</h3>
+                    <p class="text-sm text-gray-300">Servidor queima = 5 anos de trabalho perdidos</p>
+                </div>
+                <div class="bg-red-600/20 border border-red-500/50 rounded-xl p-6 pulse-danger">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-lg font-bold mb-2">HD QUEBROU</h3>
+                    <p class="text-sm text-gray-300">Planilhas, contratos, fotos = ZERO</p>
+                </div>
+                <div class="bg-red-600/20 border border-red-500/50 rounded-xl p-6 pulse-danger">
+                    <div class="text-4xl mb-4">😱</div>
+                    <h3 class="text-lg font-bold mb-2">FUNCIONÁRIO</h3>
+                    <p class="text-sm text-gray-300">Deletou pasta por engano = caos total</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-green-500 hover:bg-green-400 text-slate-900 font-black text-xl px-12 py-6 rounded-xl glow-button">
+                    🚨 BLINDAR MINHA EMPRESA AGORA
+                </button>
+                <p class="text-green-400 mt-4 font-semibold">✅ Setup em 48 horas | ✅ Backup automático 24/7</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="bg-slate-800 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-8">
+                    <span class="text-red-500">78% DAS EMPRESAS</span> QUE PERDEM DADOS
+                    <br><span class="text-red-500">FECHAM EM 2 ANOS</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-slate-700/50 border border-red-500/30 rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-2xl">💸</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-red-400">PREJUÍZO MÉDIO</h3>
+                                <p class="text-3xl font-black text-white">R$ 50.000+</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">Por perda de dados em empresas de 10-50 funcionários</p>
+                    </div>
+
+                    <div class="bg-slate-700/50 border border-red-500/30 rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-2xl">⏰</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-red-400">TEMPO PERDIDO</h3>
+                                <p class="text-3xl font-black text-white">200+ HORAS</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">Para tentar recuperar dados perdidos (quando consegue)</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-8 border border-yellow-500/30">
+                    <h3 class="text-2xl font-bold mb-6 text-yellow-400">⚠️ CASOS REAIS QUE ATENDEMOS:</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="bg-slate-600/50 p-4 rounded-lg">
+                            <p class="font-semibold text-red-400">"Chuva entrou no escritório, molhou servidor"</p>
+                            <p class="text-gray-300 mt-2">→ Perdeu 3 anos de contratos | Prejuízo: R$ 35.000</p>
+                        </div>
+                        <div class="bg-slate-600/50 p-4 rounded-lg">
+                            <p class="font-semibold text-red-400">"HD fez ruído estranho e parou"</p>
+                            <p class="text-gray-300 mt-2">→ Perdeu base de clientes inteira | Prejuízo: R$ 28.000</p>
+                        </div>
+                        <div class="bg-slate-600/50 p-4 rounded-lg">
+                            <p class="font-semibold text-red-400">"Funcionário deletou pasta principal"</p>
+                            <p class="text-gray-300 mt-2">→ Perdeu fotos de 500 projetos | Prejuízo: R$ 42.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="bg-slate-900 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">
+                    <span class="text-green-400">BACKUP CORPORATIVO BLINDADO</span>
+                    <br>PROTEÇÃO MILITAR PARA SUA EMPRESA
+                </h2>
+                <p class="text-xl text-gray-400">Tecnologia AWS de bancos e hospitais, agora para PMEs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-800 border border-green-500/30 rounded-xl p-8 hover:border-green-400/50 transition-colors">
+                    <div class="text-5xl mb-6">🤖</div>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">BACKUP AUTOMÁTICO</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>✅ Todo arquivo salvo = backup imediato</li>
+                        <li>✅ Funciona 24/7 sem intervenção</li>
+                        <li>✅ Não atrapalha o trabalho</li>
+                        <li>✅ Backup de emails também</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 border border-green-500/30 rounded-xl p-8 hover:border-green-400/50 transition-colors">
+                    <div class="text-5xl mb-6">🔒</div>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">SEGURANÇA MILITAR</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>✅ Dados criptografados (impossível hackear)</li>
+                        <li>✅ Múltiplas cópias em locais diferentes</li>
+                        <li>✅ Acesso apenas para quem autorizar</li>
+                        <li>✅ Log de tudo que acontece</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 border border-green-500/30 rounded-xl p-8 hover:border-green-400/50 transition-colors">
+                    <div class="text-5xl mb-6">⚡</div>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">RECUPERAÇÃO RÁPIDA</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>✅ Arquivo perdido? Recupera em minutos</li>
+                        <li>✅ Servidor queimou? Volta em 4 horas</li>
+                        <li>✅ Histórico de 90 dias disponível</li>
+                        <li>✅ Suporte técnico incluído</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-600 to-green-500 rounded-2xl p-8 text-center">
+                <h3 class="text-3xl font-black text-slate-900 mb-4">🛡️ GARANTIA BLINDADA</h3>
+                <p class="text-xl text-slate-900 font-semibold mb-6">
+                    Se você perder 1 arquivo sequer, devolvemos 100% do dinheiro + R$ 5.000 de indenização
+                </p>
+                <button class="bg-slate-900 text-green-400 font-black text-lg px-10 py-4 rounded-xl hover:bg-slate-800 transition-colors">
+                    QUERO ESSA GARANTIA AGORA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-slate-800 py-20" id="precos">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">
+                    INVISTA <span class="text-green-400">R$ 19/DIA</span>
+                    <br>ECONOMIZE <span class="text-red-400">R$ 50.000</span>
+                </h2>
+            </div>
+
+            <div class="bg-slate-900 border-2 border-green-500 rounded-2xl p-8 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-slate-900 font-black px-6 py-2 rounded-full text-sm">
+                    MAIS POPULAR
+                </div>
+                
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-2">BACKUP CORPORATIVO COMPLETO</h3>
+                    <div class="text-6xl font-black text-white mb-2">
+                        R$ 599<span class="text-2xl text-gray-400">/mês</span>
+                    </div>
+                    <p class="text-green-400 font-semibold">R$ 19,96 por dia | Menos que um almoço executivo</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="font-bold text-lg mb-4 text-green-400">✅ ESTÁ INCLUÍDO:</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>🤖 Backup automático 24/7</li>
+                            <li>🔒 Criptografia militar</li>
+                            <li>⚡ Recuperação em minutos</li>
+                            <li>📧 Backup de emails</li>
+                            <li>💾 Até 1TB de dados</li>
+                            <li>📱 Acesso mobile</li>
+                            <li>🆘 Suporte técnico incluído</li>
+                            <li>🛡️ Garantia total</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4 text-yellow-400">🎁 BÔNUS EXCLUSIVOS:</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>🚀 Setup gratuito (valor R$ 1.500)</li>
+                            <li>📚 Treinamento da equipe</li>
+                            <li>📊 Relatórios mensais</li>
+                            <li>🔄 Migração de dados atual</li>
+                            <li>⏰ Primeira recuperação grátis</li>
+                            <li>🎯 Consultoria personalizada</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="bg-green-500 hover:bg-green-400 text-slate-900 font-black text-xl px-16 py-6 rounded-xl glow-button w-full md:w-auto">
+                        🚨 BLINDAR MINHA EMPRESA AGORA
+                    </button>
+                    <p class="text-xs text-gray-400 mt-4">Setup em 48h | Sem fidelidade | Cancele quando quiser</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="bg-slate-900 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black mb-4">
+                    <span class="text-green-400">47 EMPRESAS</span> JÁ ESTÃO BLINDADAS
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-xl p-6 border border-green-500/20">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-slate-900 font-bold">
+                            MC
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Marcos Costa</h4>
+                            <p class="text-sm text-gray-400">CEO - Construtora Costa (23 funcionários)</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm text-gray-300 italic">
+                        "Chuva destruiu nosso escritório semana passada. Em 2 horas tínhamos tudo funcionando normal. 
+                        Valeu cada centavo investido no backup."
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-green-500/20">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-slate-900 font-bold">
+                            AS
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Ana Silva</h4>
+                            <p class="text-sm text-gray-400">Sócia - Advocacia Silva & Associados</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm text-gray-300 italic">
+                        "Funcionário deletou pasta com 400 processos por engano. Recuperamos tudo em 15 minutos. 
+                        Sistema impecável!"
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 rounded-xl p-6 border border-green-500/20">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-slate-900 font-bold">
+                            RL
+                        </div>
+                        <div class="ml-3">
+                            <h4 class="font-semibold">Roberto Lima</h4>
+                            <p class="text-sm text-gray-400">Diretor - Metalúrgica Lima (35 funcionários)</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-sm text-gray-300 italic">
+                        "Servidor principal queimou durante temporal. Backup automático salvou nossa empresa. 
+                        Recomendo de olhos fechados."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency/CTA Final -->
+    <section class="bg-gradient-to-r from-red-600 via-red-700 to-red-800 py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-black mb-6">
+                ⏰ SUA EMPRESA ESTÁ VULNERÁVEL
+                <br><span class="text-yellow-300">NESTE EXATO MOMENTO</span>
+            </h2>
+            <p class="text-xl mb-8 text-red-100">
+                Cada segundo que passa sem backup é uma roleta-russa com os dados da sua empresa
+            </p>
+            
+            <div class="bg-black/30 rounded-xl p-6 mb-8">
+                <p class="text-2xl font-bold text-yellow-300 mb-2">🔥 PROMOÇÃO LIMITADA</p>
+                <p class="text-lg text-red-100">
+                    <strong>Primeiros 20 clientes:</strong> Setup gratuito (economia de R$ 1.500) + 1º mês por R$ 299
+                </p>
+            </div>
+
+            <button class="bg-green-500 hover:bg-green-400 text-slate-900 font-black text-2xl px-20 py-8 rounded-2xl glow-button mb-4">
+                🚨 PROTEGER MINHA EMPRESA AGORA
+            </button>
+            <p class="text-red-100 text-sm">
+                ⚡ Setup em 48 horas | ☎️ (11) 99999-9999 | 💬 WhatsApp direto com especialista
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="bg-slate-900 py-20" id="contato">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black mb-4">
+                    RECEBA SEU ORÇAMENTO PERSONALIZADO
+                </h2>
+                <p class="text-gray-400">Resposta em menos de 2 horas úteis</p>
+            </div>
+
+            <form class="bg-slate-800 rounded-xl p-8 border border-green-500/30" x-data="{ submitted: false }">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Nome Completo *</label>
+                        <input type="text" required class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:border-green-500 focus:outline-none text-white" placeholder="Seu nome">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Empresa *</label>
+                        <input type="text" required class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:border-green-500 focus:outline-none text-white" placeholder="Nome da empresa">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-green-400">WhatsApp *</label>
+                        <input type="tel" required class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:border-green-500 focus:outline-none text-white" placeholder="(11) 99999-9999">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-green-400">Quantos funcionários?</label>
+                        <select class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:border-green-500 focus:outline-none text-white">
+                            <option>1-10 funcionários</option>
+                            <option>11-25 funcionários</option>
+                            <option>26-50 funcionários</option>
+                            <option>50+ funcionários</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-2 text-green-400">Qual sua maior preocupação com dados?</label>
+                    <textarea class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:border-green-500 focus:outline-none text-white h-24" placeholder="Ex: Já perdemos dados antes, servidor antigo, etc..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-400 text-slate-900 font-black text-lg py-4 rounded-lg glow-button">
+                    📞 RECEBER LIGAÇÃO EM 2 HORAS
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-8 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span class="text-slate-900 font-bold text-sm">🛡️</span>
+                    </div>
+                    <span class="text-xl font-bold text-green-400">BackupBlindado</span>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">
+                        ☎️ (11) 99999-9999 | 📧 contato@backupblindado.com.br
+                    </p>
+                    <p class="text-gray-500 text-xs mt-1">
+                        Tecnologia AWS • CNPJ: 00.000.000/0001-00 • Dados protegidos pela LGPD
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
