@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalSM | Soluções Técnicas</title>
+  <style>
+    :root {
+      --azul-escuro: #0e3d71;
+      --dourado: #f6b401;
+      --azul: #045ebf;
+      --branco: #ffffff;
+      --cinza-claro: #f5f5f5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cinza-claro);
+      color: #333;
+    }
+
+    header {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0 0 1rem;
+    }
+
+    .btn-group {
+      margin-top: 1rem;
+    }
+
+    .btn {
+      background-color: var(--dourado);
+      color: var(--azul-escuro);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0.5rem;
+      display: inline-block;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.8rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+    }
+
+    .highlight {
+      background-color: var(--dourado);
+      color: var(--azul-escuro);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      padding: 2rem 1rem;
+    }
+
+    .footer-cta-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn-footer-cta {
+      background-color: var(--dourado);
+      color: var(--azul-escuro);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .footer-main-content {
+      text-align: center;
+    }
+
+    .logo-secundaria-rodape {
+      max-width: 120px;
+      margin: 1rem auto;
+    }
+
+    .footer-main-content p a {
+      color: var(--dourado);
+      text-decoration: none;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-copyright-section {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      .social-icons img {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Seção 1: Hero -->
+  <header>
+    <h1>Perdeu dados? Ficou sem acesso? Nunca mais.</h1>
+    <p>Soluções práticas em segurança digital, backup automático e treinamentos técnicos.</p>
+    <div class="btn-group">
+      <a href="https://wa.me/5561998865417" class="btn" target="_blank">Quero proteger meus dados</a>
+      <a href="#" class="btn" target="_blank">Ver treinamentos disponíveis</a>
+    </div>
+  </header>
+
+  <!-- Seção 2: Soluções por Dor Real -->
+  <section>
+    <h2>🧰 Soluções por Dor Real</h2>
+    <table>
+      <tr>
+        <th>Dor</th>
+        <th>Solução</th>
+        <th>Formato</th>
+      </tr>
+      <tr>
+        <td>Perda de dados</td>
+        <td>Backup automático com script + vídeo</td>
+        <td>Produto digital</td>
+      </tr>
+      <tr>
+        <td>Falta de conhecimento técnico</td>
+        <td>Aula particular AWS/Linux</td>
+        <td>Sessão 1:1</td>
+      </tr>
+      <tr>
+        <td>Ambiente inseguro</td>
+        <td>Diagnóstico + plano de ação</td>
+        <td>Serviço pontual</td>
+      </tr>
+      <tr>
+        <td>Equipe despreparada</td>
+        <td>Treinamento técnico gravado</td>
+        <td>Curso online</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Seção 3: Treinamentos e Produtos Digitais -->
+  <section>
+    <h2>🎓 Treinamentos e Produtos Digitais</h2>
+    <ul>
+      <li>Mini curso AWS: Segurança na prática</li>
+      <li>Kit de proteção de dados para PMEs</li>
+      <li>Script de backup automático com runbook</li>
+      <li>Guia de recuperação de dados</li>
+    </ul>
+    <a href="#" class="highlight">Comprar agora</a>
+  </section>
+
+  <!-- Seção 4: Serviços Técnicos Pontuais -->
+  <section>
+    <h2>🛠️ Serviços Técnicos Pontuais</h2>
+    <ul>
+      <li>Backup automático configurado (remoto)</li>
+      <li>Diagnóstico de segurança digital</li>
+      <li>Instalação de scripts e automações</li>
+      <li>Suporte técnico básico para autônomos</li>
+    </ul>
+    <a href="https://wa.me/5561998865417?text=Quero%20solicitar%20um%20serviço%20pontual" class="highlight" target="_blank">Solicitar serviço</a>
+  </section>
+
+  <!-- Seção 5: Aulas Particulares -->
+  <section>
+    <h2>🎓 Aulas Particulares</h2>
+    <ul>
+      <li>AWS para iniciantes</li>
+      <li>Linux na prática</li>
+      <li>Segurança digital para autônomos</li>
+      <li>Preparação para certificações</li>
+    </ul>
+    <a href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20aula%20particular" class="highlight" target="_blank">Agendar aula</a>
+  </section>
+
+  <!-- Seção 6: Projetos e Estudos de Caso -->
+  <section>
+    <h2>📸 Projetos e Estudos de Caso</h2>
+    <ul>
+      <li>Projeto fictício: backup para PME contábil</li>
+      <li>Estudo de caso: ambiente AWS seguro com custo otimizado</li>
+    </ul>
+    <p>Prints, métricas, storytelling técnico — autoridade com entrega real.</p>
+  </section>
+
+  <!-- Seção 7: Depoimentos -->
+  <section>
+      <!-- Seção 7: Depoimentos -->
+  <section>
+    <h2>💬 Depoimentos</h2>
+    <p>“Comprei o script de backup e configurei em 15 minutos. Nunca mais perdi nada.” — João, designer autônomo</p>
+    <p>“A aula sobre AWS foi direta, prática e me ajudou a entender o que antes parecia impossível.” — Carla, analista júnior</p>
+    <p>“O diagnóstico técnico mostrou falhas que eu nem sabia que existiam. Recomendo demais.” — Marcos, dono de PME</p>
+  </section>
+
+  <!-- Seção 8: Contato e Conversão -->
+  <section>
+    <h2>📞 Contato e Conversão</h2>
+    <p>Entre em contato para agendar uma aula, solicitar um serviço ou tirar dúvidas sobre os cursos.</p>
+    <div class="btn-group">
+      <a href="https://wa.me/5561998865417?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20gratuita%20de%2030%20minutos%20para%20avaliar%20meu%20caso." class="btn" target="_blank">Falar pelo WhatsApp</a>
+      <a href="#" class="btn" target="_blank">Agendar aula via Calendly</a>
+    </div>
+    <form style="margin-top:2rem;">
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" style="width:100%; padding:0.5rem;"><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" style="width:100%; padding:0.5rem;"><br><br>
+      <label for="mensagem">Serviço desejado:</label><br>
+      <textarea id="mensagem" name="mensagem" rows="4" style="width:100%; padding:0.5rem;"></textarea><br><br>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé completo -->
+  <footer>
+    <div class="container footer-cta-section">
+      <section id="contato">
+        <h2>🎯 Pronto para Transformar Seu Futuro?</h2>
+        <p>"Construa a sua jornada de aprendizado conosco. Seu conhecimento, seu ritmo, seu curso."</p>
+        <div class="footer-button-wrapper">
+          <a href="https://wa.me/5561998865417?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20gratuita%20de%2030%20minutos%20para%20avaliar%20meu%20caso." class="btn btn-footer-cta" target="_blank">FALE CONOSCO</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="container footer-main-content">
+      <h3>Digital Systems Managing</h3>
+      <img src="img/logo2.png" alt="Digital Systems Managing Logo" class="logo-secundaria-rodape">
+      <p>Email: <a href="mailto:digitalsm.empresa@gmail.com">digitalsm.empresa@gmail.com</a></p>
+      <p>WhatsApp: +55 61 9 9886-5417</p>
+      <div class="social-icons">
+        <a href="https://wa.me/5561998865417" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/digitalsystemsmanaging/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank"><img src="img/linkedin.png" alt="Linkedin"></a>
+        <a href="https://www.youtube.com/@digitalsystemsmanaging" target="_blank"><img src="img/youtube.png" alt="Youtube"></a>
+      </div>
+    </div>
+
+    <div class="container footer-copyright-section">
+      <p>&copy; 2025 Digital Systems Managing | Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+</body>
+</html>
