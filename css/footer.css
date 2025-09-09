@@ -61,11 +61,11 @@
     text-decoration: underline;
 }
 
-/* REDES SOCIAIS */
+/* REDES SOCIAIS - TAMANHO CORRIGIDO */
 .redes-sociais {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin: 2rem 0;
 }
 
@@ -73,13 +73,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 35px;        /* ← REDUZIDO de 50px para 35px */
+    height: 35px;       /* ← REDUZIDO de 50px para 35px */
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     color: var(--branco);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 0.9rem;  /* ← REDUZIDO de 1.2rem para 0.9rem */
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
 }
@@ -87,9 +87,14 @@
 .rede-social:hover {
     background: var(--amarelo);
     color: var(--azul-escuro);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+    transform: translateY(-2px);  /* ← REDUZIDO de -3px para -2px */
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
 }
+
+
+
+
+
 
 /* COPYRIGHT */
 .footer-bottom {
@@ -101,36 +106,23 @@
     color: var(--cinza-claro);
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE ATUALIZADA */
 @media (max-width: 768px) {
-    .footer-content {
-        padding: 2rem 0 1rem;
-    }
-    
-    .logo-secundaria-rodape {
-        max-height: 80px;
-    }
-    
-    .empresa-descricao {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .redes-sociais {
-        gap: 1rem;
-    }
-    
     .rede-social {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+        width: 32px;        /* ← REDUZIDO */
+        height: 32px;       /* ← REDUZIDO */
+        font-size: 0.8rem;  /* ← REDUZIDO */
     }
 }
 
 @media (max-width: 480px) {
-    .footer-content {
-        padding: 1.5rem 0;
+    .rede-social {
+        width: 30px;        /* ← REDUZIDO */
+        height: 30px;       /* ← REDUZIDO */
+        font-size: 0.75rem; /* ← REDUZIDO */
     }
+}
+
     
     .logo-secundaria-rodape {
         max-height: 70px;
