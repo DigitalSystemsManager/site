@@ -109,8 +109,9 @@
 }
 
 /* COPYRIGHT */
+/* COPYRIGHT - SEM LINHA */
 .footer-copyright-section {
-  /*  border-top: 1px solid rgba(255, 255, 255, 0.1); */
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1); ← REMOVIDO */
     padding: 1.5rem 0;
     margin-top: 2rem;
     text-align: center;
