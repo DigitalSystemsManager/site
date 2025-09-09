@@ -2,6 +2,13 @@
    FOOTER - DIGITAL SYSTEMS MANAGING
    ================================== */
 
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 /* FOOTER PRINCIPAL */
 .footer {
     background: linear-gradient(135deg, #1a365d 0%, #0a2d5c 100%);
@@ -63,8 +70,7 @@
     text-decoration: underline;
 }
 
-/* REDES SOCIAIS */
-.redes-sociais,
+/* REDES SOCIAIS - PARA IMAGENS */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -72,7 +78,6 @@
     margin: 2rem 0;
 }
 
-.rede-social,
 .social-icons a {
     display: inline-flex;
     align-items: center;
@@ -81,23 +86,29 @@
     height: 35px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    color: #ffffff;
     text-decoration: none;
-    font-size: 0.9rem;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    padding: 8px;
 }
 
-.rede-social:hover,
+.social-icons a img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
 .social-icons a:hover {
     background: #ffc107;
-    color: #1a365d;
     transform: translateY(-2px);
     box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
 }
 
+.social-icons a:hover img {
+    filter: brightness(0) invert(0);
+}
+
 /* COPYRIGHT */
-.footer-bottom,
 .footer-copyright-section {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem 0;
@@ -107,7 +118,6 @@
     color: #ffffff;
 }
 
-.footer-bottom p,
 .footer-copyright-section p {
     color: #ffffff !important;
     margin: 0;
@@ -128,16 +138,19 @@
         margin-bottom: 1.5rem;
     }
     
-    .redes-sociais,
     .social-icons {
         gap: 0.8rem;
     }
     
-    .rede-social,
     .social-icons a {
         width: 32px;
         height: 32px;
-        font-size: 0.8rem;
+        padding: 6px;
+    }
+    
+    .social-icons a img {
+        width: 18px;
+        height: 18px;
     }
 }
 
@@ -154,15 +167,18 @@
         font-size: 0.9rem;
     }
     
-    .redes-sociais,
     .social-icons {
         gap: 0.8rem;
     }
     
-    .rede-social,
     .social-icons a {
         width: 30px;
         height: 30px;
-        font-size: 0.75rem;
+        padding: 5px;
+    }
+    
+    .social-icons a img {
+        width: 16px;
+        height: 16px;
     }
 }
