@@ -199,11 +199,10 @@ html {
 /*PARTE 1 CSS */
 
 /* ========================================
-   DIGITAL SYSTEMS MANAGING - CSS PARTE 2/4
-   MENU RESPONSIVO + NAVEGAÇÃO
+   MENU CORRIGIDO - VERSÃO FIXA MÍNIMA PARTE 2
 ======================================== */
 
-/* HEADER E NAVEGAÇÃO */
+/* HEADER FIXO MÍNIMO */
 header {
     position: fixed;
     top: 0;
@@ -214,6 +213,7 @@ header {
     z-index: 1000;
     transition: var(--transicao-rapida);
     border-bottom: 1px solid rgba(246, 180, 1, 0.2);
+    height: 60px; /* ALTURA FIXA MÍNIMA */
 }
 
 header.scrolled {
@@ -225,22 +225,23 @@ header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* PADDING REDUZIDO */
+    height: 60px;
     position: relative;
 }
 
-/* LOGO */
+/* LOGO MÍNIMO */
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* TAMANHO REDUZIDO */
     font-weight: 800;
     color: var(--branco);
     text-decoration: none;
 }
 
 .logo img {
-    height: 40px;
+    height: 35px; /* ALTURA REDUZIDA */
     margin-right: 0.5rem;
 }
 
@@ -248,12 +249,19 @@ header.scrolled {
     color: var(--dourado);
 }
 
-/* MENU DESKTOP */
+/* REMOVER TEXTO EXTRA DO LOGO */
+.logo-text {
+    display: none; /* OCULTAR TEXTO LONGO */
+}
+
+/* MENU DESKTOP MÍNIMO */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem; /* GAP REDUZIDO */
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-item {
@@ -263,11 +271,13 @@ header.scrolled {
 .nav-link {
     color: var(--branco);
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
+    padding: 0.4rem 0.8rem; /* PADDING REDUZIDO */
+    border-radius: 20px;
     transition: var(--transicao-rapida);
     position: relative;
     overflow: hidden;
+    font-size: 0.9rem; /* FONTE MENOR */
+    background: transparent; /* GARANTIR FUNDO TRANSPARENTE */
 }
 
 .nav-link::before {
@@ -288,54 +298,51 @@ header.scrolled {
 
 .nav-link:hover {
     color: var(--azul-escuro);
-    transform: translateY(-2px);
+    transform: translateY(-1px); /* MOVIMENTO REDUZIDO */
 }
 
-/* CTA NO MENU */
+/* CTA MÍNIMO */
 .nav-cta {
-    background: var(--gradiente-cta);
+    background: var(--gradiente-cta) !important;
     color: var(--azul-escuro) !important;
     font-weight: 700;
-    padding: 0.8rem 1.5rem !important;
-    border-radius: 30px;
+    padding: 0.6rem 1.2rem !important; /* PADDING REDUZIDO */
+    border-radius: 25px;
     box-shadow: var(--sombra-dourada);
+    font-size: 0.85rem; /* FONTE MENOR */
 }
 
 .nav-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(246, 180, 1, 0.4);
 }
 
 .nav-cta::before {
     display: none;
 }
 
-/* MENU HAMBÚRGUER */
+/* HAMBÚRGUER MÍNIMO */
 .mobile-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border-radius: 5px;
     transition: var(--transicao-rapida);
 }
 
-.mobile-menu:hover {
-    background: rgba(246, 180, 1, 0.1);
-}
-
 .hamburger {
-    width: 25px;
-    height: 3px;
+    width: 22px; /* TAMANHO REDUZIDO */
+    height: 2px;
     background: var(--branco);
-    margin: 3px 0;
+    margin: 2px 0;
     transition: var(--transicao-rapida);
     border-radius: 2px;
 }
 
 /* ANIMAÇÃO HAMBÚRGUER */
 .mobile-menu.is-active .hamburger:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(5px, 5px);
     background: var(--dourado);
 }
 
@@ -344,11 +351,11 @@ header.scrolled {
 }
 
 .mobile-menu.is-active .hamburger:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
     background: var(--dourado);
 }
 
-/* RESPONSIVIDADE MENU */
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 768px) {
     .mobile-menu {
         display: flex;
@@ -356,15 +363,15 @@ header.scrolled {
     
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 60px; /* AJUSTADO PARA ALTURA MÍNIMA */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 60px);
         background: var(--azul-escuro);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 3rem;
+        padding-top: 2rem;
         transition: var(--transicao-media);
         gap: 0;
     }
@@ -376,23 +383,18 @@ header.scrolled {
     .nav-item {
         width: 90%;
         text-align: center;
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
     }
     
     .nav-link {
         display: block;
         width: 100%;
         padding: 1rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
         border-radius: 10px;
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(246, 180, 1, 0.2);
-    }
-    
-    .nav-link:hover {
-        background: rgba(246, 180, 1, 0.1);
-        border-color: var(--dourado);
     }
     
     .nav-cta {
@@ -400,57 +402,26 @@ header.scrolled {
         color: var(--azul-escuro) !important;
         font-weight: 700 !important;
         margin-top: 1rem;
-        animation: pulse 2s infinite;
     }
 }
 
-/* OVERLAY PARA MENU MOBILE */
-@media (max-width: 768px) {
-    .nav-menu.active::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-    }
-}
-
-/* EFEITOS ESPECIAIS */
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
-    opacity: 0.5;
-}
-
-/* SCROLL INDICATOR */
-.scroll-indicator {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: var(--gradiente-cta);
-    z-index: 1001;
-    transition: width 0.3s ease;
-}
-
-/* AJUSTE PARA CONTEÚDO */
+/* AJUSTE BODY PARA MENU MÍNIMO */
 body {
-    padding-top: 80px;
+    padding-top: 60px; /* AJUSTADO PARA ALTURA MÍNIMA */
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 70px;
+        padding-top: 60px;
     }
 }
+
+/* REMOVER EFEITOS EXTRAS */
+.navbar::after {
+    display: none; /* REMOVER LINHA DECORATIVA */
+}
+
+
 
 /*PARTE 2 */
 
