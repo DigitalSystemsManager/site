@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- INÍCIO META TAGS SEO -->
+    <!-- META TAGS SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[SEU_TITULO_SEO] - Digital SM | Consultoria e Soluções de TI</title>
     <meta name="description" content="[SEU_TEXTO_SEO_DESCRIPTION]">
     <meta name="keywords" content="[SUAS_KEYWORDS_SEO]">
     <meta name="author" content="Digital SM">
-    <!-- FIM META TAGS SEO -->
-
-    <!-- INÍCIO GOOGLE FONTS - MONTSERRAT -->
+    
+    <!-- GOOGLE FONTS - MONTSERRAT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FIM GOOGLE FONTS -->
-
-    <!-- INÍCIO GOOGLE ANALYTICS - PRONTO PARA SEU ID -->
+    
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=[SEU_GA_ID]"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,9 +25,8 @@
         gtag('js', new Date());
         gtag('config', '[SEU_GA_ID]');
     </script>
-    <!-- FIM GOOGLE ANALYTICS -->
-
-    <!-- INÍCIO FACEBOOK PIXEL - PRONTO PARA SEU ID -->
+    
+    <!-- FACEBOOK PIXEL -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,36 +39,53 @@
         fbq('init', '[SEU_PIXEL_ID]');
         fbq('track', 'PageView');
     </script>
-    <!-- FIM FACEBOOK PIXEL -->
 </head>
 
-<body class="font-montserrat bg-slate-900 text-white">
-    <!-- INÍCIO MENU NAVEGAÇÃO -->
-    <nav class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo Digital SM -->
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                        <span class="text-slate-900 font-bold text-lg">💻</span>
-                    </div>
-                    <span class="text-2xl font-bold text-green-400">Digital SM</span>
+<body>
+    <!-- INCLUDE MENU -->
+    <div id="menu-container"></div>
+
+
+    <!-- SEÇÃO 1 - PROTEÇÃO DE DADOS -->
+    <section id="protecao" class="protecao-section">
+        <div class="container">
+            <h1 class="section-title">🛡️ Proteção Total dos Seus Dados</h1>
+            <p class="section-subtitle">
+                Sua empresa não pode parar por falhas de sistema ou perda de dados. 
+                Nossa consultoria especializada garante a segurança e continuidade do seu negócio.
+            </p>
+            
+            <div class="protecao-grid">
+                <div class="protecao-card">
+                    <div class="protecao-icon">🔒</div>
+                    <h3>Backup Automático</h3>
+                    <p>Sistemas de backup automatizados que protegem seus dados 24/7, com redundância e testes regulares de integridade.</p>
                 </div>
                 
-                <!-- Menu Desktop -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#protecao" class="text-slate-300 hover:text-green-400 transition-colors">Proteção</a>
-                    <a href="#servicos" class="text-slate-300 hover:text-green-400 transition-colors">Serviços</a>
-                    <a href="#treinamentos" class="text-slate-300 hover:text-green-400 transition-colors">Treinamentos</a>
-                    <a href="#consultoria" class="text-slate-300 hover:text-green-400 transition-colors">Consultoria</a>
-                    <a href="#contatos" class="text-slate-300 hover:text-green-400 transition-colors">Contatos</a>
+                <div class="protecao-card">
+                    <div class="protecao-icon">🛡️</div>
+                    <h3>Segurança Avançada</h3>
+                    <p>Implementação de protocolos de segurança robustos, firewall configurado e monitoramento constante contra ameaças.</p>
                 </div>
                 
-                <!-- CTA Button -->
-                <button class="bg-green-500 hover:bg-green-600 text-slate-900 font-bold py-2 px-6 rounded-lg transition-colors">
-                    Fale Conosco
-                </button>
+                <div class="protecao-card">
+                    <div class="protecao-icon">⚡</div>
+                    <h3>Recuperação Rápida</h3>
+                    <p>Planos de contingência e recuperação de desastres que garantem o retorno das operações em tempo mínimo.</p>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- FIM MENU NAVEGAÇÃO -->
+    </section>
+
+    <!-- INCLUDE FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- JS EXTERNO -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+
+    
