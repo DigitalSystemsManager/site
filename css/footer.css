@@ -138,3 +138,47 @@
         font-size: 1rem;
     }
 }
+
+
+/* COPYRIGHT - CLASSE CORRETA */
+.footer-copyright-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--branco) !important;  /* ← BRANCO FORÇADO */
+}
+
+.footer-copyright-section p {
+    color: var(--branco) !important;  /* ← BRANCO FORÇADO */
+    margin: 0;
+}
+
+/* REDES SOCIAIS - CLASSE CORRETA */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;        /* ← TAMANHO CORRETO */
+    height: 35px;       /* ← TAMANHO CORRETO */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 0.9rem;  /* ← TAMANHO CORRETO */
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+    transform: translateY(-2px);
+}
