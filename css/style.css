@@ -1,241 +1,108 @@
-/* ========================================
-   DIGITAL SYSTEMS MANAGING - CSS GLOBAL BASE
-   (Refatorado: BASE + CORES + TIPOGRAFIA + RESET)
-======================================== */
+// js/script.js
 
-/* RESET E CONFIGURAÇÕES GLOBAIS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Função para carregar componentes HTML dinamicamente em um container específico
+async function loadComponent(containerId, componentPath) {
+    try {
+        const response = await fetch(componentPath);
+        if (!response.ok) {
+            throw new Error(`Erro ao carregar o componente ${componentPath}: ${response.status} ${response.statusText}`);
+        }
+        const html = await response.text();
+        document.getElementById(containerId).innerHTML = html;
+        console.log(`Componente ${componentPath} carregado com sucesso em #${containerId}.`);
 
-/* VARIÁVEIS DE CORES */
-:root {
-    /* CORES DA MARCA */
-    --azul-escuro: #0e3d71;
-    --dourado: #f6b401;
-    --azul: #045ebf;
-    
-    /* CORES FORTES PARA SEÇÕES (para uso futuro nas seções individuais) */
-    --vermelho-forte: #e74c3c;
-    --verde-forte: #27ae60;
-    --roxo-forte: #8e44ad;
-    --laranja-forte: #f39c12;
-    --rosa-forte: #e91e63;
-    
-    /* CORES NEUTRAS */
-    --branco: #ffffff;
-    --cinza-claro: #f8f9fa;
-    --cinza-medio: #6c757d;
-    --cinza-escuro: #343a40;
-    --preto: #000000;
-    
-    /* GRADIENTES GENÉRICOS (para uso em H1 ou botões genéricos, mas não vinculados a elementos específicos) */
-    --gradiente-marca: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, var(--dourado) 100%);
+        // Após carregar o menu, ajusta o padding-top do body.
+        if (containerId === 'menu-container') {
+            adjustBodyPadding();
+            window.addEventListener('resize', adjustBodyPadding);
+        }
 
-    
-    /* SOMBRAS GENÉRICAS */
-    --sombra-suave: 0 2px 10px rgba(0,0,0,0.1);
-    --sombra-media: 0 5px 20px rgba(0,0,0,0.15);
-    --sombra-forte: 0 10px 30px rgba(0,0,0,0.25);
-    --sombra-dourada: 0 5px 20px rgba(246, 180, 1, 0.3); /* Pode ser usada em botões genéricos */
-    
-    /* TRANSIÇÕES GENÉRICAS */
-    --transicao-rapida: all 0.3s ease;
-    --transicao-media: all 0.5s ease;
-    --transicao-lenta: all 0.8s ease;
-}
+        // NOVO: Chama a função para processar links de âncora após um componente ser carregado.
+        // Isso é crucial para que os botões funcionem corretamente quando apontam para #ids que são injetados.
+        processAnchorLinks();
 
-/* TIPOGRAFIA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--cinza-escuro);
-    background-color: var(--branco);
-    overflow-x: hidden;
-    padding-top: 0; /* Removido padding do body específico de header fixo */
-}
-
-/* HEADINGS */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-}
-
-h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 900;
-    background: var(--gradiente-marca);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--azul-escuro);
-}
-
-h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    color: var(--azul);
-}
-
-/* PARÁGRAFOS */
-p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    color: var(--cinza-medio);
-}
-
-/* LINKS */
-a {
-    text-decoration: none;
-    color: var(--azul);
-    transition: var(--transicao-rapida);
-}
-
-a:hover {
-    color: var(--dourado);
-}
-
-/* BOTÕES BASE GENÉRICOS (se um componente não definir seu próprio) */
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transicao-rapida);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-primary {
-    background: var(--gradiente-marca); /* Usando gradiente da marca para CTA genérico */
-    color: var(--branco);
-    box-shadow: var(--sombra-dourada);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--azul);
-    border: 2px solid var(--azul);
-}
-
-.btn-secondary:hover {
-    background: var(--azul);
-    color: var(--branco);
-}
-
-/* CONTAINER RESPONSIVO */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* SEÇÕES BASE */
-section {
-    padding: 5rem 0; /* Padding base para todas as seções */
-    position: relative;
-}
-
-/* ANIMAÇÕES GLOBAIS (apenas se realmente genéricas e sem vinculo direto a componentes específicos) */
-/* As keyframes e classes 'fadeInUp' e 'pulse' que estavam ligadas a elementos específicos
-   (hero-content, cards) foram removidas daqui para serem geridas nos CSSs específicos das sessões se desejar mantê-las com efeito mínimo. */
-
-
-/* SCROLL SUAVE */
-html {
-    scroll-behavior: smooth;
-   scroll-padding-top: 85px; /* Altura do header em desktop */ 
-}
-
-/* RESPONSIVIDADE BASE */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
-    .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-   /* NOVO: Ajusta scroll-padding-top para altura do header em mobile */
-    html {
-        scroll-padding-top: 60px; /* Altura do header em mobile */
-    }
-
-}
-
-/* LOADING E TRANSIÇÕES GLOBAIS */
-/* A classe fade-in e seus keyframes, por serem específicas do seu CSS original, 
-   podem ser definidas por componente se for o caso ou generalizadas aqui caso queira animações de entrada *em toda a página*. 
-   No momento, estou optando por manter a simplicidade extrema, conforme "sem muitos efeitos".
-   Se precisar de uma animação de "aparecer suave" para todos os blocos, me avise para recriar aqui de forma global. */
-
-
-/* SCROLL PERSONALIZADO */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--cinza-claro);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--dourado); /* Usando dourado para scrollbar */
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--azul);
-}
-
-/* SELEÇÃO DE TEXTO */
-::selection {
-    background: var(--dourado);
-    color: var(--azul-escuro);
-}
-
-::-moz-selection {
-    background: var(--dourado);
-    color: var(--azul-escuro);
-}
-
-/* PERFORMANCE E OTIMIZAÇÕES */
-/* O will-change foi removido porque deve ser usado com parcimônia, 
-   apenas em elementos específicos que realmente sofrerão mudanças para performance máxima,
-   não globalmente no '*' ou em todos os .card/.btn/.nav-link que não existem aqui mais. */
-
-/* PRINT STYLES */
-@media print {
-    /* Header, footer, .back-to-top e .nav-link não existem mais como elementos globais estilizados aqui */
-    body {
-        padding-top: 0 !important;
-    }
-    
-    * {
-        background: white !important;
-        color: black !important;
+    } catch (error) {
+        console.error(`Falha crítica ao carregar componente ${componentPath}:`, error); // Log mais detalhado
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = `<p style="color: red; text-align: center; padding: 20px;">
+                Erro ao carregar o conteúdo da seção ${containerId}. (Arquivo: ${componentPath}). Verifique os caminhos e arquivos.
+            </p>`;
+        }
     }
 }
+
+// Função para ajustar o padding-top do body, dinamicamente baseando-se na altura do cabeçalho
+function adjustBodyPadding() {
+    const menuContainer = document.getElementById('menu-container');
+    if (menuContainer && menuContainer.firstElementChild) {
+        const headerHeight = menuContainer.firstElementChild.offsetHeight;
+        document.body.style.paddingTop = `${headerHeight}px`;
+    }
+}
+
+// NOVO: Função para forçar a navegação para a âncora #chamada-final
+function smoothScrollToAnchor(anchorId) {
+    const targetElement = document.getElementById(anchorId);
+    if (targetElement) {
+        // Usa setTimeout para garantir que a rolagem aconteça DEPOIS
+        // que o navegador teve tempo de renderizar o elemento injetado.
+        setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // Atualiza a URL para refletir a âncora, sem forçar um recarregamento da página.
+            history.pushState(null, null, `#${anchorId}`);
+            console.log(`Rolando para o ID: #${anchorId}`);
+        }, 100); // Pequeno atraso, mas suficiente para o DOM renderizar.
+    } else {
+        console.warn(`Elemento com ID '${anchorId}' não encontrado para rolagem.`);
+    }
+}
+
+// NOVO: Função para gerenciar os cliques nos links de âncora
+function processAnchorLinks() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Remove listener anterior para evitar duplicidade
+        anchor.removeEventListener('click', handleAnchorClick);
+        anchor.addEventListener('click', handleAnchorClick);
+    });
+}
+
+// Handler de evento para links de âncora
+function handleAnchorClick(e) {
+    const href = this.getAttribute('href');
+    // Verifica se o href aponta para '#chamada-final' ou outra âncora na mesma página
+    if (href === '#chamada-final') {
+        e.preventDefault(); // Impede o comportamento padrão do navegador
+        smoothScrollToAnchor('chamada-final'); // Chama nossa função de rolagem
+    } 
+    // Se o href for para outro ID que não o #chamada-final e quiséssemos
+    // também tratar (mas agora todos os CTAs internos levam pra #chamada-final)
+    // else if (href.startsWith('#') && href !== '#') {
+    //     e.preventDefault();
+    //     const targetId = href.substring(1);
+    //     smoothScrollToAnchor(targetId);
+    // }
+}
+
+
+// --- INJEÇÃO PRINCIPAL DOS COMPONENTES NA PÁGINA ---
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadComponent('menu-container', 'components/menu.html');
+    await loadComponent('protecao-container', 'sections/protecao.html');
+    await loadComponent('portfolio-container', 'sections/portfolio.html');
+    await loadComponent('treinamentos-container', 'sections/treinamentos.html');
+
+    // Inicializa a escuta para os links de âncora após todos os componentes terem chance de carregar.
+    // Usamos o setTimeout para garantir que TUDO esteja no DOM antes de tentar attach listeners
+    // e o processamento pode ocorrer.
+    setTimeout(() => {
+        processAnchorLinks();
+        // Se a página já carrega com uma âncora na URL (ex: dominio.com/#chamada-final),
+        // isso forçará a rolagem inicial corretamente.
+        if (window.location.hash) {
+            smoothScrollToAnchor(window.location.hash.substring(1));
+        }
+    }, 500); // Um atraso maior (0.5s) para dar tempo para TUDO renderizar.
+
+    await loadComponent('footer-container', 'components/footer.html');
+});
