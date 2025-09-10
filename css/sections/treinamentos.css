@@ -303,7 +303,7 @@
     background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%); /* Fundo degradê marcante */
     padding: 4.5rem; /* Um pouco mais de padding */
     border-radius: 15px;
-    margin-top: 3rem;
+    margin-top: 0rem;
     margin-bottom: 0;
     box-shadow: 0 0 40px rgba(var(--azul-escuro-rgb, 14, 61, 113), 0.3); /* Sombra mais intensa */
     border: 1px solid var(--dourado); /* Borda dourada */
