@@ -1,0 +1,233 @@
+/* ========================================
+   DIGITAL SYSTEMS MANAGING - CSS GLOBAL BASE
+   (Refatorado: BASE + CORES + TIPOGRAFIA + RESET)
+======================================== */
+
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIÁVEIS DE CORES */
+:root {
+    /* CORES DA MARCA */
+    --azul-escuro: #0e3d71;
+    --dourado: #f6b401;
+    --azul: #045ebf;
+    
+    /* CORES FORTES PARA SEÇÕES (para uso futuro nas seções individuais) */
+    --vermelho-forte: #e74c3c;
+    --verde-forte: #27ae60;
+    --roxo-forte: #8e44ad;
+    --laranja-forte: #f39c12;
+    --rosa-forte: #e91e63;
+    
+    /* CORES NEUTRAS */
+    --branco: #ffffff;
+    --cinza-claro: #f8f9fa;
+    --cinza-medio: #6c757d;
+    --cinza-escuro: #343a40;
+    --preto: #000000;
+    
+    /* GRADIENTES GENÉRICOS (para uso em H1 ou botões genéricos, mas não vinculados a elementos específicos) */
+    --gradiente-marca: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, var(--dourado) 100%);
+    
+    /* SOMBRAS GENÉRICAS */
+    --sombra-suave: 0 2px 10px rgba(0,0,0,0.1);
+    --sombra-media: 0 5px 20px rgba(0,0,0,0.15);
+    --sombra-forte: 0 10px 30px rgba(0,0,0,0.25);
+    --sombra-dourada: 0 5px 20px rgba(246, 180, 1, 0.3); /* Pode ser usada em botões genéricos */
+    
+    /* TRANSIÇÕES GENÉRICAS */
+    --transicao-rapida: all 0.3s ease;
+    --transicao-media: all 0.5s ease;
+    --transicao-lenta: all 0.8s ease;
+}
+
+/* TIPOGRAFIA */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--cinza-escuro);
+    background-color: var(--branco);
+    overflow-x: hidden;
+    padding-top: 0; /* Removido padding do body específico de header fixo */
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    background: var(--gradiente-marca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--azul-escuro);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--azul);
+}
+
+/* PARÁGRAFOS */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--cinza-medio);
+}
+
+/* LINKS */
+a {
+    text-decoration: none;
+    color: var(--azul);
+    transition: var(--transicao-rapida);
+}
+
+a:hover {
+    color: var(--dourado);
+}
+
+/* BOTÕES BASE GENÉRICOS (se um componente não definir seu próprio) */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transicao-rapida);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--gradiente-marca); /* Usando gradiente da marca para CTA genérico */
+    color: var(--branco);
+    box-shadow: var(--sombra-dourada);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--azul);
+    border: 2px solid var(--azul);
+}
+
+.btn-secondary:hover {
+    background: var(--azul);
+    color: var(--branco);
+}
+
+/* CONTAINER RESPONSIVO */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* SEÇÕES BASE */
+section {
+    padding: 5rem 0; /* Padding base para todas as seções */
+    position: relative;
+}
+
+/* ANIMAÇÕES GLOBAIS (apenas se realmente genéricas e sem vinculo direto a componentes específicos) */
+/* As keyframes e classes 'fadeInUp' e 'pulse' que estavam ligadas a elementos específicos
+   (hero-content, cards) foram removidas daqui para serem geridas nos CSSs específicos das sessões se desejar mantê-las com efeito mínimo. */
+
+
+/* SCROLL SUAVE */
+html {
+    scroll-behavior: smooth;
+}
+
+/* RESPONSIVIDADE BASE */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* LOADING E TRANSIÇÕES GLOBAIS */
+/* A classe fade-in e seus keyframes, por serem específicas do seu CSS original, 
+   podem ser definidas por componente se for o caso ou generalizadas aqui caso queira animações de entrada *em toda a página*. 
+   No momento, estou optando por manter a simplicidade extrema, conforme "sem muitos efeitos".
+   Se precisar de uma animação de "aparecer suave" para todos os blocos, me avise para recriar aqui de forma global. */
+
+
+/* SCROLL PERSONALIZADO */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cinza-claro);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dourado); /* Usando dourado para scrollbar */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--azul);
+}
+
+/* SELEÇÃO DE TEXTO */
+::selection {
+    background: var(--dourado);
+    color: var(--azul-escuro);
+}
+
+::-moz-selection {
+    background: var(--dourado);
+    color: var(--azul-escuro);
+}
+
+/* PERFORMANCE E OTIMIZAÇÕES */
+/* O will-change foi removido porque deve ser usado com parcimônia, 
+   apenas em elementos específicos que realmente sofrerão mudanças para performance máxima,
+   não globalmente no '*' ou em todos os .card/.btn/.nav-link que não existem aqui mais. */
+
+/* PRINT STYLES */
+@media print {
+    /* Header, footer, .back-to-top e .nav-link não existem mais como elementos globais estilizados aqui */
+    body {
+        padding-top: 0 !important;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+    }
+}
