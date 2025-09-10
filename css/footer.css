@@ -1,0 +1,228 @@
+/* ===================================
+   FOOTER - DIGITAL SYSTEMS MANAGING
+   ================================== */
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* FOOTER PRINCIPAL */
+.footer {
+    background: linear-gradient(135deg, #1a365d 0%, #0a2d5c 100%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+    padding: 0;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ffc107, #ff6b35);
+}
+
+.footer-content {
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+/* LOGO FOOTER */
+.logo-secundaria-rodape {
+    max-height: 120px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: brightness(1.1);
+}
+
+/* DESCRIÇÃO EMPRESA - TEXTO MAIOR */
+.empresa-descricao {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #e2e8f0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+/* CONTATOS FOOTER - TEXTOS MAIORES */
+.footer-content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.footer-content a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* REDES SOCIAIS - SEM BORDINHA + ÍCONES 40px */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.social-icons a:hover {
+    background: #ffc107;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+}
+
+.social-icons a:hover img {
+    filter: brightness(0) invert(0);
+}
+
+/* COPYRIGHT - SEM ESPAÇO EXTRA */
+.footer-copyright-section {
+    padding: 1rem 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-copyright-section p {
+    color: #ffffff !important;
+    margin: 0;
+}
+
+/* RESPONSIVIDADE - PROPORÇÕES MANTIDAS */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 3rem 0 1.5rem; /* ← MAIS ESPAÇO */
+    }
+    
+    .logo-secundaria-rodape {
+        max-height: 100px; /* ← MAIOR (era 80px) */
+    }
+    
+    /* DESCRIÇÃO RESPONSIVA - PROPORCIONAL */
+    .empresa-descricao {
+        font-size: 1.25rem; /* ← MAIOR (era 1.2rem) */
+        margin-bottom: 1.8rem;
+    }
+    
+    /* CONTATOS RESPONSIVOS - PROPORCIONAL */
+    .footer-content p {
+        font-size: 1.05rem; /* ← MAIOR (era 1rem) */
+    }
+    
+    .social-icons {
+        gap: 1rem; /* ← MANTIDO */
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .social-icons a {
+        width: 42px; /* ← MAIOR (era 40px) */
+        height: 42px;
+        padding: 9px;
+    }
+    
+    .social-icons a img {
+        width: 38px; /* ← MAIOR (era 35px) */
+        height: 38px;
+    }
+    
+    .footer-copyright-section {
+        font-size: 0.85rem; /* ← MAIOR */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 2.5rem 0 1.2rem; /* ← MAIS ESPAÇO */
+    }
+    
+    .logo-secundaria-rodape {
+        max-height: 90px; /* ← MAIOR (era 70px) */
+    }
+    
+    /* DESCRIÇÃO MOBILE - PROPORCIONAL */
+    .empresa-descricao {
+        font-size: 1.2rem; /* ← MAIOR (era 1.1rem) */
+        margin-bottom: 1.6rem;
+    }
+    
+    /* CONTATOS MOBILE - PROPORCIONAL */
+    .footer-content p {
+        font-size: 1rem; /* ← MAIOR (era 0.95rem) */
+    }
+    
+    .social-icons {
+        gap: 0.9rem; /* ← MAIOR */
+        margin: 1.3rem 0 0.8rem;
+    }
+    
+    .social-icons a {
+        width: 40px; /* ← MAIOR (era 38px) */
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .social-icons a img {
+        width: 36px; /* ← MAIOR (era 32px) */
+        height: 36px;
+    }
+    
+    .footer-copyright-section {
+        font-size: 0.8rem; /* ← MAIOR */
+        padding: 0.8rem 0;
+    }
+}
+
+/* CELULAR MUITO PEQUENO */
+@media (max-width: 360px) {
+    .empresa-descricao {
+        font-size: 1.1rem;
+    }
+    
+    .footer-content p {
+        font-size: 0.95rem;
+    }
+    
+    .social-icons a {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .social-icons a img {
+        width: 34px;
+        height: 34px;
+    }
+}
