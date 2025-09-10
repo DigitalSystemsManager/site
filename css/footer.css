@@ -1,0 +1,206 @@
+/* ===================================
+   FOOTER - DIGITAL SYSTEMS MANAGING (Refatorado e Consolidado)
+   ================================== */
+
+/* FOOTER PRINCIPAL */
+.footer {
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, #0a2d5c 100%);
+    color: var(--branco);
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem; 
+    padding: 0; 
+    margin-bottom: 0; 
+}
+
+/* LINHA DEGRADÊ NO TOPO */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--dourado), var(--vermelho-forte)); 
+}
+
+.footer-content {
+    padding: 4rem 0 2rem; 
+    text-align: center;
+}
+
+/* LOGO FOOTER */
+.logo-secundaria-rodape {
+    max-height: 120px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: brightness(1.1);
+}
+
+/* DESCRIÇÃO EMPRESA - TEXTO MAIOR */
+.empresa-descricao {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--cinza-claro); 
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+/* CONTATOS FOOTER - TEXTOS MAIORES */
+.footer-content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--branco); 
+    font-weight: 400;
+}
+
+.footer-content a {
+    color: var(--dourado); 
+    text-decoration: none;
+    transition: var(--transicao-rapida); 
+}
+
+.footer-content a:hover {
+    color: var(--branco); 
+    text-decoration: underline;
+}
+
+/* REDES SOCIAIS - ÍCONES MAIORES */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transicao-rapida); 
+    padding: 10px;
+}
+
+.social-icons a img {
+    width: 42px;
+    height: 42px;
+    filter: brightness(0) invert(1); 
+}
+
+.social-icons a:hover {
+    background: var(--dourado); 
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+}
+
+.social-icons a:hover img {
+    filter: brightness(0) invert(0); 
+}
+
+/* COPYRIGHT */
+.footer-copyright-section {
+    padding: 1rem 0 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-copyright-section p {
+    color: var(--branco) !important;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+/* RESPONSIVIDADE ESPECÍFICA DO FOOTER */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .logo-secundaria-rodape {
+        max-height: 100px;
+    }
+    
+    .empresa-descricao {
+        font-size: 1.25rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .footer-content p {
+        font-size: 1.05rem;
+    }
+    
+    .social-icons {
+        gap: 1rem;
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .social-icons a {
+        width: 42px;
+        height: 42px;
+        padding: 9px;
+    }
+    
+    .social-icons a img {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .footer-copyright-section {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 2.5rem 0 1.2rem;
+    }
+    
+    .logo-secundaria-rodape {
+        max-height: 90px;
+    }
+    
+    .empresa-descricao {
+        font-size: 1.2rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    .footer-content p {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        gap: 0.9rem;
+        margin: 1.3rem 0 0.8rem;
+    }
+    
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .social-icons a img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .footer-copyright-section {
+        font-size: 0.8rem;
+        padding: 0.8rem 0 0;
+    }
+}
+
+/* Estilos de impressão */
+@media print {
+    .footer {
+        display: none !important;
+    }
+}
