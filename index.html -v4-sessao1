@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="css/sections/protecao.css">
     <!-- ================================ -->
 
+    <!-- 5. CSS ESPECÍFICO DA SESSÃO 2: PORTFÓLIO (NOVO) -->
+    <link rel="stylesheet" href="css/sections/portfolio.css">
+
     <!-- GOOGLE ANALYTICS (existente) -->
     <!-- ... seus códigos ... -->
 </head>
