@@ -6,7 +6,7 @@
 .sessao-treinamentos {
     background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); /* Fundo claro e limpo */
     color: var(--cinza-escuro);
-    padding: 7rem 0;
+    padding: 7rem 0 2rem;
     position: relative;
     overflow: hidden;
     border-top: 1px solid rgba(var(--azul), 0.1);
@@ -378,7 +378,7 @@
 
 @media (max-width: 768px) {
     .sessao-treinamentos {
-        padding: 5rem 0;
+        padding: 5rem 0 1rem;
     }
     .header-sessao-treinamentos {
         margin-bottom: 3rem;
