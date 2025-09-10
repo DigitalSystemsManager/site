@@ -1,203 +1,100 @@
-/* ===================================
-   MENU - DIGITAL SYSTEMS MANAGING
-   ================================== */
+/* ========================================
+   DIGITAL SYSTEMS MANAGING - CSS ESPECÍFICO DO MENU
+======================================== */
 
-/* ← ÁREA DE CUSTOMIZAÇÃO MANUAL - CORES */
-:root {
-    --menu-bg: #ffffff;
-    --menu-shadow: rgba(0, 0, 0, 0.1);
-    --menu-mobile-bg: #1a365d;
-    --menu-hover-bg: #f8f9fa;
-    
-    /* GRADIENTE DO TEXTO - ALTERE AQUI */
-    --gradient-start: var(--azul-escuro);  /* ← PERSONALIZE */
-    --gradient-middle: var(--azul);        /* ← PERSONALIZE */
-    --gradient-end: var(--dourado);        /* ← PERSONALIZE */
-}
-
-/* CONTAINER MENU */
-.menu-container {
-    background: var(--menu-bg);
-    box-shadow: 0 2px 10px var(--menu-shadow);
+/* HEADER FIXO BRANCO */
+.header { /* Antes era apenas 'header', agora usa a classe para maior especificidade e modularidade */
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    background: var(--branco); /* Usa variável global */
+    backdrop-filter: blur(10px);
     z-index: 1000;
-    transition: all 0.3s ease;
+    border-bottom: 2px solid var(--dourado); /* Usa variável global */
+    height: 85px;
+    box-shadow: var(--sombra-suave); /* Usa variável global */
 }
 
-/* MENU PRINCIPAL */
-.menu-principal {
-    display: flex;
-    justify-content: space-between;
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
-    padding: 1rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    height: 70px; /* Será sobrescrito pelo height do header. Considerar remover este ou o do .header */
+    padding: 0; /* O padding do .container já cuida disso, manter em 0 ou considerar ajustes. */
 }
 
-/* LOGO MENU */
-.logo-menu {
-    height: 50px; /* ← ALTERE AQUI O TAMANHO */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo-menu:hover {
-    transform: scale(1.05); /* ← ALTERE AQUI O HOVER */
-}
-
-/* NAVEGAÇÃO DESKTOP */
-.nav-desktop {
+/* LOGO À ESQUERDA */
+.logo {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2rem; /* ← ALTERE AQUI O ESPAÇAMENTO */
+    align-items: center;
+    justify-self: start;
 }
 
-/* ITENS DO MENU - EFEITO GRADIENTE */
-.nav-item {
-    position: relative;
+.logo img {
+    height: 60px;
+    width: auto;
 }
 
-.nav-link {
-    /* ← ÁREA DE CUSTOMIZAÇÃO - TEXTO GRADIENTE */
-    font-size: 1.1rem;           /* ← ALTERE AQUI O TAMANHO */
-    font-weight: 700;            /* ← ALTERE AQUI O PESO */
-    letter-spacing: 1.5px;       /* ← ALTERE AQUI O ESPAÇAMENTO */
-    text-transform: uppercase;   /* ← REMOVA PARA MINÚSCULO */
-    text-decoration: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
-    
-    /* GRADIENTE PRINCIPAL */
-    background: linear-gradient(45deg, 
-        var(--gradient-start), 
-        var(--gradient-middle), 
-        var(--gradient-end)
-    );
+/* TEXTO CENTRALIZADO ESTILOSO */
+.marca-texto {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--azul-escuro); /* Usa variável global */
+    text-align: center;
+    justify-self: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Adaptação: O gradiente com azul-escuro, azul e dourado pode ser um mix customizado ou referenciado do global */
+    background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* HOVER EFFECT */
-.nav-link:hover {
-    background-color: var(--menu-hover-bg);
-    transform: translateY(-2px); /* ← ALTERE AQUI A ANIMAÇÃO */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* ESPACADOR DIREITA (apenas para manter o grid) */
+.espacador {
+    justify-self: end;
 }
 
-/* BOTÃO MOBILE TOGGLE */
-.mobile-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 0.5rem;
-    border: none;
-    background: transparent;
-    gap: 4px; /* ← ALTERE AQUI O ESPAÇAMENTO DAS LINHAS */
-}
+/* AJUSTE NO BODY PARA HEADER FIXO (moverá para o JS ou será aplicado de forma específica) */
+/* REMOVIDO: body { padding-top: 70px; } - Isso deve ser gerenciado via JS quando o menu for injetado e dimensionado, ou como um estilo global específico no index.html. No momento, está no escopo de menu mas é um ajuste do body. Podemos discutir a melhor abordagem depois para a injenção via JS.*/
 
-.toggle-line {
-    width: 25px;  /* ← ALTERE AQUI A LARGURA */
-    height: 3px;  /* ← ALTERE AQUI A ESPESSURA */
-    background: var(--azul-escuro);
-    transition: all 0.3s ease;
-    border-radius: 2px;
-}
-
-/* ANIMAÇÃO HAMBURGER → X */
-.mobile-toggle.active .toggle-line:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-
-.mobile-toggle.active .toggle-line:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-toggle.active .toggle-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* MENU MOBILE */
-.nav-mobile {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--menu-mobile-bg);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    padding: 1rem 0;
-}
-
-.nav-mobile.active {
-    display: block;
-    animation: slideDown 0.3s ease; /* ← ALTERE AQUI A ANIMAÇÃO */
-}
-
-.nav-mobile .nav-item {
-    display: block;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.nav-mobile .nav-link {
-    display: block;
-    padding: 1rem;
-    color: #ffffff;
-    background: none;
-    -webkit-text-fill-color: #ffffff;
-    font-size: 1rem; /* ← ALTERE AQUI O TAMANHO MOBILE */
-}
-
-.nav-mobile .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
-    transform: none;
-}
-
-/* ANIMAÇÕES */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) { /* ← ALTERE AQUI O BREAKPOINT */
-    .nav-desktop {
-        display: none;
+/* RESPONSIVIDADE ESPECÍFICA DO MENU */
+@media (max-width: 768px) {
+    .header { /* Usa classe "header" */
+        height: 60px;
     }
     
-    .mobile-toggle {
-        display: flex;
+    .navbar {
+        height: 60px; /* Será sobrescrito. Manter a atenção. */
+        grid-template-columns: auto 1fr auto; /* Ajuste para mobile */
+        gap: 1rem;
     }
     
-    .menu-principal {
-        padding: 0.8rem 1rem; /* ← ALTERE AQUI O PADDING MOBILE */
+    .logo img {
+        height: 35px;
     }
     
-    .logo-menu {
-        height: 40px; /* ← ALTERE AQUI O TAMANHO MOBILE */
+    .marca-texto {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
     }
+    
+    /* REMOVIDO: body { padding-top: 60px; } - Pelo mesmo motivo acima. */
 }
 
 @media (max-width: 480px) {
-    .nav-mobile .nav-link {
-        font-size: 0.9rem; /* ← ALTERE AQUI PARA TELAS PEQUENAS */
-        letter-spacing: 1px;
+    .marca-texto {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Estilos de impressão */
+@media print {
+    .header { /* Agora usa a classe 'header' */
+        display: none !important;
     }
 }
