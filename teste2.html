@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO BÁSICO (Mantido do seu original) -->
+    <title>Digital Systems Managing - Consultoria e Treinamentos em TI</title>
+    <meta name="description" content="Especialistas em proteção de dados, consultoria e treinamentos em tecnologia da informação para blindar sua empresa.">
+    <meta name="keywords" content="consultoria TI, treinamentos, proteção dados, LGPD, segurança da informação, tecnologia">
+    <meta name="author" content="Digital Systems Managing">
+    
+    <!-- FAVICON (Exemplo - troque o caminho se necessário) -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- DEPENDÊNCIAS (Google Fonts, TailwindCSS, AlpineJS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS CUSTOMIZADO PARA EFEITOS ESPECIAIS E CORES DA MARCA -->
+    <style>
+        /* Define a fonte base para todo o site */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* cinza muito claro de fundo (bg-slate-50) */
+        }
+
+        /* Configuração de Cores da Marca para o Tailwind CSS (opcional, mas bom para referência) */
+        /* tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark-blue': '#0e3d71',
+                        'brand-gold': '#f6b401',
+                        'brand-blue': '#045ebf',
+                    }
+                }
+            }
+        } */
+
+        /* ================================================================= */
+        /* ================ EFEITOS ESPECIAIS EXTRAÍDOS ==================== */
+        /* ================================================================= */
+
+        /* EFEITO DE BRILHO (GLOW) PARA BOTÕES */
+        /* Adaptado para a cor Dourada da sua marca */
+        .glow-button { 
+            box-shadow: 0 0 30px rgba(246, 180, 1, 0.4); 
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-button:hover { 
+            box-shadow: 0 0 50px rgba(246, 180, 1, 0.6); 
+            transform: translateY(-3px);
+        }
+
+        /* EFEITO MÁQUINA DE ESCREVER (TYPEWRITER) */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #f6b401; /* Cor Dourada do cursor */
+            white-space: nowrap;
+            margin: 0;
+            letter-spacing: .05em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #f6b401; }
+        }
+        
+        /* ANIMAÇÃO DE ENTRADA SUAVE (FADE IN) */
+        .fade-in {
+            animation: fadeInAnimation 1s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInAnimation {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- ================================================================= -->
+<!-- ======================= INÍCIO DO HEADER ======================== -->
+<!-- ================================================================= -->
+<header id="menu-container" class="bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold">
+                <span style="color: #0e3d71;">Digital Systems</span><span style="color: #045ebf;"> Managing</span>
+            </a>
+            <!-- Links de Navegação -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#protecao-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Proteção de Dados</a>
+                <a href="#portfolio-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Serviços</a>
+                <a href="#treinamentos-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Treinamentos</a>
+            </div>
+            <!-- Botão CTA -->
+            <a href="#contato" style="background-color: #f6b401;" class="hidden md:inline-block text-[#0e3d71] font-bold px-6 py-2 rounded-lg glow-button">
+                Fale com um Especialista
+            </a>
+            <!-- Menu Mobile (opcional, pode ser adicionado com AlpineJS) -->
+            <div class="md:hidden">
+                <button class="text-[#0e3d71]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- ================================================================= -->
+<!-- ========================= FIM DO HEADER ========================= -->
+<!-- ================================================================= -->
+
+
+<main>
+
+<!-- ================================================================= -->
+<!-- ================ INÍCIO DA SEÇÃO HERO (PROTEÇÃO) ================== -->
+<!-- ================================================================= -->
+<section id="protecao-container" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <!-- Fundo com Padrão Sutil -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke-width="2" stroke="%23e2e8f0"><path d="M0 .5H31.5V32"/></svg>')] opacity-50"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight" style="color: #0e3d71;">
+            Sua empresa está <br>
+            <span class="typewriter inline-block text-[#045ebf]">verdadeiramente segura?</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600 mb-10 fade-in" style="animation-delay: 3.6s;">
+            Nós transformamos sua infraestrutura de TI em uma fortaleza digital. Proteja seus dados, treine sua equipe e garanta a conformidade com a LGPD.
+        </p>
+        <a href="#contato" style="background-color: #f6b401;" class="text-[#0e3d71] font-bold text-xl px-12 py-5 rounded-xl glow-button inline-block fade-in" style="animation-delay: 3.8s;">
+            QUERO UMA ANÁLISE DE RISCO
+        </a>
+    </div>
+</section>
+<!-- ================================================================= -->
+<!-- ================== FIM DA SEÇÃO HERO (PROTEÇÃO) ================= -->
+<!-- ================================================================= -->
+
+
+<!-- ================================================================= -->
+<!-- ============== INÍCIO DA SEÇÃO PORTFÓLIO (SERVIÇOS) ============= -->
+<!-- ================================================================= -->
+<section id="portfolio-container" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black mb-4" style="color: #0e3d71;">Nosso Portfólio de Serviços</h2>
+            <p class="text-lg text-gray-600">Soluções completas para a segurança e eficiência da sua empresa.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#045ebf] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="p-8">
+                    <div class="text-3xl mb-4" style="color: #045ebf;">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">Consultoria LGPD Completa</h3>
+                    <p class="text-gray-600">Adequamos sua empresa à Lei Geral de Proteção de Dados, do diagnóstico à implementação de políticas, evitando multas e fortalecendo sua imagem no mercado.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#f6b401] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="p-8">
+                    <div class="text-3xl mb-4" style="color: #f6b401;">🌐</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">Segurança de Redes e Sistemas</h3>
+                    <p class="text-gray-600">Implementamos firewalls, antivírus corporativos e sistemas de detecção de intrusos. Realizamos testes de vulnerabilidade para blindar seus ativos digitais.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#0e3d71] transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="p-8">
+                    <div class="text-3xl mb-4" style="color: #0e3d71;">📈</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">Otimização de Infraestrutura</h3>
+                    <p class="text-gray-600">Analisamos sua TI para reduzir custos, aumentar a performance e preparar sua empresa para o futuro, com soluções em nuvem e automação de processos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================================================================= -->
+<!-- =============== FIM DA SEÇÃO PORTFÓLIO (SERVIÇOS) =============== -->
+<!-- ================================================================= -->
+
+
+<!-- ================================================================= -->
+<!-- =========== INÍCIO DA SEÇÃO TREINAMENTOS (ACORDEÃO) ============= -->
+<!-- ================================================================= -->
+<section id="treinamentos-container" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black mb-4" style="color: #0e3d71;">Treinamentos e Capacitação</h2>
+            <p class="text-lg text-gray-600">Capacite sua equipe para ser a primeira linha de defesa da sua empresa.</p>
+        </div>
+
+        <div x-data="{ openAccordion: 1 }" class="space-y-4">
+            <!-- Acordeão 1 -->
+            <div class="bg-white rounded-lg shadow-md border border-gray-200">
+                <button @click="openAccordion = openAccordion === 1 ? null : 1" class="w-full text-left p-6 flex justify-between items-center">
+                    <h3 class="font-bold text-lg" style="color: #0e3d71;">Treinamento em Conscientização de Segurança</h3>
+                    <span :class="{'rotate-180': openAccordion === 1}" class="transform transition-transform duration-300 text-[#045ebf]">▼</span>
+                </button>
+                <div x-show="openAccordion === 1" x-collapse class="p-6 pt-0 text-gray-600">
+                    <p>Ensinamos seus colaboradores a identificar e-mails de phishing, criar senhas seguras, evitar malwares e adotar boas práticas no dia a dia. Essencial para toda a equipe.</p>
+                </div>
+            </div>
+            
+            <!-- Acordeão 2 -->
+            <div class="bg-white rounded-lg shadow-md border border-gray-200">
+                <button @click="openAccordion = openAccordion === 2 ? null : 2" class="w-full text-left p-6 flex justify-between items-center">
+                    <h3 class="font-bold text-lg" style="color: #0e3d71;">Workshop Prático de LGPD</h3>
+                    <span :class="{'rotate-180': openAccordion === 2}" class="transform transition-transform duration-300 text-[#045ebf]">▼</span>
+                </button>
+                <div x-show="openAccordion === 2" x-collapse class="p-6 pt-0 text-gray-600">
+                    <p>Um treinamento focado nos times de Marketing, Vendas e RH sobre como coletar, tratar e armazenar dados de clientes e funcionários de acordo com a lei, evitando riscos legais.</p>
+                </div>
+            </div>
+
+            <!-- Acordeão 3 -->
+            <div class="bg-white rounded-lg shadow-md border border-gray-200">
+                <button @click="openAccordion = openAccordion === 3 ? null : 3" class="w-full text-left p-6 flex justify-between items-center">
+                    <h3 class="font-bold text-lg" style="color: #0e3d71;">Treinamento para Equipes de TI</h3>
+                    <span :class="{'rotate-180': openAccordion === 3}" class="transform transition-transform duration-300 text-[#045ebf]">▼</span>
+                </button>
+                <div x-show="openAccordion === 3" x-collapse class="p-6 pt-0 text-gray-600">
+                    <p>Capacitação técnica para seu time de TI sobre as mais recentes ferramentas de segurança, gestão de backups, planos de recuperação de desastres e monitoramento de redes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================================================================= -->
+<!-- ============ FIM DA SEÇÃO TREINAMENTOS (ACORDEÃO) =============== -->
+<!-- ================================================================= -->
+
+
+<!-- ================================================================= -->
+<!-- =============== INÍCIO DA SEÇÃO DE CONTATO (CTA) ================ -->
+<!-- ================================================================= -->
+<section id="contato" class="py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black mb-4" style="color: #0e3d71;">Pronto para Elevar o Nível da sua Segurança?</h2>
+        <p class="text-lg text-gray-600 mb-8">
+            Preencha o formulário abaixo ou nos chame no WhatsApp. Nossa equipe de especialistas está pronta para entender suas necessidades e propor a solução ideal.
+        </p>
+        <form class="space-y-6 text-left">
+            <input type="text" placeholder="Seu Nome Completo *" required class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f6b401]">
+            <input type="email" placeholder="Seu Melhor E-mail *" required class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f6b401]">
+            <input type="tel" placeholder="Seu Telefone / WhatsApp *" required class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f6b401]">
+            <textarea placeholder="Como podemos ajudar?" class="w-full p-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f6b401] h-32"></textarea>
+            <button type="submit" style="background-color: #045ebf; color: white;" class="w-full p-4 font-bold text-lg rounded-lg hover:opacity-90 transition-opacity glow-button">
+                ENVIAR MENSAGEM
+            </button>
+        </form>
+    </div>
+</section>
+<!-- ================================================================= -->
+<!-- ================= FIM DA SEÇÃO DE CONTATO (CTA) ================= -->
+<!-- ================================================================= -->
+
+</main>
+
+<!-- ================================================================= -->
+<!-- ======================= INÍCIO DO FOOTER ======================== -->
+<!-- ================================================================= -->
+<footer id="footer-container" style="background-color: #0e3d71;" class="text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Coluna 1: Sobre -->
+            <div>
+                <h3 class="text-xl font-bold mb-4" style="color: #f6b401;">Digital Systems Managing</h3>
+                <p class="text-gray-300">Sua parceira estratégica em tecnologia da informação, focada em segurança, eficiência e crescimento para o seu negócio.</p>
+            </div>
+            <!-- Coluna 2: Links Úteis -->
+            <div>
+                <h3 class="text-xl font-bold mb-4" style="color: #f6b401;">Navegação</h3>
+                <ul class="space-y-2">
+                    <li><a href="#protecao-container" class="text-gray-300 hover:text-white">Proteção de Dados</a></li>
+                    <li><a href="#portfolio-container" class="text-gray-300 hover:text-white">Serviços</a></li>
+                    <li><a href="#treinamentos-container" class="text-gray-300 hover:text-white">Treinamentos</a></li>
+                    <li><a href="#contato" class="text-gray-300 hover:text-white">Contato</a></li>
+                </ul>
+            </div>
+            <!-- Coluna 3: Contato -->
+            <div>
+                <h3 class="text-xl font-bold mb-4" style="color: #f6b401;">Fale Conosco</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li>E-mail: contato@digitalsystems.com</li>
+                    <li>Telefone: (11) 99999-8888</li>
+                    <li>São Paulo - SP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+            <p>&copy; 2024 Digital Systems Managing. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+<!-- ================================================================= -->
+<!-- ========================= FIM DO FOOTER ========================= -->
+<!-- ================================================================= -->
+
+</body>
+</html>
