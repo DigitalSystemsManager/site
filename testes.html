@@ -28,122 +28,129 @@
     <!-- ================================================================== -->
     <!-- === TODO O CSS EMBUTIDO AQUI DENTRO DE UMA ÚNICA TAG <STYLE> === -->
     <!-- ================================================================== -->
-    <style>
-        /* ========================================
-           CSS GLOBAL (style.css)
-        ======================================== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --azul-escuro: #0e3d71; --dourado: #f6b401; --azul: #045ebf;
-            --vermelho-forte: #e74c3c; --verde-forte: #27ae60; --roxo-forte: #8e44ad; --laranja-forte: #f39c12; --rosa-forte: #e91e63;
-            --branco: #ffffff; --cinza-claro: #f8f9fa; --cinza-medio: #6c757d; --cinza-escuro: #343a40; --preto: #000000;
-            --gradiente-marca: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, var(--dourado) 100%);
-            --gradiente-cta: linear-gradient(45deg, var(--dourado) 0%, #ffcc02 100%);
-            --sombra-suave: 0 2px 10px rgba(0,0,0,0.1); --sombra-media: 0 5px 20px rgba(0,0,0,0.15); --sombra-forte: 0 10px 30px rgba(0,0,0,0.25);
-            --sombra-dourada: 0 5px 20px rgba(246, 180, 1, 0.3);
-            --transicao-rapida: all 0.3s ease; --transicao-media: all 0.5s ease; --transicao-lenta: all 0.8s ease;
-            --vermelho-forte-rgb: 231, 76, 60; --dourado-rgb: 246, 180, 1; --verde-forte-rgb: 39, 174, 96; --azul-rgb: 4, 94, 191; --azul-escuro-rgb: 14, 61, 113;
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--cinza-escuro); background-color: var(--branco); overflow-x: hidden; padding-top: 85px; }
-        h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; background: var(--gradiente-marca); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--azul-escuro); }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--azul); }
-        p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--cinza-medio); }
-        a { text-decoration: none; color: var(--azul); transition: var(--transicao-rapida); }
-        a:hover { color: var(--dourado); }
-        .btn { display: inline-block; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; text-align: center; cursor: pointer; transition: var(--transicao-rapida); text-transform: uppercase; letter-spacing: 1px; }
-        .btn-primary { background: var(--gradiente-cta); color: var(--azul-escuro); box-shadow: var(--sombra-dourada); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        section { padding: 5rem 0; position: relative; }
-        html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-        ::selection { background: var(--dourado); color: var(--azul-escuro); }
-        @media (max-width: 768px) {
-            body { padding-top: 60px; }
-            .container { padding: 0 1rem; }
-            section { padding: 3rem 0; }
-            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
-            html { scroll-padding-top: 60px; }
-        }
+    /* ========================================
+   CSS GLOBAL (style.css) - NITRO MEGA POWER UPGRADE
+======================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    /* SUAS CORES DE MARCA */
+    --azul-escuro: #0e3d71; --dourado: #f6b401; --azul: #045ebf;
+    /* CORES DE DESTAQUE INSPIRADAS NO EXEMPLO */
+    --vermelho-forte: #dc2626; --verde-forte: #22c55e; --amarelo-forte: #facc15;
+    /* TONS DE CINZA/SLATE DO EXEMPLO */
+    --fundo-base: #0f172a; --fundo-secao-escura: #1e293b; --fundo-card-escuro: #334155;
+    --texto-principal: #e2e8f0; --texto-secundario: #94a3b8;
+    /* VARIÁVEIS PARA FACILITAR */
+    --transicao-padrao: all 0.3s ease;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body { 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    color: var(--texto-principal); 
+    background-color: var(--fundo-base); 
+    overflow-x: hidden; 
+    padding-top: 85px; 
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
+h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--texto-secundario); }
+a { text-decoration: none; color: var(--verde-forte); transition: var(--transicao-padrao); }
+a:hover { filter: brightness(1.2); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 6rem 0; position: relative; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+::selection { background: var(--verde-forte); color: var(--fundo-base); }
+@media (max-width: 768px) {
+    body { padding-top: 60px; }
+    section { padding: 4rem 0; }
+    html { scroll-padding-top: 60px; }
+}
 
-        /* ========================================
-           CSS DO MENU (menu.css)
-        ======================================== */
-        .header { position: fixed; top: 0; left: 0; width: 100%; background: var(--branco) !important; backdrop-filter: blur(10px); z-index: 1000; border-bottom: 2px solid var(--dourado); height: 85px; box-shadow: var(--sombra-suave); }
-        .navbar { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; height: 85px; padding: 0; }
-        .logo { display: flex; align-items: center; justify-self: start; }
-        .logo img { height: 60px; width: auto; }
-        .marca-texto { font-size: 1.8rem; font-weight: 800; text-align: center; justify-self: center; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado)) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-        .espacador { justify-self: end; }
-        @media (max-width: 768px) {
-            .header { height: 60px; }
-            .navbar { height: 60px; grid-template-columns: auto 1fr auto; gap: 1rem; }
-            .logo img { height: 35px; }
-            .marca-texto { font-size: 1.2rem; letter-spacing: 1px; }
-        }
+/* ========================================
+   CSS DO MENU - NITRO MEGA POWER UPGRADE
+======================================== */
+.header { position: fixed; top: 0; left: 0; width: 100%; background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(34, 197, 94, 0.2); height: 85px; }
+.navbar { display: flex; justify-content: space-between; align-items: center; height: 85px; }
+.logo { display: flex; align-items: center; }
+.logo img { height: 50px; }
+.marca-texto { font-size: 1.5rem; font-weight: 800; background: linear-gradient(45deg, var(--azul), var(--dourado)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.espacador { display: none; } /* Não precisamos mais dele com flexbox */
+@media (max-width: 768px) {
+    .header { height: 60px; } .navbar { height: 60px; } .logo img { height: 35px; } .marca-texto { font-size: 1.2rem; }
+}
 
-        /* ========================================
-           CSS DA SESSÃO PROTEÇÃO (protecao.css)
-        ======================================== */
-        .sessao-protecao { background: linear-gradient(135deg, var(--azul-escuro) 0%, #001f3f 100%); color: var(--branco); }
-        .sessao-protecao .titulo-destaque-sessao { color: var(--branco); background: none; -webkit-text-fill-color: var(--branco); }
-        .sessao-protecao .titulo-destaque-sessao .cor-alerta { color: var(--vermelho-forte); -webkit-text-fill-color: var(--vermelho-forte); }
-        .grid-gatilhos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 6rem; }
-        .card-gatilho { background: rgba(231, 76, 60, 0.2); border: 1px solid var(--vermelho-forte); border-radius: 15px; padding: 2.5rem; text-align: center; }
-        .icone-gatilho { font-size: 3.5rem; margin-bottom: 1.5rem; }
-        .titulo-card { font-size: 1.8rem; font-weight: 700; color: var(--dourado); margin-bottom: 1rem; }
-        .etiqueta-alerta { display: inline-block; background: var(--vermelho-forte); color: var(--branco); font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; }
-        .bloco-estatisticas { text-align: center; background: rgba(0, 0, 0, 0.3); padding: 4rem; border-radius: 15px; margin-bottom: 6rem; }
-        .grid-metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2.5rem; }
-        .solucoes-keypoints { max-width: 800px; margin: 0 auto 4rem; display: grid; gap: 1.5rem; }
-        .keypoint-item { background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.2rem 1.8rem; }
-        .btn-acao-sessao { margin-top: 2.5rem; font-size: clamp(1.2rem, 2.5vw, 1.6rem); padding: 1.2rem 3rem; font-weight: 900; }
+/* ========================================
+   CSS DA SESSÃO PROTEÇÃO - NITRO MEGA POWER UPGRADE
+======================================== */
+.sessao-protecao { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); text-align: center; }
+.sessao-protecao h1 { color: var(--branco); background: none; -webkit-text-fill-color: unset; }
+.sessao-protecao .cor-alerta { background: linear-gradient(45deg, var(--vermelho-forte), var(--amarelo-forte)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grid-gatilhos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem; }
+.card-gatilho { background: rgba(220, 38, 38, 0.1); border: 1px solid rgba(220, 38, 38, 0.3); border-radius: 1rem; padding: 2rem; text-align: center; transition: var(--transicao-padrao); }
+.card-gatilho:hover { transform: translateY(-8px); background: rgba(220, 38, 38, 0.2); border-color: var(--vermelho-forte); }
+.icone-gatilho { font-size: 3rem; margin-bottom: 1rem; }
+.titulo-card { color: var(--texto-principal); font-size: 1.25rem; }
+.etiqueta-alerta { display: inline-block; background: var(--vermelho-forte); color: var(--texto-principal); font-size: 0.8rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 99px; margin-top: 1rem; }
+.bloco-estatisticas { background: var(--fundo-card-escuro); padding: 3rem; border-radius: 1rem; margin-top: 5rem; border: 1px solid rgba(255,255,255,0.1); }
+.btn-acao-sessao { background: var(--verde-forte); color: var(--fundo-base); border-radius: 0.75rem; font-weight: 900; box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); }
+.btn-acao-sessao:hover { box-shadow: 0 0 50px rgba(34, 197, 94, 0.6); transform: translateY(-2px); }
 
-        /* ========================================
-           CSS DA SESSÃO PORTFÓLIO (portfolio.css)
-        ======================================== */
-        .sessao-portfolio { background: var(--branco); }
-        .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 6rem; }
-        .card-projeto { background: var(--azul-escuro); color: var(--branco); border-radius: 15px; padding: 3rem; text-align: center; }
-        .icone-projeto { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--dourado); }
-        .titulo-card-projeto, .lista-beneficios-projeto li { color: var(--branco); }
-        .texto-card-projeto { color: rgba(255, 255, 255, 0.7); }
-        .lista-beneficios-projeto { list-style: none; padding: 0; margin-bottom: 2rem; }
-        .cta-geral-portfolio { text-align: center; background: var(--azul); padding: 4rem; border-radius: 15px; color: var(--branco); }
+/* ========================================
+   CSS DA SESSÃO PORTFÓLIO - NITRO MEGA POWER UPGRADE
+======================================== */
+.sessao-portfolio { background-color: var(--fundo-secao-escura); }
+.titulo-portfolio .cor-destaque-verde { color: var(--verde-forte); }
+.grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 4rem; }
+.card-projeto { background: var(--fundo-card-escuro); border-radius: 1rem; padding: 2rem; border: 1px solid rgba(255,255,255,0.1); transition: var(--transicao-padrao); }
+.card-projeto:hover { transform: translateY(-8px); border-color: var(--verde-forte); }
+.icone-projeto { font-size: 2.5rem; margin-bottom: 1rem; color: var(--verde-forte); }
+.titulo-card-projeto { color: var(--texto-principal); font-size: 1.5rem; }
+.titulo-card-projeto .cor-dourado { color: var(--amarelo-forte); }
+.lista-beneficios-projeto { list-style-position: inside; padding-left: 0; text-align: left; }
+.btn-ver-projeto { background: transparent; border: 2px solid var(--verde-forte); color: var(--verde-forte); border-radius: 0.75rem; }
+.btn-ver-projeto:hover { background: var(--verde-forte); color: var(--fundo-base); }
+.cta-geral-portfolio { background: var(--fundo-base); padding: 3rem; border-radius: 1rem; margin-top: 4rem; }
 
-        /* ========================================
-           CSS DA SESSÃO TREINAMENTOS (treinamentos.css)
-        ======================================== */
-        .sessao-treinamentos { background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); padding-bottom: 2rem; }
-        .treinamento-bloco { background: var(--branco); border-radius: 20px; padding: 4rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; }
-        .accordion-container { max-width: 900px; margin: 2rem auto 3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--azul); }
-        .accordion-header { background: var(--azul); color: var(--branco); padding: 1.5rem 2rem; width: 100%; border: none; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .accordion-header.active .icon-toggle { transform: rotate(45deg); }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
-        .accordion-content.open { max-height: 500px; padding: 1.5rem 2rem; }
-        .lista-assuntos { display: flex; gap: 2rem; }
-        .minicursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
-        .card-minicurso { background: var(--azul-escuro); border-radius: 15px; padding: 1.8rem; text-align: center; color: var(--branco); }
-        .minicurso-thumb { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; }
-        .titulo-minicurso, .descricao-minicurso { color: var(--branco); }
-        .btn-minicurso { background: var(--dourado); color: var(--azul-escuro) !important; padding: 0.8rem 1.5rem; border-radius: 50px; display: inline-flex; }
-        .cta-final-treinamentos { text-align: center; background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%); padding: 4.5rem; border-radius: 15px; margin-top: 3rem; color: var(--branco); }
-        .titulo-cta-final { color: var(--branco); }
-        .subtitulo-cta-final { color: rgba(255, 255, 255, 0.85); }
-        
-        /* ========================================
-           CSS DO FOOTER (footer.css)
-        ======================================== */
-        .footer { background: linear-gradient(135deg, #0e3d71 0%, #0a2d5c 100%); color: var(--branco); margin-top: 0; padding: 4rem 0 2rem; text-align: center; }
-        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gradiente-cta); }
-        .logo-secundaria-rodape { max-height: 120px; }
-        .empresa-descricao, .footer-content p, .footer-copyright-section p { color: var(--branco); }
-        .footer-content a { color: var(--dourado); }
-        .social-icons { display: flex; justify-content: center; gap: 1.2rem; margin: 1.5rem 0; }
-        .social-icons a img { width: 42px; filter: invert(1); }
+/* ========================================
+   CSS DA SESSÃO TREINAMENTOS - NITRO MEGA POWER UPGRADE
+======================================== */
+.sessao-treinamentos { background-color: var(--fundo-base); padding-bottom: 2rem; }
+.titulo-sessao-treinamentos .cor-destaque-dourado { color: var(--amarelo-forte); }
+.treinamento-bloco { background: var(--fundo-secao-escura); border-radius: 1rem; padding: 3rem; margin-bottom: 3rem; border: 1px solid rgba(255,255,255,0.1); }
+.accordion-header { background: var(--fundo-card-escuro); color: var(--texto-principal); padding: 1rem 1.5rem; }
+.accordion-header:hover { background: #475569; }
+.accordion-content { background: var(--fundo-base); }
+.minicursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.card-minicurso { background: var(--fundo-card-escuro); border-radius: 1rem; padding: 1.5rem; text-align: center; color: var(--texto-principal); transition: var(--transicao-padrao); border: 1px solid transparent; }
+.card-minicurso:hover { transform: translateY(-8px); border-color: var(--amarelo-forte); }
+.minicurso-thumb { height: 160px; }
+.btn-minicurso { background: var(--amarelo-forte); color: var(--fundo-base); padding: 0.6rem 1.2rem; border-radius: 99px; }
+.cta-final-treinamentos { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); padding: 4rem; border-radius: 1rem; margin-top: 4rem; }
+.btn-acao-final { background: var(--verde-forte); color: var(--fundo-base); border-radius: 0.75rem; font-weight: 900; box-shadow: 0 0 30px rgba(34, 197, 94, 0.4); }
+.btn-acao-final:hover { box-shadow: 0 0 50px rgba(34, 197, 94, 0.6); transform: translateY(-2px); }
+
+/* ========================================
+   CSS DO FOOTER - NITRO MEGA POWER UPGRADE
+======================================== */
+.footer { background: var(--fundo-base); color: var(--texto-secundario); padding: 4rem 0 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+.footer::before { display: none; } /* Remove a linha gradiente antiga */
+.logo-secundaria-rodape { max-height: 80px; }
+.empresa-descricao, .footer-content p, .footer-copyright-section p { color: var(--texto-secundario); }
+.footer-content a { color: var(--verde-forte); }
+.social-icons a img { filter: grayscale(1) brightness(1.5); transition: var(--transicao-padrao); }
+.social-icons a:hover img { filter: grayscale(0) brightness(1); }
     </style>
+</head>
+<body>
+    <!-- SEU BODY E SCRIPT EXISTENTES (sem nenhuma alteração) VÃO AQUI -->
+    <!-- ... Copie e cole o <body> inteiro do seu index.html funcional aqui ... -->
+</body>
+</html>
+
+    
 </head>
 <body>
     <!-- ================================================================== -->
