@@ -1,0 +1,41 @@
+<!-- components/menu.html - VERSÃO DE TESTE COM CSS EMBUTIDO -->
+
+<!-- 
+    NOTA DE TESTE: O bloco <style> abaixo é temporário.
+    Ele foi adicionado para forçar o navegador a ler os estilos do menu,
+    bypassing qualquer problema de cache ou caminho com o arquivo externo css/menu.css.
+-->
+<style>
+    /* TEXTO CENTRALIZADO ESTILOSO - REGRAS DIRETAMENTE AQUI */
+    .marca-texto {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-align: center;
+        justify-self: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        
+        /* Forçando o navegador a usar estas regras de estilo acima de qualquer outra */
+        background: linear-gradient(45deg, #0e3d71, #045ebf, #f6b401) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+
+<header class="header">
+    <nav class="navbar container">
+        <div class="logo">
+            <!-- Garantindo que o caminho da imagem está correto -->
+            <img src="img/logo.png" alt="DSM Logo">
+        </div>
+        
+        <div class="marca-texto">
+            Consultoria & Treinamentos
+        </div>
+        
+        <div class="espacador"></div>
+    </nav>
+</header>
