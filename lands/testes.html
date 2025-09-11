@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO BÁSICO -->
+    <title>Digital SM - TESTE FINAL</title>
+    <meta name="description" content="Especialistas em proteção de dados, consultoria e treinamentos em tecnologia da informação">
+    <meta name="keywords" content="consultoria TI, treinamentos, proteção dados, LGPD, tecnologia">
+    <meta name="author" content="Digital Systems Managing">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Digital Systems Managing - Consultoria e Treinamentos em TI">
+    <meta property="og:description" content="Especialistas em proteção de dados, consultoria e treinamentos em tecnologia da informação">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digital Systems Managing">
+    <meta name="twitter:description" content="Consultoria e Treinamentos em TI">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- ================================================================== -->
+    <!-- === TODO O CSS EMBUTIDO AQUI DENTRO DE UMA ÚNICA TAG <STYLE> === -->
+    <!-- ================================================================== -->
+    <style>
+        /* ========================================
+           CONTEÚDO DE: css/style.css
+        ======================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --azul-escuro: #0e3d71; --dourado: #f6b401; --azul: #045ebf;
+            --vermelho-forte: #e74c3c; --verde-forte: #27ae60; --roxo-forte: #8e44ad; --laranja-forte: #f39c12; --rosa-forte: #e91e63;
+            --branco: #ffffff; --cinza-claro: #f8f9fa; --cinza-medio: #6c757d; --cinza-escuro: #343a40; --preto: #000000;
+            --gradiente-marca: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, var(--dourado) 100%);
+            --gradiente-cta: linear-gradient(45deg, var(--dourado) 0%, #ffcc02 100%);
+            --sombra-suave: 0 2px 10px rgba(0,0,0,0.1); --sombra-media: 0 5px 20px rgba(0,0,0,0.15); --sombra-forte: 0 10px 30px rgba(0,0,0,0.25);
+            --sombra-dourada: 0 5px 20px rgba(246, 180, 1, 0.3);
+            --transicao-rapida: all 0.3s ease; --transicao-media: all 0.5s ease; --transicao-lenta: all 0.8s ease;
+            --vermelho-forte-rgb: 231, 76, 60; --dourado-rgb: 246, 180, 1; --verde-forte-rgb: 39, 174, 96; --azul-rgb: 4, 94, 191; --azul-escuro-rgb: 14, 61, 113;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--cinza-escuro); background-color: var(--branco); overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; background: var(--gradiente-marca); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--azul-escuro); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--azul); }
+        p { font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--cinza-medio); }
+        a { text-decoration: none; color: var(--azul); transition: var(--transicao-rapida); }
+        a:hover { color: var(--dourado); }
+        .btn { display: inline-block; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; text-align: center; cursor: pointer; transition: var(--transicao-rapida); text-transform: uppercase; letter-spacing: 1px; }
+        .btn-primary { background: var(--gradiente-cta); color: var(--branco); box-shadow: var(--sombra-dourada); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4); }
+        .btn-secondary { background: transparent; color: var(--azul); border: 2px solid var(--azul); }
+        .btn-secondary:hover { background: var(--azul); color: var(--branco); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 5rem 0; position: relative; }
+        html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            section { padding: 3rem 0; }
+            .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            html { scroll-padding-top: 60px; }
+        }
+        ::selection { background: var(--dourado); color: var(--azul-escuro); }
+
+        /* ========================================
+           CONTEÚDO DE: css/menu.css
+        ======================================== */
+        .header { position: fixed; top: 0; left: 0; width: 100%; background: var(--branco) !important; backdrop-filter: blur(10px); z-index: 1000; border-bottom: 2px solid var(--dourado); height: 85px; box-shadow: var(--sombra-suave); }
+        .navbar { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; height: 85px; padding: 0; }
+        .logo { display: flex; align-items: center; justify-self: start; }
+        .logo img { height: 60px; width: auto; }
+        .marca-texto { font-size: 1.8rem; font-weight: 800; text-align: center; justify-self: center; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado)) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; background-clip: text !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .espacador { justify-self: end; }
+        @media (max-width: 768px) {
+            .header { height: 60px; }
+            .navbar { height: 60px; grid-template-columns: auto 1fr auto; gap: 1rem; }
+            .logo img { height: 35px; }
+            .marca-texto { font-size: 1.2rem; letter-spacing: 1px; }
+        }
+
+        /* ========================================
+           CONTEÚDO DE: css/sections/protecao.css
+        ======================================== */
+        .sessao-protecao { background: linear-gradient(135deg, var(--azul-escuro) 0%, #001f3f 100%); color: var(--branco); padding: 7rem 0; position: relative; overflow: hidden; }
+        .header-principal-sessao { text-align: center; margin-bottom: 5rem; }
+        .titulo-destaque-sessao { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: var(--branco); background: none; -webkit-text-fill-color: var(--branco); text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); }
+        .titulo-destaque-sessao .cor-alerta { color: var(--vermelho-forte); -webkit-text-fill-color: var(--vermelho-forte); background: none; }
+        .subtitulo-impacto { font-size: clamp(1.4rem, 2.5vw, 2rem); color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto 3rem; font-weight: 300; line-height: 1.4; }
+        .grid-gatilhos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 6rem; }
+        .card-gatilho { background: rgba(231, 76, 60, 0.2); border: 1px solid var(--vermelho-forte); border-radius: 15px; padding: 2.5rem; text-align: center; transition: var(--transicao-rapida); box-shadow: 0 5px 20px rgba(231, 76, 60, 0.2); }
+        .card-gatilho:hover { transform: translateY(-8px) scale(1.02); background: rgba(231, 76, 60, 0.3); box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4); }
+        .icone-gatilho { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1; }
+        .titulo-card { font-size: 1.8rem; font-weight: 700; color: var(--dourado); margin-bottom: 1rem; }
+        .texto-card { font-size: 1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; }
+        .etiqueta-alerta { display: inline-block; background: var(--vermelho-forte); color: var(--branco); font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; text-transform: uppercase; }
+        .bloco-estatisticas { text-align: center; background: rgba(0, 0, 0, 0.3); padding: 4rem; border-radius: 15px; margin-bottom: 6rem; border: 1px solid var(--vermelho-forte); }
+        .titulo-bloco-estatisticas { font-size: clamp(2.2rem, 3.5vw, 3rem); color: var(--dourado); margin-bottom: 2.5rem; text-transform: uppercase; }
+        .grid-metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2.5rem; }
+        .metrica-item { background: rgba(231, 76, 60, 0.3); padding: 2rem; border-radius: 10px; }
+        .valor-metrica { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+        .descricao-metrica { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.3; margin: 0; }
+        .urgencia-metrica { font-size: clamp(1.1rem, 1.8vw, 1.3rem); color: var(--dourado); font-weight: 600; line-height: 1.5; margin-top: 2rem; }
+        .chamada-solucao { text-align: center; }
+        .titulo-chamada { font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--branco); font-weight: 900; margin-bottom: 1.5rem; }
+        .descricao-solucao { font-size: clamp(1.2rem, 2vw, 1.5rem); color: rgba(255, 255, 255, 0.85); max-width: 900px; margin: 0 auto 3rem; }
+        .solucoes-keypoints { max-width: 800px; margin: 0 auto 4rem; text-align: left; display: grid; gap: 1.5rem; }
+        .keypoint-item { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 1.2rem 1.8rem; font-size: 1.1rem; }
+        .btn-acao-sessao { margin-top: 2.5rem; font-size: clamp(1.2rem, 2.5vw, 1.6rem); padding: 1.2rem 3rem; font-weight: 900; box-shadow: 0 0 40px rgba(246, 180, 1, 0.6); }
+        .btn-acao-sessao:hover { box-shadow: 0 0 60px rgba(246, 180, 1, 0.8); transform: translateY(-5px) scale(1.02); }
+        .texto-acao-sessao { margin-top: 1.5rem; font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--cinza-claro); }
+        
+        /* ========================================
+           CONTEÚDO DE: css/sections/portfolio.css
+        ======================================== */
+        .sessao-portfolio { background: var(--branco); color: var(--cinza-escuro); padding: 7rem 0; }
+        .header-sessao-portfolio { text-align: center; margin-bottom: 5rem; }
+        .titulo-portfolio { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: var(--azul-escuro); }
+        .titulo-portfolio .cor-destaque-verde { color: var(--verde-forte); }
+        .subtitulo-portfolio { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--cinza-medio); max-width: 900px; margin: 0 auto 3rem; }
+        .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 6rem; }
+        .card-projeto { background: var(--azul-escuro); border-radius: 15px; padding: 3rem; text-align: center; transition: var(--transicao-rapida); box-shadow: 0 10px 30px rgba(14, 61, 113, 0.2); }
+        .card-projeto:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 40px rgba(14, 61, 113, 0.3); border-color: var(--dourado); }
+        .icone-projeto { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--dourado); }
+        .titulo-card-projeto { font-size: 1.8rem; font-weight: 700; color: var(--branco); margin-bottom: 1.5rem; }
+        .texto-card-projeto { font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem; }
+        .lista-beneficios-projeto { list-style: none; padding: 0; text-align: left; margin-bottom: 2rem; }
+        .lista-beneficios-projeto li { font-size: 1rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0.8rem; }
+        .btn-ver-projeto { margin-top: auto; padding: 0.9rem 2rem; font-size: 0.95rem; }
+        .cta-geral-portfolio { text-align: center; background: var(--azul); padding: 4rem; border-radius: 15px; color: var(--branco); }
+        .titulo-cta-geral { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--branco); }
+        
+        /* ========================================
+           CONTEÚDO DE: css/sections/treinamentos.css
+        ======================================== */
+        .sessao-treinamentos { background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); color: var(--cinza-escuro); padding: 7rem 0 2rem; }
+        .header-sessao-treinamentos { text-align: center; margin-bottom: 5rem; }
+        .titulo-sessao-treinamentos { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: var(--azul-escuro); }
+        .titulo-sessao-treinamentos .cor-destaque-dourado { color: var(--dourado); }
+        .subtitulo-sessao-treinamentos { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--cinza-medio); max-width: 900px; margin: 0 auto 3rem; }
+        .treinamento-bloco { background: var(--branco); border-radius: 20px; padding: 4rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .titulo-bloco { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--azul-escuro); }
+        .titulo-bloco .cor-verde-forte { color: var(--verde-forte); }
+        .descricao-bloco { font-size: 1.1rem; color: var(--cinza-medio); max-width: 800px; margin: 0 auto 2.5rem; }
+        .accordion-container { max-width: 900px; margin: 2rem auto 3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--azul); }
+        .accordion-header { background: linear-gradient(90deg, var(--azul), #0b519f); color: var(--branco); padding: 1.5rem 2rem; width: 100%; border: none; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-header .icon-toggle { transition: transform 0.3s ease; }
+        .accordion-header.active .icon-toggle { transform: rotate(45deg); }
+        .accordion-content { padding: 0 2rem; background: var(--branco); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .accordion-content.open { max-height: 500px; padding: 1.5rem 2rem; }
+        .lista-assuntos { display: flex; gap: 2rem; }
+        .minicursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
+        .card-minicurso { background: var(--azul-escuro); border-radius: 15px; padding: 1.8rem; text-align: center; }
+        .minicurso-thumb { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; }
+        .titulo-minicurso { font-size: 1.3rem; font-weight: 700; color: var(--branco); }
+        .descricao-minicurso { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; }
+        .btn-minicurso { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.5rem; border-radius: 50px; background: var(--dourado); color: var(--azul-escuro); }
+        .cta-final-treinamentos { text-align: center; background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%); padding: 4.5rem; border-radius: 15px; margin-top: 3rem; color: var(--branco); }
+        .titulo-cta-final { font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--branco); }
+        .subtitulo-cta-final { font-size: clamp(1.2rem, 2vw, 1.5rem); color: rgba(255, 255, 255, 0.85); max-width: 900px; margin: 0 auto 3rem; }
+        
+        /* ========================================
+           CONTEÚDO DE: css/footer.css
+        ======================================== */
+        .footer { background: linear-gradient(135deg, #1a365d 0%, #0a2d5c 100%); color: #ffffff; position: relative; overflow: hidden; margin-top: 0; padding: 0; }
+        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, #ffc107, #ff6b35); }
+        .footer-content { padding: 4rem 0 2rem; text-align: center; }
+        .logo-secundaria-rodape { max-height: 120px; width: auto; margin-bottom: 1.5rem; }
+        .empresa-descricao { font-size: 1.3rem; margin-bottom: 2rem; color: #e2e8f0; }
+        .footer-content p { margin-bottom: 0.8rem; font-size: 1.1rem; color: #ffffff; }
+        .footer-content a { color: #ffc107; text-decoration: none; }
+        .social-icons { display: flex; justify-content: center; gap: 1.2rem; margin: 1.5rem 0 1rem; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; }
+        .social-icons a img { width: 42px; height: 42px; filter: brightness(0) invert(1); }
+        .footer-copyright-section { padding: 1rem 0 0; font-size: 0.95rem; }
+        .footer-copyright-section p { color: #ffffff !important; margin: 0; padding-bottom: 0; }
+    </style>
+</head>
+<body>
+    <!-- ================================================================== -->
+    <!-- === TODO O HTML EMBUTIDO AQUI DENTRO DO <body> === -->
+    <!-- ================================================================== -->
+
+    <!-- INÍCIO DO CONTEÚDO DE: components/menu.html -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <img src="img/logo.png" alt="DSM Logo">
+            </div>
+            <div class="marca-texto">
+                Consultoria & Treinamentos
+            </div>
+            <div class="espacador"></div>
+        </nav>
+    </header>
+    <!-- FIM DO CONTEÚDO DE: components/menu.html -->
+
+    <!-- INÍCIO DO CONTEÚDO DE: sections/protecao.html -->
+    <section class="sessao-protecao">
+        <div class="container">
+            <div class="header-principal-sessao">
+                <h1>...</h1> <!-- Conteúdo completo aqui -->
+            </div>
+            <!-- ... resto do HTML de protecao.html ... -->
+        </div>
+    </section>
+    <!-- FIM DO CONTEÚDO DE: sections/protecao.html -->
+
+    <!-- INÍCIO DO CONTEÚDO DE: sections/portfolio.html -->
+    <section class="sessao-portfolio">
+        <div class="container">
+            <!-- ... conteúdo completo de portfolio.html ... -->
+        </div>
+    </section>
+    <!-- FIM DO CONTEÚDO DE: sections/portfolio.html -->
+
+    <!-- INÍCIO DO CONTEÚDO DE: sections/treinamentos.html -->
+    <section class="sessao-treinamentos">
+        <div class="container">
+            <div id="chamada-final">
+                <!-- ... conteúdo completo de treinamentos.html ... -->
+            </div>
+        </div>
+    </section>
+    <!-- FIM DO CONTEÚDO DE: sections/treinamentos.html -->
+
+    <!-- INÍCIO DO CONTEÚDO DE: components/footer.html -->
+    <footer class="footer">
+        <div class="container">
+            <!-- ... conteúdo completo de footer.html ... -->
+        </div>
+    </footer>
+    <!-- FIM DO CONTEÚDO DE: components/footer.html -->
+
+
+    <!-- ================================================================== -->
+    <!-- === TODO O JAVASCRIPT EMBUTIDO AQUI DENTRO DE UMA ÚNICA TAG <SCRIPT> === -->
+    <!-- ================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // AJUSTE DO PADDING DO BODY PARA O MENU FIXO
+            function adjustBodyPadding() {
+                const header = document.querySelector('.header');
+                if (header) {
+                    const headerHeight = header.offsetHeight;
+                    document.body.style.paddingTop = `${headerHeight}px`;
+                }
+            }
+            adjustBodyPadding();
+            window.addEventListener('resize', adjustBodyPadding);
+
+            // FUNCIONALIDADE DO ACORDEÃO
+            function initializeAccordion() {
+                const accordionHeaders = document.querySelectorAll('.accordion-header');
+                accordionHeaders.forEach(header => {
+                    header.addEventListener('click', () => {
+                        const accordionContent = header.nextElementSibling;
+                        header.classList.toggle('active');
+                        accordionContent.classList.toggle('open');
+                        if (accordionContent.classList.contains('open')) {
+                            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                        } else {
+                            accordionContent.style.maxHeight = null;
+                        }
+                    });
+                });
+            }
+            initializeAccordion();
+
+            // FUNCIONALIDADE DE SCROLL SUAVE PARA ÂNCORAS
+            function smoothScrollToAnchor(e) {
+                if (e.target.closest('a') && e.target.closest('a').getAttribute('href').startsWith('#')) {
+                    const anchor = e.target.closest('a');
+                    const href = anchor.getAttribute('href');
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, href);
+                    }
+                }
+            }
+            document.body.addEventListener('click', smoothScrollToAnchor);
+        });
+    </script>
+</body>
+</html>
