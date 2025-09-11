@@ -36,23 +36,23 @@
     width: auto;
 }
 
-/* TEXTO CENTRALIZADO ESTILOSO */
+/* TEXTO CENTRALIZADO ESTILOSO - VERSÃO CORRETA */
 .marca-texto {
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--azul-escuro); /* Usa variável global */
     text-align: center;
     justify-self: center;
     letter-spacing: 2px;
     text-transform: uppercase;
-    /* Adaptação: O gradiente com azul-escuro, azul e dourado pode ser um mix customizado ou referenciado do global */
-    background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    
+    /* Forçando o navegador a usar estas regras de estilo acima de qualquer outra */
+    background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
-
 /* ESPACADOR DIREITA (apenas para manter o grid) */
 .espacador {
     justify-self: end;
