@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO BÁSICO -->
-    <title>Digital SM - TESTE FINAL</title>
+    <title>Digital SM - Consultoria e Treinamentos em TI</title>
     <meta name="description" content="Especialistas em proteção de dados, consultoria e treinamentos em tecnologia da informação">
     <meta name="keywords" content="consultoria TI, treinamentos, proteção dados, LGPD, tecnologia">
     <meta name="author" content="Digital Systems Managing">
@@ -30,7 +30,7 @@
     <!-- ================================================================== -->
     <style>
         /* ========================================
-           CONTEÚDO DE: css/style.css
+           CSS GLOBAL (style.css)
         ======================================== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -45,7 +45,7 @@
             --vermelho-forte-rgb: 231, 76, 60; --dourado-rgb: 246, 180, 1; --verde-forte-rgb: 39, 174, 96; --azul-rgb: 4, 94, 191; --azul-escuro-rgb: 14, 61, 113;
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--cinza-escuro); background-color: var(--branco); overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--cinza-escuro); background-color: var(--branco); overflow-x: hidden; padding-top: 85px; }
         h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
         h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; background: var(--gradiente-marca); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--azul-escuro); }
@@ -54,23 +54,22 @@
         a { text-decoration: none; color: var(--azul); transition: var(--transicao-rapida); }
         a:hover { color: var(--dourado); }
         .btn { display: inline-block; padding: 1rem 2rem; border: none; border-radius: 50px; font-weight: 600; font-size: 1rem; text-align: center; cursor: pointer; transition: var(--transicao-rapida); text-transform: uppercase; letter-spacing: 1px; }
-        .btn-primary { background: var(--gradiente-cta); color: var(--branco); box-shadow: var(--sombra-dourada); }
+        .btn-primary { background: var(--gradiente-cta); color: var(--azul-escuro); box-shadow: var(--sombra-dourada); }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(246, 180, 1, 0.4); }
-        .btn-secondary { background: transparent; color: var(--azul); border: 2px solid var(--azul); }
-        .btn-secondary:hover { background: var(--azul); color: var(--branco); }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         section { padding: 5rem 0; position: relative; }
         html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+        ::selection { background: var(--dourado); color: var(--azul-escuro); }
         @media (max-width: 768px) {
+            body { padding-top: 60px; }
             .container { padding: 0 1rem; }
             section { padding: 3rem 0; }
             .btn { padding: 0.8rem 1.5rem; font-size: 0.9rem; }
             html { scroll-padding-top: 60px; }
         }
-        ::selection { background: var(--dourado); color: var(--azul-escuro); }
 
         /* ========================================
-           CONTEÚDO DE: css/menu.css
+           CSS DO MENU (menu.css)
         ======================================== */
         .header { position: fixed; top: 0; left: 0; width: 100%; background: var(--branco) !important; backdrop-filter: blur(10px); z-index: 1000; border-bottom: 2px solid var(--dourado); height: 85px; box-shadow: var(--sombra-suave); }
         .navbar { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; height: 85px; padding: 0; }
@@ -86,100 +85,64 @@
         }
 
         /* ========================================
-           CONTEÚDO DE: css/sections/protecao.css
+           CSS DA SESSÃO PROTEÇÃO (protecao.css)
         ======================================== */
-        .sessao-protecao { background: linear-gradient(135deg, var(--azul-escuro) 0%, #001f3f 100%); color: var(--branco); padding: 7rem 0; position: relative; overflow: hidden; }
-        .header-principal-sessao { text-align: center; margin-bottom: 5rem; }
-        .titulo-destaque-sessao { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; color: var(--branco); background: none; -webkit-text-fill-color: var(--branco); text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); }
-        .titulo-destaque-sessao .cor-alerta { color: var(--vermelho-forte); -webkit-text-fill-color: var(--vermelho-forte); background: none; }
-        .subtitulo-impacto { font-size: clamp(1.4rem, 2.5vw, 2rem); color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto 3rem; font-weight: 300; line-height: 1.4; }
+        .sessao-protecao { background: linear-gradient(135deg, var(--azul-escuro) 0%, #001f3f 100%); color: var(--branco); }
+        .sessao-protecao .titulo-destaque-sessao { color: var(--branco); background: none; -webkit-text-fill-color: var(--branco); }
+        .sessao-protecao .titulo-destaque-sessao .cor-alerta { color: var(--vermelho-forte); -webkit-text-fill-color: var(--vermelho-forte); }
         .grid-gatilhos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 6rem; }
-        .card-gatilho { background: rgba(231, 76, 60, 0.2); border: 1px solid var(--vermelho-forte); border-radius: 15px; padding: 2.5rem; text-align: center; transition: var(--transicao-rapida); box-shadow: 0 5px 20px rgba(231, 76, 60, 0.2); }
-        .card-gatilho:hover { transform: translateY(-8px) scale(1.02); background: rgba(231, 76, 60, 0.3); box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4); }
-        .icone-gatilho { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1; }
+        .card-gatilho { background: rgba(231, 76, 60, 0.2); border: 1px solid var(--vermelho-forte); border-radius: 15px; padding: 2.5rem; text-align: center; }
+        .icone-gatilho { font-size: 3.5rem; margin-bottom: 1.5rem; }
         .titulo-card { font-size: 1.8rem; font-weight: 700; color: var(--dourado); margin-bottom: 1rem; }
-        .texto-card { font-size: 1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; }
-        .etiqueta-alerta { display: inline-block; background: var(--vermelho-forte); color: var(--branco); font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; text-transform: uppercase; }
-        .bloco-estatisticas { text-align: center; background: rgba(0, 0, 0, 0.3); padding: 4rem; border-radius: 15px; margin-bottom: 6rem; border: 1px solid var(--vermelho-forte); }
-        .titulo-bloco-estatisticas { font-size: clamp(2.2rem, 3.5vw, 3rem); color: var(--dourado); margin-bottom: 2.5rem; text-transform: uppercase; }
+        .etiqueta-alerta { display: inline-block; background: var(--vermelho-forte); color: var(--branco); font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; }
+        .bloco-estatisticas { text-align: center; background: rgba(0, 0, 0, 0.3); padding: 4rem; border-radius: 15px; margin-bottom: 6rem; }
         .grid-metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2.5rem; }
-        .metrica-item { background: rgba(231, 76, 60, 0.3); padding: 2rem; border-radius: 10px; }
-        .valor-metrica { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
-        .descricao-metrica { font-size: 1rem; color: rgba(255, 255, 255, 0.7); line-height: 1.3; margin: 0; }
-        .urgencia-metrica { font-size: clamp(1.1rem, 1.8vw, 1.3rem); color: var(--dourado); font-weight: 600; line-height: 1.5; margin-top: 2rem; }
-        .chamada-solucao { text-align: center; }
-        .titulo-chamada { font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--branco); font-weight: 900; margin-bottom: 1.5rem; }
-        .descricao-solucao { font-size: clamp(1.2rem, 2vw, 1.5rem); color: rgba(255, 255, 255, 0.85); max-width: 900px; margin: 0 auto 3rem; }
-        .solucoes-keypoints { max-width: 800px; margin: 0 auto 4rem; text-align: left; display: grid; gap: 1.5rem; }
-        .keypoint-item { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; padding: 1.2rem 1.8rem; font-size: 1.1rem; }
-        .btn-acao-sessao { margin-top: 2.5rem; font-size: clamp(1.2rem, 2.5vw, 1.6rem); padding: 1.2rem 3rem; font-weight: 900; box-shadow: 0 0 40px rgba(246, 180, 1, 0.6); }
-        .btn-acao-sessao:hover { box-shadow: 0 0 60px rgba(246, 180, 1, 0.8); transform: translateY(-5px) scale(1.02); }
-        .texto-acao-sessao { margin-top: 1.5rem; font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--cinza-claro); }
-        
+        .solucoes-keypoints { max-width: 800px; margin: 0 auto 4rem; display: grid; gap: 1.5rem; }
+        .keypoint-item { background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 1.2rem 1.8rem; }
+        .btn-acao-sessao { margin-top: 2.5rem; font-size: clamp(1.2rem, 2.5vw, 1.6rem); padding: 1.2rem 3rem; font-weight: 900; }
+
         /* ========================================
-           CONTEÚDO DE: css/sections/portfolio.css
+           CSS DA SESSÃO PORTFÓLIO (portfolio.css)
         ======================================== */
-        .sessao-portfolio { background: var(--branco); color: var(--cinza-escuro); padding: 7rem 0; }
-        .header-sessao-portfolio { text-align: center; margin-bottom: 5rem; }
-        .titulo-portfolio { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: var(--azul-escuro); }
-        .titulo-portfolio .cor-destaque-verde { color: var(--verde-forte); }
-        .subtitulo-portfolio { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--cinza-medio); max-width: 900px; margin: 0 auto 3rem; }
+        .sessao-portfolio { background: var(--branco); }
         .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 6rem; }
-        .card-projeto { background: var(--azul-escuro); border-radius: 15px; padding: 3rem; text-align: center; transition: var(--transicao-rapida); box-shadow: 0 10px 30px rgba(14, 61, 113, 0.2); }
-        .card-projeto:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 15px 40px rgba(14, 61, 113, 0.3); border-color: var(--dourado); }
+        .card-projeto { background: var(--azul-escuro); color: var(--branco); border-radius: 15px; padding: 3rem; text-align: center; }
         .icone-projeto { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--dourado); }
-        .titulo-card-projeto { font-size: 1.8rem; font-weight: 700; color: var(--branco); margin-bottom: 1.5rem; }
-        .texto-card-projeto { font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem; }
-        .lista-beneficios-projeto { list-style: none; padding: 0; text-align: left; margin-bottom: 2rem; }
-        .lista-beneficios-projeto li { font-size: 1rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0.8rem; }
-        .btn-ver-projeto { margin-top: auto; padding: 0.9rem 2rem; font-size: 0.95rem; }
+        .titulo-card-projeto, .lista-beneficios-projeto li { color: var(--branco); }
+        .texto-card-projeto { color: rgba(255, 255, 255, 0.7); }
+        .lista-beneficios-projeto { list-style: none; padding: 0; margin-bottom: 2rem; }
         .cta-geral-portfolio { text-align: center; background: var(--azul); padding: 4rem; border-radius: 15px; color: var(--branco); }
-        .titulo-cta-geral { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--branco); }
-        
+
         /* ========================================
-           CONTEÚDO DE: css/sections/treinamentos.css
+           CSS DA SESSÃO TREINAMENTOS (treinamentos.css)
         ======================================== */
-        .sessao-treinamentos { background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); color: var(--cinza-escuro); padding: 7rem 0 2rem; }
-        .header-sessao-treinamentos { text-align: center; margin-bottom: 5rem; }
-        .titulo-sessao-treinamentos { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: var(--azul-escuro); }
-        .titulo-sessao-treinamentos .cor-destaque-dourado { color: var(--dourado); }
-        .subtitulo-sessao-treinamentos { font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--cinza-medio); max-width: 900px; margin: 0 auto 3rem; }
-        .treinamento-bloco { background: var(--branco); border-radius: 20px; padding: 4rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .titulo-bloco { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--azul-escuro); }
-        .titulo-bloco .cor-verde-forte { color: var(--verde-forte); }
-        .descricao-bloco { font-size: 1.1rem; color: var(--cinza-medio); max-width: 800px; margin: 0 auto 2.5rem; }
+        .sessao-treinamentos { background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); padding-bottom: 2rem; }
+        .treinamento-bloco { background: var(--branco); border-radius: 20px; padding: 4rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; }
         .accordion-container { max-width: 900px; margin: 2rem auto 3rem; border-radius: 10px; overflow: hidden; border: 1px solid var(--azul); }
-        .accordion-header { background: linear-gradient(90deg, var(--azul), #0b519f); color: var(--branco); padding: 1.5rem 2rem; width: 100%; border: none; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .accordion-header .icon-toggle { transition: transform 0.3s ease; }
+        .accordion-header { background: var(--azul); color: var(--branco); padding: 1.5rem 2rem; width: 100%; border: none; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .accordion-header.active .icon-toggle { transform: rotate(45deg); }
-        .accordion-content { padding: 0 2rem; background: var(--branco); max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
         .accordion-content.open { max-height: 500px; padding: 1.5rem 2rem; }
         .lista-assuntos { display: flex; gap: 2rem; }
         .minicursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
-        .card-minicurso { background: var(--azul-escuro); border-radius: 15px; padding: 1.8rem; text-align: center; }
+        .card-minicurso { background: var(--azul-escuro); border-radius: 15px; padding: 1.8rem; text-align: center; color: var(--branco); }
         .minicurso-thumb { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 1.5rem; }
-        .titulo-minicurso { font-size: 1.3rem; font-weight: 700; color: var(--branco); }
-        .descricao-minicurso { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1.5rem; }
-        .btn-minicurso { display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.5rem; border-radius: 50px; background: var(--dourado); color: var(--azul-escuro); }
+        .titulo-minicurso, .descricao-minicurso { color: var(--branco); }
+        .btn-minicurso { background: var(--dourado); color: var(--azul-escuro) !important; padding: 0.8rem 1.5rem; border-radius: 50px; display: inline-flex; }
         .cta-final-treinamentos { text-align: center; background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%); padding: 4.5rem; border-radius: 15px; margin-top: 3rem; color: var(--branco); }
-        .titulo-cta-final { font-size: clamp(2.5rem, 4vw, 3.5rem); color: var(--branco); }
-        .subtitulo-cta-final { font-size: clamp(1.2rem, 2vw, 1.5rem); color: rgba(255, 255, 255, 0.85); max-width: 900px; margin: 0 auto 3rem; }
+        .titulo-cta-final { color: var(--branco); }
+        .subtitulo-cta-final { color: rgba(255, 255, 255, 0.85); }
         
         /* ========================================
-           CONTEÚDO DE: css/footer.css
+           CSS DO FOOTER (footer.css)
         ======================================== */
-        .footer { background: linear-gradient(135deg, #1a365d 0%, #0a2d5c 100%); color: #ffffff; position: relative; overflow: hidden; margin-top: 0; padding: 0; }
-        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, #ffc107, #ff6b35); }
-        .footer-content { padding: 4rem 0 2rem; text-align: center; }
-        .logo-secundaria-rodape { max-height: 120px; width: auto; margin-bottom: 1.5rem; }
-        .empresa-descricao { font-size: 1.3rem; margin-bottom: 2rem; color: #e2e8f0; }
-        .footer-content p { margin-bottom: 0.8rem; font-size: 1.1rem; color: #ffffff; }
-        .footer-content a { color: #ffc107; text-decoration: none; }
-        .social-icons { display: flex; justify-content: center; gap: 1.2rem; margin: 1.5rem 0 1rem; }
-        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; }
-        .social-icons a img { width: 42px; height: 42px; filter: brightness(0) invert(1); }
-        .footer-copyright-section { padding: 1rem 0 0; font-size: 0.95rem; }
-        .footer-copyright-section p { color: #ffffff !important; margin: 0; padding-bottom: 0; }
+        .footer { background: linear-gradient(135deg, #0e3d71 0%, #0a2d5c 100%); color: var(--branco); margin-top: 0; padding: 4rem 0 2rem; text-align: center; }
+        .footer::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gradiente-cta); }
+        .logo-secundaria-rodape { max-height: 120px; }
+        .empresa-descricao, .footer-content p, .footer-copyright-section p { color: var(--branco); }
+        .footer-content a { color: var(--dourado); }
+        .social-icons { display: flex; justify-content: center; gap: 1.2rem; margin: 1.5rem 0; }
+        .social-icons a img { width: 42px; filter: invert(1); }
     </style>
 </head>
 <body>
@@ -187,7 +150,7 @@
     <!-- === TODO O HTML EMBUTIDO AQUI DENTRO DO <body> === -->
     <!-- ================================================================== -->
 
-    <!-- INÍCIO DO CONTEÚDO DE: components/menu.html -->
+    <!-- INÍCIO DO CONTEÚDO DO MENU -->
     <header class="header">
         <nav class="navbar container">
             <div class="logo">
@@ -199,44 +162,194 @@
             <div class="espacador"></div>
         </nav>
     </header>
-    <!-- FIM DO CONTEÚDO DE: components/menu.html -->
 
-    <!-- INÍCIO DO CONTEÚDO DE: sections/protecao.html -->
+    <!-- INÍCIO DA SESSÃO PROTEÇÃO -->
     <section class="sessao-protecao">
         <div class="container">
             <div class="header-principal-sessao">
-                <h1>...</h1> <!-- Conteúdo completo aqui -->
+                <h1 class="titulo-destaque-sessao">
+                    <span class="cor-alerta">QUANTO CUSTA?</span>
+                    <br>O SILÊNCIO APÓS PERDER <span class="cor-alerta">TUDO.</span>
+                </h1>
+                <p class="subtitulo-impacto">Seus dados são o coração da sua empresa. Sem proteção de VERDADE, o que resta?</p>
             </div>
-            <!-- ... resto do HTML de protecao.html ... -->
+            <div class="grid-gatilhos">
+                <div class="card-gatilho">
+                    <div class="icone-gatilho">💀</div>
+                    <h3 class="titulo-card">ATAQUE CIBERNÉTICO</h3>
+                    <p class="texto-card">Ransomware, invasão, phishing. Seus arquivos sequestrados, seu negócio PARALISADO.</p>
+                    <span class="etiqueta-alerta">IMPACTO MILIONÁRIO</span>
+                </div>
+                <div class="card-gatilho">
+                    <div class="icone-gatilho">💣</div>
+                    <h3 class="titulo-card">FALHA NO SERVIDOR/HD</h3>
+                    <p class="texto-card">Servidor derreteu? HD quebrou? Anos de trabalho simplesmente sumiram.</p>
+                    <span class="etiqueta-alerta">RECUPERAÇÃO: QUASE IMPOSSÍVEL</span>
+                </div>
+                <div class="card-gatilho">
+                    <div class="icone-gatilho">🤯</div>
+                    <h3 class="titulo-card">ERRO HUMANO</h3>
+                    <p class="texto-card">Funcionário apagou sem querer? Malware de pen-drive? O elo mais fraco te quebra.</p>
+                    <span class="etiqueta-alerta">SEM VOLTA NA LIXEIRA</span>
+                </div>
+            </div>
+            <div class="bloco-estatisticas">
+                <h2 class="titulo-bloco-estatisticas">O FATO É: PERDA DE DADOS É UMA SENTENÇA.</h2>
+                <div class="grid-metricas">
+                    <div class="metrica-item">
+                        <p class="valor-metrica">85%</p>
+                        <p class="descricao-metrica">DAS PMEs NÃO SOBREVIVEM AO SEGUNDO ANO PÓS PERDA MASSIVA.</p>
+                    </div>
+                    <div class="metrica-item">
+                        <p class="valor-metrica">R$ 50K+</p>
+                        <p class="descricao-metrica">PREJUÍZO MÉDIO EM MULTAS, PARALISAÇÃO E TENTATIVA DE RECUPERAÇÃO.</p>
+                    </div>
+                </div>
+                <p class="urgencia-metrica">A cada minuto que passa sem a PROTEÇÃO DA DIGITAL SM, você joga uma moeda com o futuro do seu negócio.</p>
+            </div>
+            <div class="chamada-solucao">
+                <h2 class="titulo-chamada">NÃO SEJA MAIS UMA ESTATÍSTICA. SUA EMPRESA EXIGE BLINDAGEM MÁXIMA.</h2>
+                <p class="descricao-solucao">Implementamos as mesmas tecnologias que protegem GIGANTES como bancos e hospitais.</p>
+                <div class="solucoes-keypoints">
+                    <div class="keypoint-item">✅ BACKUP AUTO S3 & STORAGE GATEWAY: Seus dados IMORTAIS na nuvem AWS.</div>
+                    <div class="keypoint-item">✅ DEFESA ATIVA: Firewall, Antivírus e Políticas de Segurança INTRANSIGENTES.</div>
+                    <div class="keypoint-item">✅ MONITORAMENTO PROATIVO: Vigia 24/7. Erro DETECTADO, PROBLEMA NEUTRALIZADO.</div>
+                </div>
+                <a href="#chamada-final" class="btn-acao-sessao btn-primary">
+                    🚨 QUERO MINHA EMPRESA BLINDADA AGORA!
+                </a>
+                <p class="texto-acao-sessao">Transforme vulnerabilidade em FORTALEZA em tempo recorde.</p>
+            </div>
         </div>
     </section>
-    <!-- FIM DO CONTEÚDO DE: sections/protecao.html -->
 
-    <!-- INÍCIO DO CONTEÚDO DE: sections/portfolio.html -->
+    <!-- INÍCIO DA SESSÃO PORTFÓLIO -->
     <section class="sessao-portfolio">
         <div class="container">
-            <!-- ... conteúdo completo de portfolio.html ... -->
-        </div>
-    </section>
-    <!-- FIM DO CONTEÚDO DE: sections/portfolio.html -->
-
-    <!-- INÍCIO DO CONTEÚDO DE: sections/treinamentos.html -->
-    <section class="sessao-treinamentos">
-        <div class="container">
-            <div id="chamada-final">
-                <!-- ... conteúdo completo de treinamentos.html ... -->
+            <div class="header-sessao-portfolio">
+                <h2 class="titulo-portfolio">PROJETOS QUE ESCALAM, <span class="cor-destaque-verde">RESULTADOS QUE IMPULSIONAM SEU NEGÓCIO.</span></h2>
+                <p class="subtitulo-portfolio">Transformamos desafios complexos de TI em soluções AWS estratégicas. Veja como a Digital SM entrega excelência comprovada e tangível.</p>
+            </div>
+            <div class="grid-projetos">
+                <div class="card-projeto">
+                    <div class="icone-projeto">⚡</div>
+                    <h3 class="titulo-card-projeto">AGILIDADE LÍDER: <span class="cor-dourado">MIGRAÇÃO AWS PARA GRANDES REDES.</span></h3>
+                    <p class="texto-card-projeto">Desempenho em pico de vendas, zero lentidão. Reestruturamos a infraestrutura de rede de supermercados com a agilidade e economia da nuvem AWS. Chega de downtime e gargalos.</p>
+                    <ul class="lista-beneficios-projeto">
+                        <li>✅ Elasticidade para demanda sazonal</li>
+                        <li>✅ Redução drástica de custos operacionais</li>
+                        <li>✅ Integração total de filiais e sistemas</li>
+                    </ul>
+                    <a href="#chamada-final" class="btn-ver-projeto btn-primary">QUERO AGILIDADE. QUERO A DIGITAL SM!</a>
+                </div>
+                <div class="card-projeto">
+                    <div class="icone-projeto">🛡️</div>
+                    <h3 class="titulo-card-projeto">CONTINUIDADE BLINDADA: <span class="cor-verde-forte">DISASTER RECOVERY AWS PARA PMEs.</span></h3>
+                    <p class="texto-card-projeto">Pequenos e médios negócios também precisam de defesa de gigante. Implementamos soluções de Disaster Recovery na AWS que garantem a restauração dos seus dados em minutos, não dias. Sua operação não para.</p>
+                    <ul class="lista-beneficios-projeto">
+                        <li>✅ Recuperação de dados em tempo recorde</li>
+                        <li>✅ Proteção contra Ransomware, falhas e desastres</li>
+                        <li>✅ Paz de espírito, sua empresa sempre online</li>
+                    </ul>
+                    <a href="#chamada-final" class="btn-ver-projeto btn-primary">MINHA EMPRESA NÃO PODE PARAR!</a>
+                </div>
+                <div class="card-projeto">
+                    <div class="icone-projeto">🔒</div>
+                    <h3 class="titulo-card-projeto">COMPLIANCE SEM FALHAS: <span class="cor-dourado">CONSULTORIA AWS PARA LGPD.</span></h3>
+                    <p class="texto-card-projeto">Com a expertise de um SAA-C03, crio e implemento arquiteturas AWS impenetráveis para proteger dados sensíveis. Evite multas colossais e preserve a reputação da sua marca com a nossa blindagem LGPD e SOC.</p>
+                    <ul class="lista-beneficios-projeto">
+                        <li>✅ Adequação completa à LGPD na AWS</li>
+                        <li>✅ Auditoria e implementações de segurança</li>
+                        <li>✅ Proteção de reputação e evita prejuízos legais</li>
+                    </ul>
+                    <a href="#chamada-final" class="btn-ver-projeto btn-primary">PRECISO DESSA BLINDAGEM AGORA!</a>
+                </div>
+            </div>
+            <div class="cta-geral-portfolio">
+                <h2 class="titulo-cta-geral">PRONTO PARA TRANSFORMAR SEUS DESAFIOS EM <span class="cor-dourado">SUCESSO INOVADOR?</span></h2>
+                <a href="#chamada-final" class="btn-acao-sessao btn-primary">FALE COM NOSSO ESPECIALISTA AWS SAA-C03</a>
+                <p class="texto-acao-sessao">Explore como cada solução é meticulosamente adaptada à sua necessidade. Seus projetos, nossa expertise, resultados exponenciais.</p>
             </div>
         </div>
     </section>
-    <!-- FIM DO CONTEÚDO DE: sections/treinamentos.html -->
 
-    <!-- INÍCIO DO CONTEÚDO DE: components/footer.html -->
+    <!-- INÍCIO DA SESSÃO TREINAMENTOS -->
+    <section class="sessao-treinamentos">
+        <div class="container">
+            <div class="header-sessao-treinamentos">
+                <h2 class="titulo-sessao-treinamentos">DOMINE O AMANHÃ: <span class="cor-destaque-dourado">EXPERTISE CLOUD E TI AGORA.</span></h2>
+                <p class="subtitulo-sessao-treinamentos">Com a Digital SM, seus desafios em TI se transformam em habilidades valiosas. Cursos que impulsionam carreiras, aulas que resolvem, minicursos que simplificam. Qual é seu próximo passo?</p>
+            </div>
+            <div class="treinamento-bloco tipo-trilha">
+                <h3 class="titulo-bloco">TRAJETÓRIA ELITE: <span class="cor-verde-forte">DO ZERO À ESPECIALIZAÇÃO CLOUD AWS.</span></h3>
+                <p class="descricao-bloco">Projetado para transformar. Nossas trilhas completas levam você do conhecimento básico à proficiência em tecnologias cruciais: Linux, Python, Segurança de Dados, e AWS - o passaporte para o mercado.</p>
+                <a href="#chamada-final" class="btn-treinamento btn-primary">🎓 INICIAR MINHA TRILHA DE SUCESSO!</a>
+            </div>
+            <div class="treinamento-bloco tipo-particulares">
+                <h3 class="titulo-bloco">EXPERTISE SOB MEDIDA: <span class="cor-destaque-dourado">SUA AGENDA, SEU FOCO, NOSSA SOLUÇÃO.</span></h3>
+                <p class="descricao-bloco">Não perca tempo com cursos genéricos. Nossas aulas particulares são consultorias 1:1 com foco total nas suas necessidades.</p>
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Quais assuntos posso aprender? (Expanda para ver 20+ Tópicos!)<span class="icon-toggle">+</span></button>
+                        <div class="accordion-content">
+                            <div class="lista-assuntos">
+                                <ul><li>• Python para DevOps</li><li>• Fundamentos de Redes</li></ul>
+                                <ul><li>• Implementação de Firewalls</li><li>• Contêineres com Docker</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#chamada-final" class="btn-treinamento btn-primary">🗓️ AGENDAR MENTORIA 1:1 PERSONALIZADA</a>
+            </div>
+            <div class="treinamento-bloco tipo-minicursos">
+                <h3 class="titulo-bloco">RESULTADOS IMEDIATOS: <span class="cor-verde-forte">MICRO-AULAS PARA GRANDES GANHOS.</span></h3>
+                <div class="minicursos-grid">
+                    <div class="card-minicurso">
+                        <img src="img/linux_server.png" alt="Servidor Linux DNS" class="minicurso-thumb">
+                        <h4 class="titulo-minicurso">Servidor Linux DNS Local: Setup em 30 min.</h4>
+                        <a href="#chamada-final" class="btn-minicurso"><span class="icon-play">▶</span> ACESSAR AGORA (AULA GRÁTIS)</a>
+                    </div>
+                    <div class="card-minicurso">
+                        <img src="img/aws_s3.png" alt="S3 Backup" class="minicurso-thumb">
+                        <h4 class="titulo-minicurso">Backup Automático AWS S3: Guia de Bolso SAA-C03.</h4>
+                        <a href="#chamada-final" class="btn-minicurso"><span class="icon-play">▶</span> BAIXAR GUIA & VIDEO</a>
+                    </div>
+                    <div class="card-minicurso">
+                        <img src="img/firewall.png" alt="Firewall para PMEs" class="minicurso-thumb">
+                        <h4 class="titulo-minicurso">Firewall Básico: Blindando sua PME contra ataques.</h4>
+                        <a href="#chamada-final" class="btn-minicurso"><span class="icon-play">▶</span> VEJA COMO!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-final-treinamentos" id="chamada-final">
+                <h2 class="titulo-cta-final">PRONTO PARA IMPULSIONAR? <br>SEJA EM TREINAMENTOS OU <span class="cor-destaque-dourado">CONSULTORIA ESTRATÉGICA.</span></h2>
+                <a href="https://wa.me/5561998865417?text=..." target="_blank" class="btn-acao-final btn-primary">FALE COM NOSSO ESPECIALISTA AGORA!</a>
+                <p class="texto-suporte">Digital SM: Sua inovação, nossa tecnologia, **SEUS RESULTADOS!**</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INÍCIO DO FOOTER -->
     <footer class="footer">
         <div class="container">
-            <!-- ... conteúdo completo de footer.html ... -->
+            <div class="footer-content">
+                <img src="img/logo2.png" alt="Digital SM Logo" class="logo-secundaria-rodape">
+                <p class="empresa-descricao">Treinamentos & Consultoria - Soluções Inteligentes de TI</p>
+                <p>Email: digitalsm.empresa@gmail.com</p>
+                <p>WhatsApp: <a href="https://wa.me/5561998865417?text=...">+55 61 9 9886-5417</a></p>
+                <div class="social-icons">
+                    <a href="..."><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                    <a href="..."><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="..."><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="..."><img src="img/linkedin.png" alt="Linkedin"></a>
+                    <a href="..."><img src="img/youtube.png" alt="Youtube"></a>
+                </div>
+                <div class="footer-copyright-section">
+                    <p>&copy; 2025 Digital Systems Managing | Todos os direitos reservados</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <!-- FIM DO CONTEÚDO DE: components/footer.html -->
 
 
     <!-- ================================================================== -->
@@ -274,10 +387,9 @@
             initializeAccordion();
 
             // FUNCIONALIDADE DE SCROLL SUAVE PARA ÂNCORAS
-            function smoothScrollToAnchor(e) {
-                if (e.target.closest('a') && e.target.closest('a').getAttribute('href').startsWith('#')) {
-                    const anchor = e.target.closest('a');
-                    const href = anchor.getAttribute('href');
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
                     const targetId = href.substring(1);
                     const targetElement = document.getElementById(targetId);
                     if (targetElement) {
@@ -285,9 +397,8 @@
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                         history.pushState(null, null, href);
                     }
-                }
-            }
-            document.body.addEventListener('click', smoothScrollToAnchor);
+                });
+            });
         });
     </script>
 </body>
