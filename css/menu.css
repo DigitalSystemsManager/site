@@ -1,0 +1,96 @@
+/* ========================================
+   DIGITAL SYSTEMS MANAGING - CSS ESPECÍFICO DO MENU (VERSÃO FINAL COM CORREÇÕES)
+======================================== */
+
+/* HEADER FIXO BRANCO - FORÇANDO O BACKGROUND */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* FORÇANDO O BACKGROUND BRANCO PARA O HEADER */
+    background: var(--branco) !important; 
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 2px solid var(--dourado);
+    height: 85px;
+    box-shadow: var(--sombra-suave);
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    height: 85px; /* Alinhado com a altura do header */
+    padding: 0;
+}
+
+/* LOGO À ESQUERDA */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* TEXTO CENTRALIZADO ESTILOSO - MANTENDO A CORREÇÃO QUE FUNCIONOU */
+.marca-texto {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    justify-self: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    background: linear-gradient(45deg, var(--azul-escuro), var(--azul), var(--dourado)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ESPACADOR DIREITA */
+.espacador {
+    justify-self: end;
+}
+
+/* RESPONSIVIDADE ESPECÍFICA DO MENU */
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+    
+    .navbar {
+        height: 60px;
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .marca-texto {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .marca-texto {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Estilos de impressão */
+@media print {
+    .header {
+        display: none !important;
+    }
+}
