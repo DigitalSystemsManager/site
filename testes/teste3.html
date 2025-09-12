@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO BÁSICO -->
+    <title>Digital Systems Managing - Consultoria e Treinamentos em TI</title>
+    <meta name="description" content="Especialistas em proteção de dados, consultoria e treinamentos em tecnologia da informação. Blindamos sua empresa com soluções AWS e capacitamos sua equipe.">
+    <meta name="keywords" content="consultoria TI, treinamentos aws, proteção dados, LGPD, SAA-C03, segurança da informação, tecnologia, disaster recovery">
+    <meta name="author" content="Digital Systems Managing">
+    
+    <!-- FAVICON (Exemplo - troque o caminho se necessário) -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- DEPENDÊNCIAS (Google Fonts, TailwindCSS, AlpineJS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS CUSTOMIZADO PARA EFEITOS ESPECIAIS E CORES DA MARCA -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+
+        /* EFEITO DE BRILHO (GLOW) PARA BOTÕES - COR DOURADA */
+        .glow-button { 
+            box-shadow: 0 0 30px rgba(246, 180, 1, 0.4); 
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-button:hover { 
+            box-shadow: 0 0 50px rgba(246, 180, 1, 0.6); 
+            transform: translateY(-3px);
+        }
+
+        /* EFEITO MÁQUINA DE ESCREVER (TYPEWRITER) - CURSOR DOURADO */
+        .typewriter {
+            overflow: hidden; border-right: .15em solid #f6b401; white-space: nowrap; margin: 0;
+            letter-spacing: .05em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #f6b401; } }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<!-- ======================= INÍCIO DO HEADER ======================== -->
+<header class="bg-white/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <a href="#" class="text-2xl font-bold">
+                <span style="color: #0e3d71;">Digital Systems</span><span style="color: #045ebf;"> Managing</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#protecao-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Proteção</a>
+                <a href="#portfolio-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Projetos</a>
+                <a href="#treinamentos-container" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Treinamentos</a>
+            </div>
+            <a href="https://wa.me/5561998865417?text=Gostaria%20de%20falar%20com%20um%20especialista%20da%20Digital%20SM." target="_blank" style="background-color: #f6b401;" class="hidden md:inline-block text-[#0e3d71] font-bold px-6 py-2 rounded-lg glow-button">
+                Fale com um Especialista
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- ========================= FIM DO HEADER ========================= -->
+
+
+<main>
+
+<!-- ================ INÍCIO DA SEÇÃO HERO (PROTEÇÃO) ================== -->
+<section id="protecao-container" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke-width="2" stroke="%23e2e8f0"><path d="M0 .5H31.5V32"/></svg>')] opacity-50"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight" style="color: #0e3d71;">
+                <span class="text-red-600">QUANTO CUSTA?</span><br>
+                <span class="typewriter inline-block">O SILÊNCIO APÓS PERDER <span class="text-red-600">TUDO.</span></span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-xl text-gray-700 font-semibold">
+                Seus dados são o coração da sua empresa. 
+                <strong class="text-white p-1 rounded" style="background-color: #045ebf;">Sem proteção de VERDADE, o que resta?</strong>
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl mb-4">💀</div>
+                <h3 class="text-lg font-bold text-red-800">ATAQUE CIBERNÉTICO</h3>
+                <p class="text-red-700 text-sm mb-4">Ransomware, invasão, phishing. Seus arquivos sequestrados, seu negócio PARALISADO.</p>
+                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">IMPACTO MILIONÁRIO</span>
+            </div>
+            <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl mb-4">💣</div>
+                <h3 class="text-lg font-bold text-red-800">FALHA NO SERVIDOR/HD</h3>
+                <p class="text-red-700 text-sm mb-4">Servidor derreteu? HD quebrou? Anos de trabalho simplesmente sumiram.</p>
+                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">RECUPERAÇÃO: QUASE IMPOSSÍVEL</span>
+            </div>
+            <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl mb-4">🤯</div>
+                <h3 class="text-lg font-bold text-red-800">ERRO HUMANO</h3>
+                <p class="text-red-700 text-sm mb-4">Funcionário apagou sem querer? Malware de pen-drive? O elo mais fraco te quebra.</p>
+                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">SEM VOLTA NA LIXEIRA</span>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg border p-8 mb-20">
+            <h2 class="text-center text-2xl font-black mb-8" style="color: #0e3d71;">O FATO É: PERDA DE DADOS É UMA SENTENÇA.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center border-t border-b border-gray-200 py-8 mb-8">
+                <div><p class="text-6xl font-black" style="color: #045ebf;">85%</p><p class="text-sm font-semibold text-gray-600 mt-2">DAS PMEs NÃO SOBREVIVEM AO SEGUNDO ANO PÓS PERDA MASSIVA.</p></div>
+                <div><p class="text-6xl font-black" style="color: #045ebf;">R$50K+</p><p class="text-sm font-semibold text-gray-600 mt-2">PREJUÍZO MÉDIO EM MULTAS, PARALISAÇÃO E TENTATIVA DE RECUPERAÇÃO.</p></div>
+            </div>
+            <p class="text-center text-md italic text-gray-700">A cada minuto que passa sem a <strong style="color: #0e3d71;">PROTEÇÃO DA DIGITAL SM</strong>, você joga uma moeda com o futuro do seu negócio.</p>
+        </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-4" style="color: #0e3d71;">NÃO SEJA MAIS UMA ESTATÍSTICA. SUA EMPRESA EXIGE BLINDAGEM MÁXIMA.</h2>
+            <p class="text-lg text-gray-600 mb-8">Implementamos as mesmas tecnologias que protegem GIGANTES como bancos e hospitais.</p>
+            <div class="space-y-4 text-left max-w-2xl mx-auto mb-10">
+                <div class="bg-blue-50 border-l-4 p-4 rounded-r-lg" style="border-color: #045ebf;">✅ <strong class="text-gray-800">BACKUP AUTO S3 & STORAGE GATEWAY:</strong> Seus dados IMORTAIS na nuvem AWS.</div>
+                <div class="bg-blue-50 border-l-4 p-4 rounded-r-lg" style="border-color: #045ebf;">✅ <strong class="text-gray-800">DEFESA ATIVA:</strong> Firewall, Antivírus e Políticas de Segurança INTRANSIGENTES.</div>
+                <div class="bg-blue-50 border-l-4 p-4 rounded-r-lg" style="border-color: #045ebf;">✅ <strong class="text-gray-800">MONITORAMENTO PROATIVO:</strong> Vigia 24/7. Erro DETECTADO, PROBLEMA NEUTRALIZADO.</div>
+            </div>
+            <a href="#chamada-final" style="background-color: #f6b401;" class="text-[#0e3d71] font-black text-xl px-16 py-6 rounded-xl glow-button inline-block">
+                🚨 QUERO MINHA EMPRESA BLINDADA AGORA!
+            </a>
+            <p class="mt-4 font-semibold" style="color: #045ebf;">Transforme vulnerabilidade em FORTALEZA em tempo recorde.</p>
+        </div>
+    </div>
+</section>
+<!-- =================== FIM DA SEÇÃO HERO (PROTEÇÃO) ================== -->
+
+
+<!-- ============== INÍCIO DA SEÇÃO PORTFÓLIO (PROJETOS) ============= -->
+<section id="portfolio-container" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-black" style="color: #0e3d71;">PROJETOS QUE ESCALAM, <br class="sm:hidden"><span style="color: #045ebf;">RESULTADOS QUE IMPULSIONAM SEU NEGÓCIO.</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Transformamos desafios complexos de TI em soluções AWS estratégicas. Veja como a <strong>Digital SM</strong> entrega excelência comprovada e tangível.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-[#f6b401] hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">AGILIDADE LÍDER: <span style="color: #f6b401;">MIGRAÇÃO AWS PARA GRANDES REDES.</span></h3>
+                    <p class="text-gray-600 mb-4">Desempenho em pico de vendas, zero lentidão. Reestruturamos a infraestrutura de rede de supermercados com a agilidade e economia da nuvem AWS. <strong>Chega de downtime e gargalos.</strong></p>
+                    <ul class="space-y-2 text-sm text-gray-700"><li>✅ Elasticidade para demanda sazonal</li><li>✅ Redução drástica de custos operacionais</li><li>✅ Integração total de filiais e sistemas</li></ul>
+                </div>
+                <div class="p-6 bg-slate-50"><a href="#chamada-final" style="background-color: #045ebf;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">QUERO AGILIDADE. QUERO A DIGITAL SM!</a></div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-[#045ebf] hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">CONTINUIDADE BLINDADA: <span style="color: #045ebf;">DISASTER RECOVERY AWS PARA PMEs.</span></h3>
+                    <p class="text-gray-600 mb-4">Pequenos e médios negócios também precisam de defesa de gigante. Implementamos soluções de <strong>Disaster Recovery na AWS</strong> que garantem a restauração dos seus dados em <em>minutos</em>, não dias. Sua operação não para.</p>
+                    <ul class="space-y-2 text-sm text-gray-700"><li>✅ Recuperação de dados em tempo recorde</li><li>✅ Proteção contra Ransomware, falhas e desastres</li><li>✅ Paz de espírito, sua empresa sempre online</li></ul>
+                </div>
+                <div class="p-6 bg-slate-50"><a href="#chamada-final" style="background-color: #045ebf;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">MINHA EMPRESA NÃO PODE PARAR!</a></div>
+            </div>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-[#f6b401] hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: #0e3d71;">COMPLIANCE SEM FALHAS: <span style="color: #f6b401;">CONSULTORIA AWS PARA LGPD.</span></h3>
+                    <p class="text-gray-600 mb-4">Com a expertise de um <strong>SAA-C03</strong>, crio e implemento arquiteturas AWS impenetráveis para proteger dados sensíveis. Evite multas colossais e preserve a reputação da sua marca com a nossa blindagem LGPD e SOC.</p>
+                    <ul class="space-y-2 text-sm text-gray-700"><li>✅ Adequação completa à LGPD na AWS</li><li>✅ Auditoria e implementações de segurança</li><li>✅ Proteção de reputação e evita prejuízos legais</li></ul>
+                </div>
+                <div class="p-6 bg-slate-50"><a href="#chamada-final" style="background-color: #045ebf;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">PRECISO DESSA BLINDAGEM AGORA!</a></div>
+            </div>
+        </div>
+        <div class="mt-20 text-center">
+            <h2 class="text-2xl font-black" style="color: #0e3d71;">PRONTO PARA TRANSFORMAR SEUS DESAFIOS EM <span style="color: #f6b401;">SUCESSO INOVADOR?</span></h2>
+            <a href="#chamada-final" style="background-color: #f6b401;" class="inline-block text-[#0e3d71] font-bold py-4 px-10 rounded-lg glow-button mt-6 text-lg">FALE COM NOSSO ESPECIALISTA AWS SAA-C03</a>
+            <p class="text-gray-600 mt-4">Explore como cada solução é meticulosamente adaptada à sua necessidade. Seus projetos, nossa expertise, <strong>resultados exponenciais</strong>.</p>
+        </div>
+    </div>
+</section>
+<!-- =============== FIM DA SEÇÃO PORTFÓLIO (PROJETOS) =============== -->
+
+
+<!-- =================== INÍCIO DA SEÇÃO TREINAMENTOS ================== -->
+<section id="treinamentos-container" class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-black" style="color: #0e3d71;">DOMINE O AMANHÃ: <span style="color: #f6b401;">EXPERTISE CLOUD E TI AGORA.</span></h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Com a <strong>Digital SM</strong>, seus desafios em TI se transformam em habilidades valiosas. Cursos que impulsionam carreiras, aulas que resolvem, minicursos que simplificam. Qual é seu próximo passo?</p>
+        </div>
+        <div class="space-y-12">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-l-8" style="border-color: #045ebf;">
+                <h3 class="text-2xl font-black mb-3" style="color: #0e3d71;">TRAJETÓRIA ELITE: <span style="color: #045ebf;">DO ZERO À ESPECIALIZAÇÃO CLOUD AWS.</span></h3>
+                <p class="text-gray-600 mb-4">Projetado para transformar. Nossas trilhas completas levam você do conhecimento básico à proficiência em tecnologias cruciais: Linux, Python, Segurança de Dados, e AWS - o passaporte para o mercado. São <strong>40+ horas de imersão</strong> em conteúdo prático, com mentoria de <strong>experts SAA-C03</strong>.</p>
+                <ul class="space-y-2 mb-6"><li>🏆 Certificação Digital SM + Preparação para AWS Certifications</li><li>🛠️ Projetos Práticos e Aplicações Reais do Mercado</li><li>🚀 Networking Exclusivo e Suporte Pós-Curso</li></ul>
+                <a href="#chamada-final" style="background-color: #045ebf;" class="inline-block text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">🎓 INICIAR MINHA TRILHA DE SUCESSO!</a>
+                <p class="text-sm text-gray-500 mt-2">Vagas limitadas para turmas pequenas.</p>
+            </div>
+            <div x-data="{ openAccordion: null }" class="bg-white p-8 rounded-xl shadow-lg border-l-8" style="border-color: #f6b401;">
+                <h3 class="text-2xl font-black mb-3" style="color: #0e3d71;">EXPERTISE SOB MEDIDA: <span style="color: #f6b401;">SUA AGENDA, SEU FOCO, NOSSA SOLUÇÃO.</span></h3>
+                <p class="text-gray-600 mb-6">Não perca tempo com cursos genéricos. Nossas aulas particulares são <strong>consultorias 1:1</strong> com foco total nas suas necessidades. Escolha o assunto, pague por hora e veja seu problema ser resolvido com a clareza de um mentor <strong>SAA-C03 AWS</strong>.</p>
+                <div class="border rounded-lg">
+                    <button @click="openAccordion = openAccordion === 1 ? null : 1" class="w-full text-left p-4 flex justify-between items-center font-bold" :class="{'bg-[#0e3d71] text-white': openAccordion === 1, 'bg-slate-50 text-[#0e3d71]': openAccordion !== 1}">Quais assuntos posso aprender? (Expanda para ver 20+ Tópicos!)<span :class="{'rotate-180': openAccordion === 1}" class="transform transition-transform duration-300 text-[#f6b401] text-2xl font-light">▾</span></button>
+                    <div x-show="openAccordion === 1" x-collapse class="p-6 text-gray-600 bg-white">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                            <ul class="list-disc list-inside"><li>Python para DevOps</li><li>Fundamentos de Redes (TCP/IP)</li><li>Excel Avançado para Analistas</li><li>Segurança Cibernética Essencial</li><li>Administração Linux (Bash Scripting)</li><li>Introdução ao Cloud Computing (Geral)</li><li>Primeiros Passos na AWS (EC2, S3)</li><li>Kubernetes Essencial</li><li>Git e GitHub para Colaboração</li><li>Bancos de Dados (SQL e NoSQL)</li></ul>
+                            <ul class="list-disc list-inside"><li>Implementação de Firewalls</li><li>Contêineres com Docker</li><li>Automação com Ansible</li><li>Boas Práticas de LGPD</li><li>VPC e Rede na AWS</li><li>IAM e Segurança de Acesso AWS</li><li>Ferramentas de Monitoramento (Grafana, Zabbix)</li><li>Servidores Web (Apache, Nginx)</li><li>Fundamentos de PHP</li><li>Lógica de Programação</li></ul>
+                        </div>
+                    </div>
+                </div>
+                 <a href="#chamada-final" style="background-color: #f6b401;" class="inline-block text-[#0e3d71] font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity mt-6">🗓️ AGENDAR MENTORIA 1:1 PERSONALIZADA</a>
+                 <p class="text-sm text-gray-500 mt-2">Seu desafio. Nossa expertise. Sua vitória em TI.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==================== FIM DA SEÇÃO TREINAMENTOS ==================== -->
+
+
+<!-- ============== INÍCIO DA SEÇÃO CTA FINAL / CONTATO ============== -->
+<section id="chamada-final" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-[#0e3d71] to-[#045ebf] text-white rounded-2xl p-12">
+        <h2 class="text-3xl font-black mb-4">PRONTO PARA IMPULSIONAR?<br>SEJA EM TREINAMENTOS OU <span style="color: #f6b401;">CONSULTORIA ESTRATÉGICA.</span></h2>
+        <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">Nossa expertise SAA-C03 AWS está à sua disposição. Soluções personalizadas, treinamentos que transformam, e uma parceria que você realmente precisa.</p>
+        <a href="https://wa.me/5561998865417?text=Gostaria%20de%20falar%20com%20um%20especialista%20da%20Digital%20SM%20sobre%20treinamentos%20e%20consultoria." target="_blank" style="background-color: #f6b401;" class="inline-block text-[#0e3d71] font-black text-xl px-16 py-6 rounded-xl glow-button">
+            FALE COM NOSSO ESPECIALISTA AGORA!
+        </a>
+        <p class="mt-4 text-sm opacity-80">Digital SM: Sua inovação, nossa tecnologia, <strong>SEUS RESULTADOS!</strong></p>
+    </div>
+</section>
+<!-- =============== FIM DA SEÇÃO CTA FINAL / CONTATO =============== -->
+
+</main>
+
+<!-- ======================= INÍCIO DO FOOTER ======================== -->
+<footer style="background-color: #0e3d71;" class="text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col items-center text-center">
+            <img src="https://via.placeholder.com/200x50.png?text=Logo+DigitalSM" alt="Digital Systems Managing Logo" class="mb-4 h-12"> <!-- Substitua pelo caminho da sua logo -->
+            <p class="mb-4 text-gray-300">Treinamentos & Consultoria - Soluções Inteligentes de TI</p>
+            <div class="mb-4 text-gray-200 space-y-1">
+                <p><strong>Email:</strong> digitalsm.empresa@gmail.com</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="hover:text-[#f6b401] transition-colors">+55 61 9 9886-5417</a></p>
+            </div>
+            <div class="flex space-x-6 mb-6">
+                 <!-- Ícones SVG inline para evitar problemas de caminho e para facilitar a estilização -->
+                 <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="hover:opacity-80 transition-opacity"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.433-9.89-9.889-9.89-5.452 0-9.887 4.428-9.889 9.89.001 2.23 1.056 4.387 2.671 5.943l-.389 1.422 1.462-.384zm7.252-7.14c-.389-.2-2.312-1.141-2.671-1.272s-.622-.2-.884.2-1.011 1.273-1.239 1.536c-.228.263-.456.299-.844.1s-1.516-.55-2.887-1.776c-1.082-.965-1.82-2.16-2.048-2.529s-.237-.56-.048-.763c.189-.202.411-.523.612-.784s.269-.424.401-.703c.132-.279.066-.523-.033-.722s-.884-2.135-1.214-2.922c-.322-.767-.657-.655-.884-.666s-.455-.012-.682-.012c-.227 0-.591.083-.891.448s-1.125 1.092-1.125 2.657c0 1.564 1.149 3.089 1.311 3.307s2.324 3.542 5.626 4.979c.813.37 1.44.596 1.926.763.784.258 1.487.23 2.046.139.63-.101 1.956-1.121 2.235-2.193.279-1.072.279-2 .189-2.193s-.263-.228-.532-.424z"/></svg></a>
+                 <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank" class="hover:opacity-80 transition-opacity"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-1.646C8.74 0 8.333.011 7.053.069 3.738.214 1.884 2.068.213 5.378.069 6.657.011 7.063 0 10.378s.058 3.721.213 5.002c1.671 3.311 3.525 5.165 6.84 5.319 1.28.058 1.687.069 4.947.069s3.667-.011 4.947-.069c3.315-.154 5.17-2.008 6.84-5.319.155-1.281.213-1.681.213-5.002s-.058-3.721-.213-5.002C22.116 2.068 20.262.214 16.947.069 15.667.011 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+                 <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank" class="hover:opacity-80 transition-opacity"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            </div>
+            <div class="border-t border-gray-700 w-full pt-6 mt-4">
+                <p class="text-gray-400 text-sm">&copy; 2025 Digital Systems Managing | Todos os direitos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ========================= FIM DO FOOTER ========================= -->
+
+</body>
+</html>
