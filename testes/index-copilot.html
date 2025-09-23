@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO OTIMIZADO -->
+  <title>Soluções de TI para Micro e Pequenas Empresas | Digital SM</title>
+  <meta name="description" content="Blindagem digital, suporte técnico e infraestrutura de TI para micro e pequenas empresas. Presencial em Brasília e remoto em todo o Brasil.">
+  <meta name="keywords" content="TI para pequenas empresas, suporte técnico Brasília, backup empresarial, segurança de dados, firewall, VPN, nuvem AWS, consultoria LGPD, gerenciamento de TI">
+  <meta name="author" content="Digital Systems Managing">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- DEPENDÊNCIAS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- ESTILOS CUSTOMIZADOS -->
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    html { scroll-padding-top: 100px; }
+    .glow-button {
+      box-shadow: 0 0 30px rgba(246, 180, 1, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
+    .glow-button:hover {
+      box-shadow: 0 0 50px rgba(246, 180, 1, 0.6);
+      transform: translateY(-3px);
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #f6b401;
+      white-space: nowrap;
+      margin: 0;
+      letter-spacing: .05em;
+      animation: typing 2.5s steps(25, end), blink-caret .75s step-end infinite;
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #f6b401; } }
+  </style>
+</head>
+<body class="text-gray-800" x-data="{}">
+
+<!-- ======================= HEADER ======================== -->
+<header class="bg-white/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-3">
+      <a href="#"><img src="img/logo.png" alt="Digital Systems Managing Logo" class="h-12"></a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#seguranca-dados" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Segurança de Dados</a>
+        <a href="#ti-gerenciada" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">TI Gerenciada</a>
+        <a href="#chamada-final" class="text-gray-600 hover:text-[#045ebf] font-semibold transition-colors">Contato</a>
+      </div>
+      <a href="https://wa.me/5561998865417?text=Preciso%20de%20ajuda%20com%20TI%20na%20minha%20empresa.%20Podemos%20conversar%3F" target="_blank" style="background-color: #f6b401;" class="hidden md:inline-block text-[#0e3d71] font-bold px-6 py-2 rounded-lg glow-button">
+        RESOLVER MEU PROBLEMA
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- ======================= HERO ======================== -->
+<section id="solucoes-diarias" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke-width="2" stroke="%23e2e8f0"><path d="M0 .5H31.5V32"/></svg>')] opacity-50"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16">
+      <div class="w-full overflow-hidden flex justify-center">
+        <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight" style="color: #0e3d71;">
+          Sua empresa está vulnerável?<br>
+          <span class="typewriter inline-block">Proteja seus dados com tecnologia acessível.</span>
+        </h1>
+      </div>
+      <p class="max-w-3xl mx-auto text-xl text-gray-700 font-semibold">
+        Conectividade instável, falta de backup, rede sem controle? A Digital SM resolve com soluções de TI para micro e pequenas empresas.
+      </p>
+    </div>
+
+    <!-- ======================= PROBLEMAS DE TI ======================== -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center">
+        <div class="text-5xl mb-4">💀</div>
+        <h3 class="text-lg font-bold text-red-800">Ataque Cibernético</h3>
+        <p class="text-red-700 text-sm mb-4">Ransomware, invasão, phishing. Arquivos sequestrados, seu negócio paralisa.</p>
+        <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Impacto Financeiro</span>
+      </div>
+      <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center">
+        <div class="text-5xl mb-4">💣</div>
+        <h3 class="text-lg font-bold text-red-800">Falha no Servidor/HD</h3>
+        <p class="text-red-700 text-sm mb-4">Servidor queimou? HD quebrou? Anos de trabalho podem desaparecer.</p>
+        <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Recuperação Difícil</span>
+      </div>
+      <div class="bg-red-50 border-2 border-red-500 rounded-lg p-6 text-center">
+        <div class="text-5xl mb-4">🤯</div>
+        <h3 class="text-lg font-bold text-red-800">Erro Humano</h3>
+        <p class="text-red-700 text-sm mb-4">Funcionário apagou? Vírus infectou? O elo mais fraco pode comprometer tudo.</p>
+        <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sem Volta na Lixeira</span>
+      </div>
+    </div>
+
+    <!-- ======================= IMPACTO FINANCEIRO ======================== -->
+    <div class="bg-white rounded-xl shadow-lg border-2 border-blue-200 p-8 mb-20">
+      <h2 class="text-center text-2xl font-black mb-8 flex items-center justify-center" style="color: #0e3d71;">
+        <span class="text-5xl mr-4">⚠️</span> Perda de dados pode ser fatal para seu negócio.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center border-t border-b border-gray-200 py-8 mb-8">
+        <div>
+          <p class="text-6xl font-black" style="color: #045ebf;">85%</p>
+          <p class="text-sm font-semibold text-gray-600 mt-2">das PMEs não sobrevivem ao segundo ano após perda massiva de dados.</p>
+        </div>
+        <div>
+          <p class="text-6xl font-black" style="color: #045ebf;">R$50K+</p>
+          <p class="text-sm font-semibold text-gray-600 mt-2">em prejuízo médio com paralisação, multas e tentativas de recuperação.</p>
+        </div>
+      </div>
+      <p class="text-center text-md italic text-gray-700">
+        A cada minuto sem a <strong style="color: #0e3d71;">Blindagem Digital SM</strong>, você arrisca o futuro da sua empresa.
+      </p>
+    </div>
+
+    <!-- ======================= CHAMADA INICIAL ======================== -->
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-black mb-4" style="color: #0e3d71;">Podemos ajudar com tecnologia acessível e eficaz</h2>
+      <p class="text-lg text-gray-600 mb-8">Atendemos presencialmente em Brasília/DF e remotamente em todo o Brasil.</p>
+      <a href="#chamada-final" style="background-color: #f6b401;" class="text-[#0e3d71] font-black text-xl px-16 py-6 rounded-xl glow-button inline-block">CHAMAR TÉCNICO AGORA</a>
+      <p class="mt-4 font-semibold" style="color: #045ebf;">Atendimento rápido e direto pelo WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- ======================= PRODUTO 1: SEGURANÇA DE DADOS ======================== -->
+<section id="seguranca-dados" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-black" style="color: #0e3d71;">Produto 1: <span style="color: #f6b401;">Segurança de Dados</span></h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Proteja sua empresa contra falhas, ataques e perdas com pacotes sob medida para micro e pequenas empresas.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- PACOTE PROTEÇÃO -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#f6b401] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥉</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Proteção (Básico)</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Antivírus corporativo</li>
+          <li>✅ Firewall básico</li>
+          <li>✅ Backup automático semanal (local + nuvem)</li>
+          <li>✅ Monitoramento mensal</li>
+          <li>✅ Suporte remoto</li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #f6b401;" class="block w-full text-center text-[#0e3d71] font-bold py-3 px-4 rounded-lg glow-button hover:opacity-90 transition-opacity">ESCOLHER PROTEÇÃO</a>
+      </div>
+
+      <!-- PACOTE BLINDAGEM -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#045ebf] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥈</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Blindagem (Intermediário)</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Tudo do Proteção +</li>
+          <li>✅ VPN corporativa</li>
+          <li>✅ Backup diário automatizado</li>
+          <li>✅ Controle de acesso básico</li>
+          <li>✅ Monitoramento quinzenal</li>
+          <li>✅ 1 treinamento trimestral (2h) <span class="font-bold text-[#f6b401]">SUA VANTAGEM!</span></li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #045ebf;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">ESCOLHER BLINDAGEM</a>
+      </div>
+
+      <!-- PACOTE FORTALEZA -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#0e3d71] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥇</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Fortaleza (Premium)</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Tudo do Blindagem +</li>
+          <li>✅ Backup em tempo real (S3 AWS) <span class="font-bold text-[#f6b401]">USE SEU SAA-C03!</span></li>
+          <li>✅ Monitoramento contínuo</li>
+          <li>✅ Controle de acesso avançado</li>
+          <li>✅ Treinamento mensal da equipe</li>
+          <li>✅ Consultoria LGPD básica</li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #0e3d71;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">ESCOLHER FORTALEZA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PRODUTO 2: TI GERENCIADA ======================== -->
+<section id="ti-gerenciada" class="py-20 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-black" style="color: #0e3d71;">Produto 2: <span style="color: #f6b401;">TI Gerenciada</span></h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Organize, mantenha e evolua sua infraestrutura com pacotes que cuidam da sua TI de forma contínua e estratégica.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- PACOTE ESSENCIAL -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#f6b401] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥉</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Essencial</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Gerenciamento de licenças</li>
+          <li>✅ Backup semanal</li>
+          <li>✅ Suporte remoto</li>
+          <li>✅ Manutenção mensal</li>
+          <li>✅ Documentação básica</li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #f6b401;" class="block w-full text-center text-[#0e3d71] font-bold py-3 px-4 rounded-lg glow-button hover:opacity-90 transition-opacity">ESCOLHER ESSENCIAL</a>
+      </div>
+
+      <!-- PACOTE PROFISSIONAL -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#045ebf] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥈</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Profissional</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Tudo do Essencial +</li>
+          <li>✅ Servidor local ou EC2 (configuração) <span class="font-bold text-[#f6b401]">AQUI SUA CERTIFICAÇÃO BRILHA!</span></li>
+          <li>✅ Office 365 / Google Workspace</li>
+          <li>✅ Backup diário</li>
+          <li>✅ Atendimento presencial mensal (Brasília)</li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #045ebf;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">ESCOLHER PROFISSIONAL</a>
+      </div>
+
+      <!-- PACOTE CORPORATIVO -->
+      <div class="bg-white rounded-xl shadow-lg border-2 border-[#0e3d71] p-6 flex flex-col hover:-translate-y-2 transition-all">
+        <div class="text-4xl mb-2">🥇</div>
+        <h3 class="text-xl font-bold mb-3 text-[#0e3d71]">Pacote Corporativo</h3>
+        <ul class="space-y-2 text-sm text-gray-700 mb-4">
+          <li>✅ Tudo do Profissional +</li>
+          <li>✅ Infraestrutura híbrida (local + AWS)</li>
+          <li>✅ Backup em tempo real</li>
+          <li>✅ Atendimento presencial quinzenal</li>
+          <li>✅ Consultoria estratégica de TI</li>
+        </ul>
+        <a href="#chamada-final" style="background-color: #0e3d71;" class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">ESCOLHER CORPORATIVO</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CHAMADA FINAL ======================== -->
+<section id="chamada-final" class="pb-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-[#0e3d71] to-[#045ebf] text-white rounded-2xl p-12">
+    <h2 class="text-3xl font-black mb-4">Sua TI não precisa ser uma dor de cabeça.<br>Ela pode ser sua maior <span style="color: #f6b401;">aliada.</span></h2>
+    <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">Pronto para ter um parceiro de tecnologia que entende seu negócio e resolve seus problemas? Vamos conversar.</p>
+    <a href="https://wa.me/5561998865417?text=Preciso%20de%20um%20or%C3%A7amento%20de%20TI%20para%20minha%20empresa." target="_blank" style="background-color: #f6b401;" class="inline-block text-[#0e3d71] font-black text-xl px-16 py-6 rounded-xl glow-button">FALAR COM UM TÉCNICO ESPECIALISTA</a>
+    <p class="mt-4 text-sm opacity-80">Sem robôs. Fale diretamente com quem vai te ajudar.</p>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================== -->
+<footer style="background-color: #0e3d71;" class="text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex flex-col items-center text-center">
+      <img src="img/logo2.png" alt="Digital Systems Managing Logo" class="h-16 mb-4">
+      <p class="empresa-descricao mb-4 text-gray-300">Soluções & Capacitação em TI para Micro e Pequenas Empresas</p>
+      <div class="contatos mb-4 text-gray-200 space-y-1">
+        <p><strong>Email:</strong> digitalsm.empresa@gmail.com</p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="hover:text-[#f6b401] transition-colors">+55 61 9 9886-5417</a></p>
+      </div>
+      <div class="social-icons flex space-x-6 mb-8">
+        <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/whatsapp.png" alt="WhatsApp" class="h-8"></a>
+        <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/instagram.png" alt="Instagram" class="h-8"></a>
+        <a href="https://www.facebook.com/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/facebook.png" alt="Facebook" class="h-8"></a>
+        <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/linkedin.png" alt="Linkedin" class="h-8"></a>
+        <a href="https://www.youtube.com/@digitalsystemsmanaging" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/youtube.png" alt="Youtube" class="h-8"></a>
+      </div>
+      <div class="footer-copyright-section border-t border-white/20 w-full pt-6 mt-4">
+        <p class="text-gray-400 text-sm">&copy; 2026 Digital Systems Managing | Todos os direitos reservados</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= BOTÃO 'VOLTAR AO TOPO' ======================== -->
+<a href="#" x-show="window.scrollY > 400" @scroll.window="scrolled = window.scrollY > 400"
+   x-transition:enter="transition ease-out duration-300"
+   x-transition:enter-start="opacity-0 transform translate-y-2"
+   x-transition:enter-end="opacity-100 transform translate-y-0"
+   x-transition:leave="transition ease-in duration-300"
+   x-transition:leave-start="opacity-100 transform translate-y-0"
+   x-transition:leave-end="opacity-0 transform translate-y-2"
+   class="fixed bottom-6 right-6 p-3 rounded-full shadow-lg text-white"
+   style="background-color: #0e3d71;">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+  </svg>
+</a>
+
+</main>
+</body>
+</html>
+
+  
+  
