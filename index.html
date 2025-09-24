@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO OTIMIZADO V10 - Foco Remoto e Capacitação -->
+    <title>Digital SM | Treinamentos e Capacitação em TI para PMEs no Brasil</title>
+    <meta name="description" content="A Digital SM oferece treinamentos e consultoria de capacitação em TI para PMEs. Capacite sua equipe em cibersegurança, LGPD, nuvem AWS, FinOps e Linux. Atendimento remoto especializado para todo o Brasil.">
+    <meta name="keywords" content="treinamento ti pme, capacitação ti empresas, cursos cibersegurança, lgpd para equipes, finops pme, otimização custos nuvem, linux para empresas, redes ti, consultoria de capacitação, digital sm">
+    <meta name="author" content="Digital Systems Managing">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <!-- DEPENDÊNCIAS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS CUSTOMIZADO -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        html {
+            scroll-padding-top: 100px;
+        }
+        .glow-button { 
+            box-shadow: 0 0 30px rgba(246, 180, 1, 0.4); 
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-button:hover { 
+            box-shadow: 0 0 50px rgba(246, 180, 1, 0.6); 
+            transform: translateY(-3px) scale(1.05);
+        }
+        .typewriter {
+            overflow: hidden; border-right: .15em solid #f6b401; white-space: nowrap; margin: 0;
+            letter-spacing: .05em;
+            animation: typing 2.5s steps(35, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #f6b401; } }
+        /* Cores base para evitar repetição */
+        .color-primary { color: #0e3d71; }
+        .bg-primary { background-color: #0e3d71; }
+        .border-primary { border-color: #0e3d71; }
+        .color-secondary { color: #045ebf; }
+        .bg-secondary { background-color: #045ebf; }
+        .border-secondary { border-color: #045ebf; }
+        .color-accent { color: #f6b401; }
+        .bg-accent { background-color: #f6b401; }
+        .border-accent { border-color: #f6b401; }
+
+        /* Estilo para o menu mobile - Hamburguer */
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #0e3d71; /* Cor do hamburguer */
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+        .hamburger-menu.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+            background-color: white; /* Cor do X */
+        }
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+            background-color: white; /* Cor do X */
+        }
+        .price-old {
+            text-decoration: line-through;
+            color: #ef4444; /* red-500 */
+            font-weight: 400;
+            font-size: 0.875rem; /* text-sm */
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800" x-data="{ openMenu: false }" :class="{'overflow-hidden': openMenu}">
+
+<!-- ======================= HEADER V10 ======================== -->
+<header class="bg-white/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-3">
+            <a href="#"><img src="img/logo.png" alt="Digital Systems Managing Logo" class="h-12"></a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#nossas-solucoes" class="text-gray-600 hover:text-color-secondary font-semibold transition-colors">Soluções</a>
+                <a href="#provas-sociais" class="text-gray-600 hover:text-color-secondary font-semibold transition-colors">Clientes</a>
+                <a href="#sobre" class="text-gray-600 hover:text-color-secondary font-semibold transition-colors">Sobre</a>
+                <a href="#chamada-final" class="text-gray-600 hover:text-color-secondary font-semibold transition-colors">Contato</a>
+                <a href="#faq" class="text-gray-600 hover:text-color-secondary font-semibold transition-colors">FAQ</a>
+            </div>
+            <a href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20avaliação%20de%20capacitação%20para%20minha%20equipe." target="_blank" class="hidden md:inline-block bg-accent color-primary font-bold px-6 py-2 rounded-lg glow-button hover:scale-105">
+                AVALIAR NECESSIDADES
+            </a>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button @click="openMenu = !openMenu" class="md:hidden p-2 rounded-md focus:outline-none z-50" :class="{'hamburger-menu open': openMenu, 'hamburger-menu': !openMenu}">
+                <span :class="{'bg-white': openMenu}"></span>
+                <span :class="{'bg-white': openMenu}"></span>
+                <span :class="{'bg-white': openMenu}"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+<!-- ========================= FIM DO HEADER ========================= -->
+
+<!-- Mobile Menu Overlay (MOVIDO PARA FORA DO HEADER) -->
+<div x-show="openMenu" 
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 translate-x-full"
+     x-transition:enter-end="opacity-100 translate-x-0"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 translate-x-0"
+     x-transition:leave-end="opacity-0 translate-x-full"
+     class="md:hidden fixed inset-0 bg-primary z-[9999] flex flex-col text-xl font-bold text-white">
+    
+    <!-- Header interno do menu mobile -->
+    <div class="bg-primary flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 shadow-md">
+        <span class="text-white text-lg font-semibold">Digital SM</span>
+        <button @click="openMenu = false" class="text-white text-3xl leading-none">&times;</button>
+    </div>
+
+    <!-- Links do menu mobile -->
+    <div class="flex flex-col items-center justify-center space-y-8 flex-grow">
+        <a @click="openMenu = false" href="#nossas-solucoes" class="hover:text-color-accent transition-colors">Soluções</a>
+        <a @click="openMenu = false" href="#provas-sociais" class="hover:text-color-accent transition-colors">Clientes</a>
+        <a @click="openMenu = false" href="#sobre" class="hover:text-color-accent transition-colors">Sobre</a>
+        <a @click="openMenu = false" href="#chamada-final" class="hover:text-color-accent transition-colors">Contato</a>
+        <a @click="openMenu = false" href="#faq" class="hover:text-color-accent transition-colors">FAQ</a>
+        <a @click="openMenu = false" href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20avaliação%20de%20capacitação%20para%20minha%20equipe." target="_blank" class="bg-accent color-primary px-8 py-3 rounded-lg glow-button hover:scale-105 mt-8">
+            AVALIAR NECESSIDADES
+        </a>
+    </div>
+</div>
+
+<main>
+<!-- ======================= SEÇÃO HERO V10 ======================== -->
+<section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke-width="2" stroke="%23e2e8f0"><path d="M0 .5H31.5V32"/></svg>')] opacity-50"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="w-full overflow-hidden flex justify-center">
+                <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight color-primary">
+                    Capacite Sua Equipe: Conhecimento em TI e <span class="color-accent">Segurança para o Sucesso</span> do Seu Negócio.
+                </h1>
+            </div>
+            <p class="max-w-3xl mx-auto text-xl text-gray-700 font-semibold mt-4">
+                A Digital SM oferece <strong class="bg-secondary p-1 rounded text-white">treinamentos e consultoria de capacitação em TI</strong> para micro e pequenas empresas, com atendimento 100% remoto em todo o Brasil. Transforme sua equipe, garanta a segurança e impulsione sua produtividade.
+            </p>
+        </div>
+        
+        <!-- SEÇÃO DE BENEFÍCIOS DA CAPACITAÇÃO -->
+        <div class="bg-white rounded-xl shadow-lg border-2 border-secondary p-8 mb-20">
+            <h2 class="text-center text-2xl font-black mb-8 flex items-center justify-center color-primary">
+                <span class="text-5xl mr-4 text-color-accent">🚀</span>Benefícios Imediatos da Capacitação Digital
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-b border-gray-200 py-8 mb-8">
+                <div>
+                    <p class="text-5xl font-black color-secondary">🛡️</p>
+                    <h3 class="text-lg font-bold color-primary mt-4">Equipe Pronta Contra Ameaças</h3>
+                    <p class="text-gray-600 text-sm mt-2">Reduza riscos de ciberataques e perdas de dados com um time consciente e seguro.</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-black color-secondary">📈</p>
+                    <h3 class="text-lg font-bold color-primary mt-4">Produtividade Máxima Garantida</h3>
+                    <p class="text-gray-600 text-sm mt-2">Sua equipe usando a tecnologia a favor, sem interrupções e com eficiência.</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-black color-secondary">✅</p>
+                    <h3 class="text-lg font-bold color-primary mt-4">Conformidade e Proteção Legal</h3>
+                    <p class="text-gray-600 text-sm mt-2">Evite multas e garanta a adequação do seu negócio às leis de proteção de dados (LGPD).</p>
+                </div>
+            </div>
+            <p class="text-center text-md italic text-gray-700">Invista no conhecimento que blinda seu negócio e impulsiona seu crescimento com a <strong class="color-primary">Digital SM</strong>.</p>
+        </div>
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-4 color-primary">Descubra as Necessidades de Capacitação da Sua Equipe</h2>
+            <p class="text-lg text-gray-600 mb-8">Oferecemos uma avaliação gratuita e personalizada para identificar as lacunas de conhecimento em TI da sua equipe e propor os melhores programas de treinamento.</p>
+            <a href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20avaliação%20de%20capacitação%20para%20minha%20equipe." target="_blank" class="bg-accent color-primary font-black text-xl px-16 py-6 rounded-xl glow-button hover:scale-105 inline-block">AGENDAR AVALIAÇÃO GRATUITA</a>
+            <p class="mt-4 font-semibold color-secondary">Conversa direta com um especialista via WhatsApp, sem compromisso.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= SEÇÃO: NOSSAS SOLUÇÕES EM CAPACITAÇÃO V10 ======================== -->
+<section id="nossas-solucoes" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-black color-primary">Nossas Soluções em Capacitação e Treinamento</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Programas exclusivos e personalizados para elevar o nível de conhecimento da sua equipe em segurança, nuvem e gestão de TI, com foco em resultados práticos para PMEs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Pacote 1: Guia Digital Essencial -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-accent hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4 text-color-secondary">📚</div>
+                    <h3 class="text-xl font-bold mb-3 color-primary">Pacote "Guia Digital Essencial: Segurança e Colaboração"</h3>
+                    <p class="text-gray-600 mb-4">Construa uma base sólida. Sua equipe preparada contra ameaças digitais, organizada e colaborando com segurança na nuvem.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>✅ Cibersegurança para Usuários (Phishing, Senhas)</li>
+                        <li>✅ LGPD na Prática para PMEs (Conscientização)</li>
+                        <li>✅ Produtividade Segura com Google Drive / OneDrive</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-slate-50">
+                    <div class="text-center text-2xl font-black color-primary mb-2">
+                        R$ 2.400 <span class="price-old">(de R$ 3.000)</span>
+                    </div>
+                    <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20o%20pacote%20Guia%20Digital%20Essencial." target="_blank" class="block w-full text-center bg-secondary text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">INVESTIR NESTE TREINAMENTO</a>
+                </div>
+            </div>
+
+            <!-- Pacote 2: TI Estruturada -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-color-secondary hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4 text-accent">⚙️</div>
+                    <h3 class="text-xl font-bold mb-3 color-primary">Pacote "TI Estruturada: Redes, Linux e Nuvem Descomplicada"</h3>
+                    <p class="text-gray-600 mb-4">Desmistifique a infraestrutura! Sua equipe com mais autonomia para entender e gerenciar a TI básica e os recursos de nuvem.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>✅ Fundamentos de Redes para PMEs (Prática)</li>
+                        <li>✅ Linux Básico: Da Teoria à Prática para PMEs</li>
+                        <li>✅ Introdução à Nuvem AWS para PMEs (S3, LightSail, Custos)</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-slate-50">
+                    <div class="text-center text-2xl font-black color-primary mb-2">
+                        R$ 4.000 <span class="price-old">(de R$ 5.000)</span>
+                    </div>
+                    <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20o%20pacote%20TI%20Estruturada." target="_blank" class="block w-full text-center bg-secondary text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">CAPACITAR MINHA EQUIPE</a>
+                </div>
+            </div>
+
+            <!-- Pacote 3: Gestão Inteligente -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-transparent transition-all duration-300 hover:shadow-2xl hover:border-accent hover:-translate-y-2 flex flex-col">
+                <div class="p-8 flex-grow">
+                    <div class="text-5xl mb-4 text-color-secondary">🚀</div>
+                    <h3 class="text-xl font-bold mb-3 color-primary">Pacote "Gestão Inteligente: Estratégia e Otimização em TI e Nuvem"</h3>
+                    <p class="text-gray-600 mb-4">Otimize investimentos e reduza riscos! Capacitação estratégica para líderes e equipes que buscam excelência em TI e conformidade avançada.</p>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>✅ FinOps para PMEs: Otimizando Custos na Nuvem</li>
+                        <li>✅ LGPD Avançada e Políticas Internas de Dados</li>
+                        <li>✅ Cibersegurança Proativa e Gestão de Riscos</li>
+                        <li>✅ Consultoria de Capacitação Personalizada (VIP)</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-slate-50">
+                    <div class="text-center text-2xl font-black color-primary mb-2">
+                        R$ 6.000 <span class="price-old">(de R$ 7.500)</span>
+                    </div>
+                    <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20o%20pacote%20Gestão%20Inteligente." target="_blank" class="block w-full text-center bg-secondary text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">SOLICITAR CONSULTORIA DE CAPACITAÇÃO</a>
+                </div>
+            </div>
+        </div>
+        <p class="mt-12 text-lg text-gray-700 text-center">Nossos módulos avulsos e consultoria por hora (R$ 250 - R$ 500/hora) também estão disponíveis para necessidades específicas. Fale conosco!</p>
+    </div>
+</section>
+
+<!-- ======================= SEÇÃO: SOBRE A DIGITAL SM V10 ======================== -->
+<section id="sobre" class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-black color-primary mb-6">Sobre a Digital SM: Conhecimento que Impulsiona Seu Negócio</h2>
+        <p class="text-lg text-gray-700 mb-8">
+            Na Digital SM, acreditamos que a tecnologia deve ser uma aliada poderosa, não uma fonte de preocupação. Fundada com a missão de **descomplicar a TI através da capacitação para micro e pequenas empresas**, unimos conhecimento técnico profundo a uma paixão por transformar equipes e resolver problemas de forma prática e eficiente.
+        </p>
+        <p class="text-lg text-gray-700 mb-8">
+            Com anos de expertise em **segurança de redes, sistemas (Linux/Windows) e soluções em nuvem (AWS)**, a Digital SM dedica-se a blindar seus dados, otimizar sua produtividade e garantir a continuidade do seu negócio. Fazemos isso através de treinamentos e consultorias de capacitação **100% remotos**, personalizados para o perfil e as necessidades específicas da sua empresa.
+        </p>
+        <p class="text-lg text-gray-700 font-semibold mb-12">
+            Nossa visão é simples: sua empresa focada no crescimento, enquanto cuidamos da sua capacitação tecnológica com **segurança, proatividade e transparência**.
+        </p>
+        <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20valores%20da%20Digital%20SM." target="_blank" class="bg-primary text-white font-bold px-8 py-4 rounded-lg glow-button hover:scale-105 inline-block">CONHECER MAIS NOSSOS VALORES</a>
+    </div>
+</section>
+
+<!-- ======================= SEÇÃO: PROVAS SOCIAIS V10 ======================== -->
+<section id="provas-sociais" class="py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-black color-primary mb-12">O Conhecimento que Transforma Nossos Clientes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-accent text-left">
+                <p class="text-gray-700 italic mb-4">"O treinamento de LGPD da Digital SM foi um divisor de águas para nossa equipe. Agora estamos muito mais seguros e entendemos como proteger os dados de nossos clientes. Um investimento que valeu cada centavo!"</p>
+                <p class="font-bold color-primary">Patrícia Lima</p>
+                <p class="text-sm text-gray-600">Gerente Administrativa, Escritório Contábil Futura</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-secondary text-left">
+                <p class="text-gray-700 italic mb-4">"Nossa equipe não tinha base em nuvem. O curso 'Introdução à Nuvem AWS' da Digital SM foi excelente, prático e objetivo. Agora conseguimos otimizar nossos custos e usar a nuvem com mais inteligência!"</p>
+                <p class="font-bold color-primary">Carlos Mendes</p>
+                <p class="text-sm text-gray-600">Sócio-Diretor, Agência Digital Criativa</p>
+            </div>
+            <!-- Pode adicionar mais depoimentos aqui -->
+        </div>
+        <p class="mt-12 text-lg text-gray-700">Pronto para ter uma equipe altamente capacitada? <a href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20avaliação%20de%20capacitação%20para%20minha%20equipe." target="_blank" class="font-bold color-secondary hover:underline">Fale com a gente!</a></p>
+    </div>
+</section>
+
+<!-- ======================= SEÇÃO: FAQ V10 ======================== -->
+<section id="faq" class="pb-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-black color-primary">Perguntas Frequentes (FAQ)</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">Tire suas dúvidas sobre nossos programas de treinamento e consultoria em TI remota para sua empresa.</p>
+        </div>
+
+        <div x-data="{ openAccordion: null }" class="bg-slate-50 p-8 rounded-xl shadow-lg border-t-8 border-secondary">
+            <h3 class="text-2xl font-black mb-4 color-primary">Sua Paz de Espírito Começa Aqui</h3>
+            <div class="border rounded-lg overflow-hidden">
+                <button @click="openAccordion = openAccordion === 1 ? null : 1" class="w-full text-left p-4 flex justify-between items-center font-bold transition-colors" :class="{'bg-primary text-white': openAccordion === 1, 'bg-white hover:bg-slate-100 color-primary': openAccordion !== 1}">
+                    🤔 Como funcionam os treinamentos remotos ao vivo?
+                    <span :class="{'rotate-180': openAccordion === 1}" class="transform transition-transform duration-300 color-accent text-2xl font-light">▾</span>
+                </button>
+                <div x-show="openAccordion === 1" x-collapse class="p-6 text-gray-600 bg-white">
+                    <p>Nossos treinamentos são ministrados ao vivo, via plataformas de videoconferência (Zoom, Google Meet), permitindo interação em tempo real com o instrutor. As sessões são dinâmicas, com exemplos práticos e espaço para dúvidas. Tudo 100% online, garantindo flexibilidade para sua equipe em qualquer lugar do Brasil.</p>
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden mt-4">
+                <button @click="openAccordion = openAccordion === 2 ? null : 2" class="w-full text-left p-4 flex justify-between items-center font-bold transition-colors" :class="{'bg-primary text-white': openAccordion === 2, 'bg-white hover:bg-slate-100 color-primary': openAccordion !== 2}">
+                    🛡️ Quais treinamentos de segurança e LGPD vocês oferecem?
+                    <span :class="{'rotate-180': openAccordion === 2}" class="transform transition-transform duration-300 color-accent text-2xl font-light">▾</span>
+                </button>
+                <div x-show="openAccordion === 2" x-collapse class="p-6 text-gray-600 bg-white">
+                    <p>Oferecemos módulos que cobrem desde a cibersegurança básica para usuários (identificação de phishing, criação de senhas fortes) até a LGPD na prática, com foco em como as PMEs devem tratar dados, evitar riscos e multas, e criar políticas internas simples. Nosso objetivo é transformar sua equipe em sua primeira linha de defesa.</p>
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden mt-4">
+                <button @click="openAccordion = openAccordion === 3 ? null : 3" class="w-full text-left p-4 flex justify-between items-center font-bold transition-colors" :class="{'bg-primary text-white': openAccordion === 3, 'bg-white hover:bg-slate-100 color-primary': openAccordion !== 3}">
+                    💸 Como os treinamentos de FinOps podem economizar dinheiro para minha PME?
+                    <span :class="{'rotate-180': openAccordion === 3}" class="transform transition-transform duration-300 color-accent text-2xl font-light">▾</span>
+                </button>
+                <div x-show="openAccordion === 3" x-collapse class="p-6 text-gray-600 bg-white">
+                    <p>Nosso módulo de FinOps para PMEs ensina sua equipe a gerenciar e otimizar os custos da sua infraestrutura em nuvem (AWS, Google Cloud, Azure). Você aprenderá a monitorar gastos, escolher serviços mais econômicos e dimensionar recursos corretamente, evitando desperdícios e garantindo que cada centavo investido em TI traga o melhor retorno.</p>
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden mt-4">
+                <button @click="openAccordion = openAccordion === 4 ? null : 4" class="w-full text-left p-4 flex justify-between items-center font-bold transition-colors" :class="{'bg-primary text-white': openAccordion === 4, 'bg-white hover:bg-slate-100 color-primary': openAccordion !== 4}">
+                    💻 Meus colaboradores precisam de treinamento em tecnologia?
+                    <span :class="{'rotate-180': openAccordion === 4}" class="transform transition-transform duration-300 color-accent text-2xl font-light">▾</span>
+                </button>
+                <div x-show="openAccordion === 4" x-collapse class="p-6 text-gray-600 bg-white">
+                    <p>Absolutamente! Em um mundo cada vez mais digital, capacitar sua equipe em TI e segurança não é um luxo, mas uma necessidade. Nossos treinamentos garantem que seus colaboradores usem a tecnologia de forma eficiente, segura e em conformidade, reduzindo riscos operacionais e aumentando a produtividade de toda a empresa.</p>
+                </div>
+            </div>
+            <div class="border rounded-lg overflow-hidden mt-4">
+                <button @click="openAccordion = openAccordion === 5 ? null : 5" class="w-full text-left p-4 flex justify-between items-center font-bold transition-colors" :class="{'bg-primary text-white': openAccordion === 5, 'bg-white hover:bg-slate-100 color-primary': openAccordion !== 5}">
+                    ☁️ Vocês oferecem treinamento para ferramentas de nuvem como Google Workspace e Microsoft 365?
+                    <span :class="{'rotate-180': openAccordion === 5}" class="transform transition-transform duration-300 color-accent text-2xl font-light">▾</span>
+                </button>
+                <div x-show="openAccordion === 5" x-collapse class="p-6 text-gray-600 bg-white">
+                    <p>Sim! Nossos programas incluem módulos focados no uso estratégico e seguro de ferramentas de colaboração em nuvem, como Google Workspace (Gmail profissional, Drive, Meet) e Microsoft 365 (Outlook, Word, Excel, OneDrive). Sua equipe aprenderá a maximizar a produtividade, organizar documentos e colaborar de forma eficiente e protegida.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CHAMADA FINAL V10 ======================== -->
+<section id="chamada-final" class="pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-primary to-secondary rounded-2xl p-12">
+        <h2 class="text-3xl font-black mb-4 color-primary">Sua Equipe Capacitada: Conhecimento que Impulsiona Seu Negócio.</h2>
+        <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto color-primary">Pronto para investir no conhecimento que transforma sua TI em uma verdadeira aliada? Receba uma avaliação gratuita de necessidades de capacitação da Digital SM.</p>
+        <a href="https://wa.me/5561998865417?text=Quero%20agendar%20uma%20avaliação%20de%20capacitação%20para%20minha%20equipe." target="_blank" class="inline-block bg-accent color-primary font-black text-xl px-16 py-6 rounded-xl glow-button hover:scale-105">SOLICITAR AVALIAÇÃO GRATUITA AGORA</a>
+        <p class="mt-4 text-sm opacity-80 color-primary">Sem robôs. Fale diretamente com o especialista que vai te ajudar.</p>
+    </div>
+</section>
+</main>
+
+<!-- ======================= FOOTER V10 ======================== -->
+<footer class="bg-primary text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col items-center text-center">
+            <img src="img/logo2.png" alt="Digital Systems Managing Logo" class="h-16 mb-4">
+            <p class="empresa-descricao mb-4 text-gray-300">Treinamentos & Capacitação em TI Remota</p>
+            <div class="contatos mb-4 text-gray-200 space-y-1">
+                <p><strong>Email:</strong> digitalsm.empresa@gmail.com</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/5561998888888?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="hover:text-accent transition-colors">+55 61 9 9886-5417</a></p>
+            </div>
+            <div class="social-icons flex space-x-6 mb-8">
+                 <a href="https://wa.me/5561998865417?text=Quero%20saber%20mais%20sobre%20os%20serviços%20da%20Digital%20SM." target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/whatsapp.png" alt="WhatsApp" class="h-8"></a>
+                 <a href="https://www.instagram.com/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/instagram.png" alt="Instagram" class="h-8"></a>
+                 <a href="https://www.facebook.com/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/facebook.png" alt="Facebook" class="h-8"></a>
+                 <a href="https://www.linkedin.com/company/digitalsystemsmanaging/" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/linkedin.png" alt="Linkedin" class="h-8"></a>
+                 <a href="https://www.youtube.com/@digitalsystemsmanaging" target="_blank" class="transform hover:scale-110 transition-transform"><img src="img/youtube.png" alt="Youtube" class="h-8"></a>
+            </div>
+            <div class="footer-copyright-section border-t border-white/20 w-full pt-6 mt-4">
+                <p class="text-gray-400 text-sm">&copy; 2026 Digital Systems Managing | Todos os direitos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ======================= BOTÃO 'VOLTAR AO TOPO' ======================== -->
+<a href="#" x-show="window.scrollY > 400" @scroll.window="scrolled = window.scrollY > 400"
+   x-transition:enter="transition ease-out duration-300"
+   x-transition:enter-start="opacity-0 transform translate-y-2"
+   x-transition:enter-end="opacity-100 transform translate-y-0"
+   x-transition:leave="transition ease-in duration-300"
+   x-transition:leave-start="opacity-100 transform translate-y-0"
+   x-transition:leave-end="opacity-0 transform translate-y-2"
+   class="fixed bottom-6 right-6 p-3 rounded-full shadow-lg text-white bg-primary z-[9999]">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+</a>
+</body>
+</html>
